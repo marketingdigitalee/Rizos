@@ -6,20 +6,17 @@ class UsuarioDAO  {
 	
 	//Agregar usuario
 	public function agregarUsuarioBD($arrayPOST){
-	try{
+
 		//Instacia de BD
 		$conexion = new BD();
 		// conectar base de datos 
 
-	$resultado = $conexion->insertar('Usuario',$arrayPOST,$conexion);
+	$resultado = $conexion->insertar('Usuario',$arrayPOST);
 
 	return $resultado;
 
-	}catch(Exception $e){
 
-		return false;//echo 'Excepción Capturada: ', $e->getMessage(),"\n";
 	}
-}
 
 	public function traerUsuarioBDXCedula($numCedula){
 

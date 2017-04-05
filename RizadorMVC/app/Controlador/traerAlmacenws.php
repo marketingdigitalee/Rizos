@@ -9,13 +9,13 @@ include 'libreria/ADOdb/adodb.inc.php';
   $db = ADONewConnection('mysqli');
   $db->debug = false;
   $db->Connect($DB_HOST, $DB_USER,$DB_PASS,$DB_NAME);
+  $db->EXECUTE("set names 'utf8'");
   
    $sql = "SELECT * FROM Almacenes";
 
     $result = $db->getAll($sql);
 
-    //ar_dump($result);
-	
+
 	foreach ($result as $row) {
 	 									
 			echo '<option value="'.$row['codAlmacen'].'">'.$row['nomAlmacen'].'</option>';

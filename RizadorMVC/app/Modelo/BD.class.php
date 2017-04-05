@@ -1,5 +1,6 @@
 <?php
 include 'app/Controlador/libreria/ADOdb/adodb.inc.php';
+
 /*
 CLASE PARA LA CONEXION Y LA GESTION DE LA BASE DE DATOS Y LA PAGINA WEB
 */
@@ -16,6 +17,8 @@ class BD{
   $db = ADONewConnection('mysqli');
   $db->debug = false;
   $db->Connect($DB_HOST, $DB_USER,$DB_PASS,$DB_NAME);
+  $db->EXECUTE("set names 'utf8'");
+
   return $db;
 
  } 
@@ -41,7 +44,9 @@ public function insertar($tabla,$array){
   try {
 
       $db = $this->conectar();
+      $db->SetFetchMode(ADODB_FETCH_ASSOC); 
       $db->autoexecute($tabla,$array,'INSERT');
+
       return true;
       
     } catch (Exception $e) {
@@ -60,6 +65,7 @@ public function insertar($tabla,$array){
     $sql = "SELECT $nomColumna FROM $nomTabla WHERE $filtro = '$valor'";
 
     $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
 
     $array = $db->getAll($sql);
 
@@ -72,6 +78,7 @@ public function insertar($tabla,$array){
     $sql = "SELECT * FROM $nomTabla";
 
     $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
 
     $array = $db->getAll($sql);
     
@@ -84,9 +91,22 @@ public function insertar($tabla,$array){
     $sql = "SELECT * FROM UserSystem WHERE emailUser = '$User' AND passUser = '$pass'";
 
     $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
 
     $array = $db->getAll($sql);
 
+    return $array;
+
+ }
+
+   public function consultaSQL($sql){
+
+
+    $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
+
+    $array = $db->getAll($sql);
+    
     return $array;
 
  }

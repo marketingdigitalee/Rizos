@@ -2,6 +2,7 @@
 require_once 'app/Modelo/UserSystemDAO.class.php';
 require_once 'app/Modelo/LogEventosDAO.class.php';
 require_once 'app/Modelo/funciones.php';
+require_once 'app/Modelo/CiudadDAO.class.php';
 
 
 
@@ -76,6 +77,17 @@ class ControladorConfig{
 
 
 		return $result;
+	}
+
+	function crearCiudad($nombreCiudad){
+
+		$modCiudad = new CiudadDAO;
+
+		$arrayCiudad['nombreCiudad'] = $nombreCiudad;
+
+		$resultado = $modCiudad->crearCiudad($arrayCiudad);
+
+		return $resultado;
 	}
 
 }

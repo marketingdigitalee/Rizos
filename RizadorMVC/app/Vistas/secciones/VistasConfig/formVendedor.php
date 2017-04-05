@@ -1,10 +1,10 @@
-	<div class="container">
+<div class="container">
 		<h3 class="centrarTexto">FORMULARIO RESERVA</h3>
   		<p class=""> Aqui algun teaser... </p>
 	
 					
 				  <!-- Contact Form -->
-				<form action="index.php#ReservaYA" method="post">
+				<form action="config.php" method="post">
 						<div class="">
 								<div >
 									<label for="nombres">Nombres</label>
@@ -93,4 +93,3 @@
                     });
     })();
 </script>
-
