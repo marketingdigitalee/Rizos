@@ -1,0 +1,434 @@
+@font-face {
+	font-family: "Textos.otf";
+	src: url(../fonts/Textos.otf) format('opentype');
+}
+@font-face {
+	font-family: "Knockout-HTF50-Welterweight_0.otf";
+	src: url(../fonts/Knockout-HTF50-Welterweight_0.otf) format('truetype');
+}
+@font-face {
+	font-family: "titulos_.ttf";
+	src: url(../fonts/titulos_.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'hljo_.ttf';
+	src: url(../fonts/hljo_.ttf)format('truetype');
+}
+@font-face {
+	font-family: "Stag-BoldItalic_0.otf";
+	src: url(../fonts/BebasNeue.otf) format('opentype');
+}
+
+
+
+.fuente{
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/back3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/*-------------------globales------------------*/
+h3{
+	font-size: 40px;
+    line-height: 38px;
+    font-weight: 100;
+    font-family: "Knockout-HTF50-Welterweight_0.otf";
+    color: #38393a;
+
+}
+
+input[type=text] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    width: 350px;
+    height: 20px;
+}
+
+input[type=password] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    width: 350px;
+    height: 20px;
+}
+
+/*-------------------Clases------------------*/
+
+.centrarTexto{
+	text-align: center;
+}
+
+/*-------------------header------------------*/
+header{
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	background-color: #fff;
+	opacity: 1;
+	z-index: 100;
+	margin-top: -100px;
+
+}
+
+#contentHeader{
+	margin: 0 auto;
+	width: 95%;
+}
+
+.logo{
+	width: 25%;
+	height: 100px;
+	float: left;
+	padding-left: 10px;	
+
+}
+.logo img{
+    width: 220px;
+    padding-top: 13px;
+    padding-left: 22px;
+}
+
+.nav{
+ 	width: 73%;
+ 	float: left;
+ 	height: 98px;
+
+ }
+.nav ul {
+  list-style: none;
+  background-color: #fff;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 24px;
+    font-size: 1.2em;
+
+
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+
+  }
+
+ 
+.nav a {
+  text-decoration: none;
+  color: #38393a;
+  display: block;
+  transition: .3s background-color;
+  font-family: "Knockout-HTF50-Welterweight_0.otf";
+  margin-top: 40px;
+
+
+
+}
+ 
+.nav a:hover {
+ color: gray}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #38393a;
+  cursor: default;
+}
+
+.cabecera{
+	width: 100%;
+	height: 70px;
+    background-color: #FFF;
+}
+
+.fixed {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; }
+/*-------------------contenedor------------------*/
+
+
+#contenedor{
+	width: 95%;
+	margin:0 auto;
+	height: auto;
+	background-color: #fff;
+	overflow: hidden;
+	margin-top: 100px;
+}
+ 
+/*-------------------home------------------*/ 
+
+#home{
+	position: relative;
+	background-image: url(../img/fondo.jpg);
+	width: 100%;
+	height: 650px;
+
+}
+
+#homePromo{
+	margin-top: 100px;
+	position: absolute;
+}
+#homeBtn{
+	margin-top: 500px;
+	margin-left: 100px;
+	position: absolute;
+	
+}
+
+#homeBtn:hover{
+	-webkit-transform: scale(1.1);
+    transform: scale(1.1)
+ }
+
+
+
+
+/*-------------------ficha técnica------------------*/ 
+
+#fichaTec{
+	position: relative;
+}
+
+#divfichaTec{
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#divfichaTec img{
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	
+}
+
+/*-------------------CAMPAÑA DE TELEVISION ------------------*/ 
+
+#campTV{
+	margin: 0 auto;
+}
+
+#contentVideo{
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+/*-------------------Como Reservar------------------*/ 
+
+#divInstructivo{
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#divInstructivo img{
+	width: 900px;
+	text-align: center;
+	margin: 0 auto;
+	
+}
+
+/*-------------------FAQ------------------*/ 
+
+#contentReserva{
+	width: 90%;
+	margin:0 auto;
+}
+
+.faq li { 
+list-style: none;
+	padding: 20px; }
+
+.faq li.q {
+  background: #4FC2E;
+  font-weight: bold;
+  font-size: 120%;
+  border-bottom: 1px #ddd solid;
+  cursor: pointer;
+}
+
+.faq li img{ 
+	width: 20px;
+	height: 20px;
+	background-color: grey;
+	 -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+	background-image: url("../img/pregunta.png");
+
+	}
+
+.faq li.a {
+  background: #3BB0D6;
+  display: none;
+  color:#fff;
+}
+
+.activado {
+	background-color: blue!important;
+	background-image: url("../img/ok.png");
+}
+
+/*-------------------Puntos -----------------*/ 
+#puntos{
+	width: 90%;
+	margin:0 auto;
+
+}
+
+#divPuntos{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	
+}
+
+.tablaPuntos{
+	float: left;
+	width: 50%;
+
+}
+
+.tablaPuntos img {
+	width: 100%;
+}
+
+/*-------------------CERRADO -----------------*/ 
+#divCerrado{
+	width: 90%;
+	margin:0 auto;
+
+}
+
+#divCerradoimg{
+	margin: 0 auto;
+	
+}
+
+#divCerradoimg img{
+	width: 100%;
+	
+}
+
+
+
+/*-------------------Formularios -----------------*/ 
+#ReservaYA{
+	width: 90%;
+	margin: 0 auto;
+}
+#divBotones{
+	text-align: center;
+	width: 90%;
+}
+
+#contenedorBotones1{
+	width: 50%;
+	float: left;
+}
+
+#boton1{
+	width: 100px;
+	height: 50px;
+}
+
+#contenedorBotones2{
+	width: 50%;
+	float: left;
+}
+
+#boton2{
+
+	width: 100px;
+	height: 50px;
+}
+
+.divFormInput{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.inputForm{
+
+}
+
+/*-------------------Footer -----------------*/ 
+#Footer{
+	background-color: black;
+}
+
+.contentCondiciones{
+	margin: 0 auto;
+	width: 90%;
+}
+
+.titulosFooter{
+    text-align: left;
+    color: #fff;
+    font-size: 34px;
+    padding-top: 25px;
+    height: 1px;
+    padding-left: 10px;
+}
+
+#textoCodiciones{
+	width: 90%;
+	margin: 0 auto;
+	padding: 30px;	
+
+}
+
+#textoCodiciones p{
+	color: white;
+
+}
+
+#ContentcopyRedes{
+	margin:0 auto;
+	width: 90%;
+	background-color: grey;
+		height: 60px;
+	overflow: hidden;
+}
+.copyright{
+    padding-top: 16px;
+    width: 50%;
+    float: left;
+    padding-left: 20px;
+}
+
+#redes{
+	width: 150px;
+	height: 50px;
+	float: right;
+	overflow: hidden;
+	margin: 5px;
+
+}
+
+#redes .redesBox{
+	width: 38px;
+	height: 38px;
+}
+#redes .redesBox:hover{
+	opacity: 0.7;
+}
