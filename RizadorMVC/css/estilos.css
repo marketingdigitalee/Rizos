@@ -26,7 +26,7 @@ h3{
     line-height: 38px;
     font-weight: 100;
     font-family: "ChampionsBold.otf";
-    color: #38393a;
+    color:#FFFFFF;
 
 }
 
@@ -118,7 +118,7 @@ header{
  
 .nav a {
   text-decoration: none;
-  color: #38393a;
+  color: #000000;
   display: block;
   transition: .3s background-color;
   font-family: "ChampionsRegular.otf";
@@ -154,7 +154,7 @@ header{
 	width: 90%;
 	margin:0 auto;
 	height: auto;
-	background: rgba(117,69,116,0.5);
+	background: rgba(117,69,116,0.7);
 	overflow: hidden;
 	margin-top: 100px;
 }
@@ -176,12 +176,13 @@ header{
 }
 
 #homePromo{
-	margin-top: 290px;
+	
+	margin-top: 280px;
 	position: absolute;
 }
 #homeBtn{
-	margin-top: 500px;
-	margin-left: 100px;
+	margin-top: 520px;
+	margin-left: 160px;
 	position: absolute;
 	
 }
@@ -221,7 +222,8 @@ header{
 
 #contentVideo{
 	width: 90%;
-	margin: 0 auto;
+	
+	margin-left: 300px;
 }
 
 
@@ -295,11 +297,7 @@ list-style: none;
 	
 }
 
-.tablaPuntos{
-	float: left;
-	width: 50%;
 
-}
 
 .tablaPuntos img {
 	width: 100%;
