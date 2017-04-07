@@ -1,23 +1,10 @@
 @font-face {
-	font-family: "Textos.otf";
-	src: url(../fonts/Textos.otf) format('opentype');
+	font-family: "ChampionsBold.otf";
+	src: url(../fonts/ChampionsBold.otf) format('opentype');
 }
 @font-face {
-	font-family: "Knockout-HTF50-Welterweight_0.otf";
-	src: url(../fonts/Knockout-HTF50-Welterweight_0.otf) format('truetype');
-}
-@font-face {
-	font-family: "titulos_.ttf";
-	src: url(../fonts/titulos_.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'hljo_.ttf';
-	src: url(../fonts/hljo_.ttf)format('truetype');
-}
-@font-face {
-	font-family: "Stag-BoldItalic_0.otf";
-	src: url(../fonts/BebasNeue.otf) format('opentype');
+	font-family: "ChampionsRegular.otf";
+	src: url(../fonts/ChampionsRegular.otf) format('opentype');
 }
 
 
@@ -29,9 +16,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../img/back3.jpg");
-  background-repeat: no-repeat;
+  background-image: url(../img/back5-02.jpg);
   background-attachment: fixed;
+	background-size: cover;
 }
 /*-------------------globales------------------*/
 h3{
@@ -112,9 +99,9 @@ header{
   margin: 0;
 }
   .nav li {
-    width: 120px;
+    width: 180px;
     border-bottom: none;
-    height: 50px;
+    height: 80px;
     line-height: 24px;
     font-size: 1.2em;
 
@@ -164,24 +151,27 @@ header{
 
 
 #contenedor{
-	width: 95%;
+	width: 80%;
 	margin:0 auto;
 	height: auto;
-	background-color: #fff;
+	background: rgba(0,0,0,0.5);
 	overflow: hidden;
 	margin-top: 100px;
 }
  
 /*-------------------home------------------*/ 
 
+
 #home{
-	position: relative;
-	background-image: url(../img/fondo.jpg);
-	width: 100%;
-	height: 650px;
+	position:relative;
+	background-image:url(../img/fondo.jpg);
+	width: 1250px;
+	height: 651px;
 	background-repeat: no-repeat;
     margin: 0 auto;
-    margin-left: 200px;
+	
+	
+   
 
 }
 
