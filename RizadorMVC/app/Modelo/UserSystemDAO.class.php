@@ -24,6 +24,19 @@ class UserSystemDAO  {
 
 	}
 
+	function consultarVentas($idUser){
+		$conexion = new BD();
+
+
+		$resultUser = $conexion->contarColumna('Reservas','idVendedor', $idUser);
+
+		return $resultUser;
+
+
+	}
+
+
+
 }
 
 ?>

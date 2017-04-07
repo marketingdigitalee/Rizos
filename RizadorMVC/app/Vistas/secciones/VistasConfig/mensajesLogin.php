@@ -5,6 +5,8 @@
 
 </div>
 <div>
-	#CONTENIDO#
+	#CONTENIDO1#
 </div>
-
+<div>
+	#CONTENIDO2#
+</div>

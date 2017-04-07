@@ -146,20 +146,21 @@ function cargarMensajesLogin($mensaje, $VistaRespuesta, $htmlUsuario=null,$htmlR
 	if (!is_null($htmlUsuario) && !is_null($htmlRespuesta)) {
 		
 			$ppal = $this->load_config();
-			$pagMensaje = $this->load_page('app/Vistas/secciones/mensaje.php');
+			$pagMensaje = $this->load_page('app/Vistas/secciones/VistasConfig/mensajesLogin.php');
 			$contenido = $this->load_page('app/Vistas/secciones/'.$VistaRespuesta.'.php');
-			$html1 = $this->load_page('app/Vistas/secciones/VistasConfig/CargarHTMLUser.php');
-			$html2 = $this->load_page('app/Vistas/secciones/VistasConfig/CargarHTMLUser.php');
+			$html1 = $this->load_page('app/Vistas/secciones/VistasConfig/CargaHTMLUser.php');
+			$html2 = $this->load_page('app/Vistas/secciones/VistasConfig/CargaHTMLUser.php');
 
 
 			$html1 = $this->replace_content('/\#CONTENIDOHTMLUSER\#/ms' ,$htmlUsuario , $html1);
 			$html2 = $this->replace_content('/\#CONTENIDOHTMLUSER\#/ms' ,$htmlRespuesta , $html2);
 
 			$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje , $pagMensaje);
-			$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$html2 , $pagMensaje);
+			$pagMensaje = $this->replace_content('/\#CONTENIDO1\#/ms' ,$html1 , $pagMensaje);
+			$pagMensaje = $this->replace_content('/\#CONTENIDO2\#/ms' ,$html2 , $pagMensaje);
 
-			$ppal = $this->replace_content('/\#HEADERUSER\#/ms' ,$html1, , $ppal);
-			$ppal = $this->replace_content('/\#CONTENIDOUSER#/ms' ,$pagMensaje , $ppal);
+			$ppal = $this->replace_content('/\#HEADERUSER\#/ms' ,$pagMensaje , $ppal);
+			$ppal = $this->replace_content('/\#CONTENIDOUSER#/ms' ,$contenido , $ppal);
 			
 			$this->view_page($ppal);
 
@@ -169,12 +170,12 @@ function cargarMensajesLogin($mensaje, $VistaRespuesta, $htmlUsuario=null,$htmlR
 		$pagMensaje = $this->load_page('app/Vistas/secciones/mensaje.php');
 		$contenido = $this->load_page('app/Vistas/secciones/'.$VistaRespuesta.'.php');
 		
-		$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje, , $pagMensaje);
-		$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$contenido, , $pagMensaje);	
+		$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje , $pagMensaje);
+		$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$contenido , $pagMensaje);	
 
 
 
-		$ppal = $this->replace_content('/\#HEADERUSER\#/ms' ,"", , $ppal);
+		$ppal = $this->replace_content('/\#HEADERUSER\#/ms' ," - " , $ppal);
 		$ppal = $this->replace_content('/\#CONTENIDOUSER#/ms' ,$pagMensaje , $ppal);
 
 		$this->view_page($ppal);
@@ -182,18 +183,18 @@ function cargarMensajesLogin($mensaje, $VistaRespuesta, $htmlUsuario=null,$htmlR
 		
 }
 
-function crearDataUser($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fechaRedencion,$codReserva, $mailUsuario){
+function crearDataUser($nombreUser,$cedulaUser,$cargoUser,$correoUser,$numeroRegistros){
 
-	$html = $this->load_page('app/Vistas/secciones/htmlMail.php');
-	$html = $this->replace_content('/\#nombreMail\#/ms' ,$nombreMail , $html);
-	$html = $this->replace_content('/\#nomAlmacen\#/ms' ,$nomAlmacen , $html);
-	$html = $this->replace_content('/\#ciudadAlmacen\#/ms' ,$ciudadAlmacen , $html);
-	$html = $this->replace_content('/\#cantidad\#/ms' ,$cantidad , $html);
-	$html = $this->replace_content('/\#fechaRedencion\#/ms' ,$fechaRedencion , $html);
-	$html = $this->replace_content('/\#codReserva\#/ms' ,$codReserva , $html);
-	$html = $this->replace_content('/\#mailUsuario\#/ms' ,$mailUsuario , $html);
+	$html = $this->load_page('app/Vistas/secciones/VistasConfig/htmlUserData.php');
+	$html = $this->replace_content('/\#nombreUser\#/ms' ,$nombreUser , $html);
+	$html = $this->replace_content('/\#cedulaUser\#/ms' ,$cedulaUser , $html);
+	$html = $this->replace_content('/\#cargoUser\#/ms' ,$cargoUser , $html);
+	$html = $this->replace_content('/\#correoUser\#/ms' ,$correoUser , $html);
+	$html = $this->replace_content('/\#numeroRegistros\#/ms' ,$numeroRegistros , $html);
+	
 
 	return $html;
+
 }
 
 }

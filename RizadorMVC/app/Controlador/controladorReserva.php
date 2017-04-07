@@ -240,11 +240,12 @@ function traerUsuarioXCedula($POST, $SESSION){
 
 			
 			if(!is_array($array)){
-				$resultado = 'error1';		
+				$resultado = "NO SE ENCUENTRA REGISTRADO POR FAVOR REGISTRESE";		
 			
 			}else{
-				
-				$resultado = $array;
+
+				$_SESSION['dataUsuario'] = $array;
+				$resultado = 'ok';
 			}
 
 			

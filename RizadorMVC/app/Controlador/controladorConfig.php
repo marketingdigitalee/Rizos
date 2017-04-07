@@ -3,6 +3,7 @@ require_once 'app/Modelo/UserSystemDAO.class.php';
 require_once 'app/Modelo/LogEventosDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'app/Modelo/CiudadDAO.class.php';
+require_once 'app/Controlador/controladorVistas.php';
 
 
 
@@ -12,7 +13,15 @@ class ControladorConfig{
 		$userSystem = new UserSystemDAO;
 		$logEventos = new LogEventosDAO;
 		$funciones = new Funciones;
+		$controlVistas = new controladorVistas;
+
 		$result = null;
+		$nombreUser = null;
+		$cedulaUser = null;
+		$cargoUser = null;
+		$correoUser = null;
+		$numeroRegistros = null;
+		$valor = null;
 
 		$resultPass = $funciones->encriptar($POST['txtpassword']);
 		
@@ -31,20 +40,52 @@ class ControladorConfig{
 				foreach ($key as $key2 => $value2) {
 					if($key2 == 'idUserSystem'){
 						$idUser = $value2;
-						break;
+						
+					}elseif($key2 == 'nomUser'){
+						$nombreUser = $value2;
+						
+
+					}elseif($key2 == 'cedulaUser'){
+						$cedulaUser = $value2;
+						
+						
+					}elseif($key2 == 'cargoUser'){
+						$cargoUser = $value2;
+						
+						
+					}elseif($key2 == 'emailUser'){
+						$correoUser = $value2;
+						
 					}
 				}
 				
 			}
 
+			
+
+			$numeroRegistros = $userSystem->consultarVentas($idUser);
+			foreach ($numeroRegistros as $key) {
+				foreach ($key as $key2 => $value2) {
+					$valor = $value2;
+				}
+				
+			}
+			
+			var_dump($numeroRegistros);
+			var_dump($valor);
+
+			$htmlUser = $controlVistas->crearDataUser($nombreUser,$cedulaUser,$cargoUser,$correoUser,$valor);
 
 			$logEventos->CrearLog('Registro Exitoso',$idUser);
 
-			$result = (int) $idUser;
+			$_SESSION['idUser'] = (int) $idUser;
+			$_SESSION['htmlUser'] = $htmlUser;
+
+			$result = 'ok';
 
 		}else{
 
-			$result = false;
+			$result = 'error1';
 		}
 		
 		return $result;

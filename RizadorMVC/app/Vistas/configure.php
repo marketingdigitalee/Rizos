@@ -13,7 +13,12 @@
 		#HEADERUSER#
 	</div>
 	<div>
-	#CONTENIDOUSER#
+		#CONTENIDOUSER#
+	</div>
+	<div>
+		<a href="config.php?action=home">HOME</a>
+		</br>
+		<a href="config.php?action=salir">SALIR</a>
 	</div>
 </body>
 </html>

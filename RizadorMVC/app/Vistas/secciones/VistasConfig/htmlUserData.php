@@ -1,37 +1,30 @@
 
 
 <div>
-  	<h4 class="tituloMail">DATOS DE RESERVA</h4>
+  	<h4 class="">INFORMACION PERSONAL</h4>
   </div>
-  <div class="contentTablaUser">
-  <table class="tg">
+  <div class="">
+  <table class="">
     <tr>
-      <th class="tg-xibm">Nombre</th>
-      <th class="tg-9apd">#nombreMail#</th>
+      <th class="-">Nombre Usuario</th>
+      <th class="">#nombreUser#</th>
     </tr>
     <tr>
-      <td class="tg-pl96">Tienda</td>
-      <td class="tg-13pz">#nomAlmacen#</td>
+      <td class="">Cedula</td>
+      <td class="">#cedulaUser#</td>
     </tr>
     <tr>
-      <td class="tg-xibm">Ciudad Redencion</td>
-      <td class="tg-9apd">#ciudadAlmacen#</td>
+      <td class="">Cargo</td>
+      <td class="">#cargoUser#</td>
     </tr>
     <tr>
-      <td class="tg-pl96">Cantidad de Rizadores</td>
-      <td class="tg-13pz">#cantidad#</td>
+      <td class="">Usted ingresó con </td>
+      <td class="">#correoUser#</td>
     </tr>
     <tr>
-      <td class="tg-xibm">Fecha de Redención </td>
-      <td class="tg-9apd">#fechaRedencion#</td>
+      <td class="">Cantidad de Registros realizados</td>
+      <td class="">#numeroRegistros#</td>
     </tr>
-    <tr>
-      <td class="tg-pl96">Código Redención</td>
-      <td class="tg-13pz">#codReserva#</td>
-    </tr>
-    <tr>
-      <td class="tg-xibm">Córreo Electrónico</td>
-      <td class="tg-9apd">#mailUsuario#</td>
-    </tr>  
+    
   </table>
 </div>

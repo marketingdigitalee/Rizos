@@ -14,13 +14,19 @@
 		/*----------LOGIN----------*/
 		if(isset($_POST['txtusuario']) && isset($_POST['txtpassword'])){
 			$resultado = $config->login($_POST);
-			var_dump($resultado);
 
 			//Verificar los roles
+			switch ($resultado) {
+				case 'ok':
+					$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor',$_SESSION['htmlUser'], '');
+					break;
+				default:
+					$control->cargarMensajesLogin("NO SE LOGRO EL REGISTRO CORRECTAMENTE, INTENTELO DE NUEVO", 'VistasConfig/login');
+					break;
+			}
 			if(is_int($resultado)){
-				$_SESSION['idUser'] = $resultado;
-				var_dump($_SESSION);
-
+				
+				
 				$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor');
 
 
@@ -53,28 +59,28 @@
 			$resultado = $registro->agregarRegistro($_POST);
 		 switch ($resultado) {
 		 	case 'error1':
-		 		$control->cargarMensajesLogin("NO SE LOGRO GUARDAR EL REGISTRO","VistasConfig/formVendedor");
+		 		$control->cargarMensajesLogin("NO SE LOGRO GUARDAR EL REGISTRO","VistasConfig/formVendedor", $_SESSION['htmlUser']);
 		 		break;
 
 		 	case 'error2':
-		 		$control->cargarMensajesLogin("NO ACEPTASTE LOS TERMINOS Y CONDICIONES, NO SE REALIARÀ EL REGISTRO", 'VistasConfig/formVendedor');
+		 		$control->cargarMensajesLogin("NO ACEPTASTE LOS TERMINOS Y CONDICIONES, NO SE REALIARÀ EL REGISTRO", 'VistasConfig/formVendedor', $_SESSION['htmlUser']);
 		 		break;
 
 		 	case 'error3':
-		 		$control->cargarMensajesLogin("YA SE ENCUENTRA REGISTRADO POR FAVOR PRESIONE EL BOTON DE YA ME ENCUENTRO REGISTRADO", 'VistasConfig/botonesVendedor');
+		 		$control->cargarMensajesLogin("YA SE ENCUENTRA REGISTRADO POR FAVOR PRESIONE EL BOTON DE YA ME ENCUENTRO REGISTRADO", 'VistasConfig/botonesVendedor', $_SESSION['htmlUser']);
 		 		break;
 
 		 	case 'error4':
-		 		$control->cargarMensajesLogin("VALIDACION CAPTCHA NO VALIDA, POR FAVOR INTENTELO DE NUEVO", 'VistasConfig/botonesVendedor');
+		 		$control->cargarMensajesLogin("VALIDACION CAPTCHA NO VALIDA, POR FAVOR INTENTELO DE NUEVO", 'VistasConfig/botonesVendedor', $_SESSION['htmlUser']);
 		 		break;
 		 	case 'ok';
 		 				 				 		
-		 		$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/reservaVendedor');
+		 		$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/reservaVendedor', $_SESSION['htmlUser']);
 		 		break;
 
 		 	
 		 	default:
-		 	$control->cargarMensajesLogin("error desconocido", 'VistasConfig/botonesVendedor');
+		 	$control->cargarMensajesLogin("error desconocido", 'VistasConfig/botonesVendedor', $_SESSION['htmlUser']);
 		 		break;
 
 		 		
@@ -87,28 +93,28 @@
 
 			switch ($resultado) {
 			 	case 'error1':
-			 		$control->cargarMensajesLogin("NO SE LOGRO GUARDAR LA RESERVA","VistasConfig/reservaVendedor");
+			 		$control->cargarMensajesLogin("NO SE LOGRO GUARDAR LA RESERVA","VistasConfig/reservaVendedor", $_SESSION['htmlUser'],'-');
 			 		break;
 
 			 	case 'ok':
-			 		$control->cargarMensajesLogin("Felicitacion Reserva registrada Correctamente","VistasConfig/botonesVendedor",$_POST['html']);
+			 		$control->cargarMensajesLogin("Felicitacion Reserva registrada Correctamente","VistasConfig/botonesVendedor",$_SESSION['htmlUser'], $_POST['html']);
 			 		break;	
 			 	case 'erro2':
-			 		$control->cargarMensajesLogin("no se logro cargar el Almacen RESERVA FALLIDA ","VistasConfig/botonesVendedor");
+			 		$control->cargarMensajesLogin("no se logro cargar el Almacen RESERVA FALLIDA ","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
 			 		
 			 		break; 	
 			 	case 'error3':
-			 		$control->cargarMensajesLogin("no se logro cargar el USUARIO RESERVA FALLIDA","VistasConfig/botonesVendedor");
+			 		$control->cargarMensajesLogin("no se logro cargar el USUARIO RESERVA FALLIDA","VistasConfig/botonesVendedor",  $_SESSION['htmlUser'],'-');
 			 		
 			 		break;
 			 	case 'error4':
-			 		$control->cargarMensajesLogin("no se logro cargar el id del Vendedor","VistasConfig/botonesVendedor");
+			 		$control->cargarMensajesLogin("no se logro cargar el id del Vendedor","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
 			 		
 			 		break;
 
 			 	default:
 			 		var_dump($resultado);
-			 		$control->cargarMensajesLogin("NO SE LOGRO REALIZAR LA RESERVA ERROR DESCONOCIDO ","VistasConfig/botonesVendedor");
+			 		$control->cargarMensajesLogin("NO SE LOGRO REALIZAR LA RESERVA ERROR DESCONOCIDO ","VistasConfig/botonesVendedor",  $_SESSION['htmlUser'],'-');
 			 		
 			 		break;
 			 }
@@ -120,19 +126,19 @@
 
 		$resultado = $registro->traerUsuarioXCedula($_POST, $_SESSION);
 
-		switch ($resultado) {
-				case 'error1':
-					$control->cargarMensajesLogin("NO SE ENCUENTRA REGISTRADO POR FAVOR REGISTRESE","VistasConfig/formVendedor");
-					break;
-				default:
-					
-					$_SESSION['dataUsuario'] = $resultado;
-					var_dump($_SESSION);
-		 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/reservaVendedor');
-		 			break;
+			switch ($resultado) {
+					case 'ok':
+
+			 			$control->cargarMensajesLogin('VistasConfig/headerUser','VistasConfig/reservaVendedor', $_SESSION['htmlUser'],'-');
+			 			break;
+						
+					default:
+					$control->cargarMensajesLogin($resultado,"VistasConfig/formVendedor");
+						break;
+						
 			}	
 		 /*--------------CARGAR CIUDAD -------------*/				
-		}elseif(isset($_POST['nombreCiudad'])){
+		}elseif(isset($_POST['nombreCiudadBD'])){
 
 			$result = $config->crearCiudad($_POST['nombreCiudad']);
 
@@ -141,7 +147,19 @@
 			}else{
 				cargarMensajesLogin("NO se cargo la Ciudad ".$_POST['nombreCiudad']." INTENTENLO DE NUEVO","VistasConfig/AddCiudades");
 			}
-		}else{
+		 /*--------------CARGAR ALMACENES -------------*/	
+		}elseif(isset($_POST['cargarAlmacenes'])){
+
+			$result = $config->crearAlmacenes($_POST['cargarAlmacenesBD']);
+
+			if ($result) {
+				cargarMensajesLogin("Se cargo la Ciudad ".$_POST['nombreCiudad']." CORRECTAMENTE","VistasConfig/AddCiudades");
+			}else{
+				cargarMensajesLogin("NO se cargo la Ciudad ".$_POST['nombreCiudad']." INTENTENLO DE NUEVO","VistasConfig/AddCiudades");
+			}
+		}
+
+		else{
 			var_dump("llego al final del if de los POST fallo");
 		}
 
@@ -150,16 +168,23 @@
 	}elseif(!empty($_GET['action']) && !empty($_SESSION['idUser'])){
 
 		if($_GET['action'] == 'registrarUser'){
-			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/registroUsers');
+			$control->cargarMensajesLogin('ESCRIBA TODOS SUS DATOS','VistasConfig/registroUsers');
 		}elseif(  $_GET['action'] == 'nuevo' ) {
-			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/formVendedor');	
+			$control->cargarMensajesLogin('REGISTRE EL COMPRADOR LLENANDO TODOS LOS CAMPOS','VistasConfig/formVendedor',$_SESSION['htmlUser'],'-');	
 		}elseif($_GET['action'] == 'registrado') {
-			var_dump($_SESSION);
-			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/registradoVendedor');	
+		
+			$control->cargarMensajesLogin('ESCRIBA EN NUMERO DE CEDULA SIN PUNTOS','VistasConfig/registradoVendedor',$_SESSION['htmlUser'],'-');	
 		}elseif($_GET['action'] == 'addCiudad'){
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/AddCiudades');
 		}elseif($_GET['action'] == 'addAlmacen'){
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/AddAlmacenes');
+		}elseif($_GET['action'] == 'home'){
+			$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor',$_SESSION['htmlUser'], '');
+			
+		}elseif($_GET['action'] == 'salir'){
+			session_destroy();
+			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/login');
+			
 		}
 
 	}elseif(!empty($_SESSION['idUser'])){

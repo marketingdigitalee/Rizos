@@ -111,5 +111,18 @@ public function insertar($tabla,$array){
 
  }
 
+  public function contarColumna($nombreTabla,$nombreColumna, $condicion){
+
+    $sql = "SELECT COUNT(*) FROM $nombreTabla WHERE $nombreColumna = '$condicion'";
+        
+    $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
+
+    $array = $db->getAll($sql);
+    
+    return $array;
+
+ } 
+
 }
 ?>
