@@ -20,6 +20,13 @@
 				case 'ok':
 					$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor',$_SESSION['htmlUser'], '');
 					break;
+				case 'admin':
+					$control->cargarMensajesLogin('Bienvenido','VistasConfig/vistaAdmon',$_SESSION['htmlUser'], '');
+					break;
+				case 'super':
+					$control->cargarMensajesLogin('Bienvenido','VistasConfig/vistaSuper',$_SESSION['htmlUser'], '');
+					break;
+
 				default:
 					$control->cargarMensajesLogin("NO SE LOGRO EL REGISTRO CORRECTAMENTE, INTENTELO DE NUEVO", 'VistasConfig/login');
 					break;
@@ -113,7 +120,7 @@
 			 		break;
 
 			 	default:
-			 		var_dump($resultado);
+			 		
 			 		$control->cargarMensajesLogin("NO SE LOGRO REALIZAR LA RESERVA ERROR DESCONOCIDO ","VistasConfig/botonesVendedor",  $_SESSION['htmlUser'],'-');
 			 		
 			 		break;
@@ -140,22 +147,22 @@
 		 /*--------------CARGAR CIUDAD -------------*/				
 		}elseif(isset($_POST['nombreCiudadBD'])){
 
-			$result = $config->crearCiudad($_POST['nombreCiudad']);
+			$result = $config->crearCiudad($_POST['nombreCiudadBD']);
 
 			if ($result) {
-				cargarMensajesLogin("Se cargo la Ciudad ".$_POST['nombreCiudad']." CORRECTAMENTE","VistasConfig/AddCiudades");
+				cargarMensajesLogin("Se cargo la Ciudad CORRECTAMENTE","VistasConfig/AddCiudades", $_SESSION['htmlUser'],'-');
 			}else{
-				cargarMensajesLogin("NO se cargo la Ciudad ".$_POST['nombreCiudad']." INTENTENLO DE NUEVO","VistasConfig/AddCiudades");
+				cargarMensajesLogin("NO se cargo la Ciudad INTENTENLO DE NUEVO","VistasConfig/AddCiudades", $_SESSION['htmlUser'],'-');
 			}
 		 /*--------------CARGAR ALMACENES -------------*/	
-		}elseif(isset($_POST['cargarAlmacenes'])){
+		}elseif(isset($_POST['codAlmacenBD'])&&isset($_POST['nomAlmacenBD'])&&isset($_POST['ciudadAlmacenBD'])&&isset($_POST['dirAlmacenBD'])){
 
-			$result = $config->crearAlmacenes($_POST['cargarAlmacenesBD']);
+			$result = $config->crearAlmacenes($_POST);
 
 			if ($result) {
-				cargarMensajesLogin("Se cargo la Ciudad ".$_POST['nombreCiudad']." CORRECTAMENTE","VistasConfig/AddCiudades");
+				cargarMensajesLogin("Se cargo el Almacen CORRECTAMENTE","VistasConfig/AddAlmacenes", $_SESSION['htmlUser'],'-');
 			}else{
-				cargarMensajesLogin("NO se cargo la Ciudad ".$_POST['nombreCiudad']." INTENTENLO DE NUEVO","VistasConfig/AddCiudades");
+				cargarMensajesLogin("NO cargo el Almacen INTENTELO DE NUEVO","VistasConfig/AddAlmacenes", $_SESSION['htmlUser'],'-');
 			}
 		}
 
@@ -165,10 +172,11 @@
 
 	
 
-	}elseif(!empty($_GET['action']) && !empty($_SESSION['idUser'])){
+	}elseif(!empty($_GET['action'])){
 
-		if($_GET['action'] == 'registrarUser'){
-			$control->cargarMensajesLogin('ESCRIBA TODOS SUS DATOS','VistasConfig/registroUsers');
+
+		if($_GET['action'] == 'registroUsers'){
+			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/registroUsers');
 		}elseif(  $_GET['action'] == 'nuevo' ) {
 			$control->cargarMensajesLogin('REGISTRE EL COMPRADOR LLENANDO TODOS LOS CAMPOS','VistasConfig/formVendedor',$_SESSION['htmlUser'],'-');	
 		}elseif($_GET['action'] == 'registrado') {
@@ -189,8 +197,7 @@
 
 	}elseif(!empty($_SESSION['idUser'])){
 		$_SESSION['dataUsuario'] = null;
-		var_dump($_SESSION);
-		$control->cargarMensajesLogin('Continua con tus reservas','VistasConfig/botonesVendedor');
+				$control->cargarMensajesLogin('Continua con tus reservas','VistasConfig/botonesVendedor');
 
 
 	}else{

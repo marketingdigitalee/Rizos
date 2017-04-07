@@ -22,6 +22,8 @@ class ControladorConfig{
 		$correoUser = null;
 		$numeroRegistros = null;
 		$valor = null;
+		$idRoll = null;
+
 
 		$resultPass = $funciones->encriptar($POST['txtpassword']);
 		
@@ -29,8 +31,7 @@ class ControladorConfig{
 		$arreglo['pass'] = $resultPass;
 
 		$array = $userSystem->existeUsuario($arreglo);
-		var_dump($arreglo);
-		
+				
 		$idUser = null;
 		
 
@@ -56,6 +57,9 @@ class ControladorConfig{
 					}elseif($key2 == 'emailUser'){
 						$correoUser = $value2;
 						
+					}elseif($key2 == 'idRoll'){
+						$idRoll = $value2;
+						
 					}
 				}
 				
@@ -71,9 +75,6 @@ class ControladorConfig{
 				
 			}
 			
-			var_dump($numeroRegistros);
-			var_dump($valor);
-
 			$htmlUser = $controlVistas->crearDataUser($nombreUser,$cedulaUser,$cargoUser,$correoUser,$valor);
 
 			$logEventos->CrearLog('Registro Exitoso',$idUser);
@@ -81,7 +82,14 @@ class ControladorConfig{
 			$_SESSION['idUser'] = (int) $idUser;
 			$_SESSION['htmlUser'] = $htmlUser;
 
-			$result = 'ok';
+			if ($idRoll == '1') {
+				$result = 'admin';
+			}elseif($idRoll == '3'){
+				$result = 'super';
+			}else{
+				$result = 'ok';
+			}
+		
 
 		}else{
 
@@ -100,6 +108,7 @@ class ControladorConfig{
 		
 		if($POST['txtPassUser'] == $POST['txtPassUserConfirm']){
 
+
 			$password = $funciones->encriptar($POST['txtPassUser']);
 
 			$arreglo['nomUser'] = $POST['txtNombreUser'];
@@ -107,6 +116,7 @@ class ControladorConfig{
 			$arreglo['cargoUser'] = $POST['txtCargoUser'];
 			$arreglo['emailUser'] = $POST['txtCorreoUser'];
 			$arreglo['passUser'] = $password;
+			$arreglo['idRoll'] = 2;//Vendedores por defecto
 
 			$respuesta = $userSystem->crearUserSystemDAO($arreglo);
 
@@ -127,6 +137,21 @@ class ControladorConfig{
 		$arrayCiudad['nombreCiudad'] = $nombreCiudad;
 
 		$resultado = $modCiudad->crearCiudad($arrayCiudad);
+
+		return $resultado;
+	}
+
+
+	function crearAlmacenes($POST){
+
+		$modCiudad = new AlmacenDAO;
+
+		$arrayAlmacen['codAlmacen'] = $POST['codAlmacenBD'];
+		$arrayAlmacen['nomAlmacen'] = $POST['nomAlmacenBD'];
+		$arrayAlmacen['nomCiudad'] = $POST['ciudadAlmacenBD'];
+		$arrayAlmacen['dirAlmacen'] = $POST['dirAlmacenBD'];
+
+		$resultado = $modCiudad->agregarAlmacenBD($arrayAlmacen);
 
 		return $resultado;
 	}

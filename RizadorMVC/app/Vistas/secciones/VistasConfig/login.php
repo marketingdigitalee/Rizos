@@ -5,7 +5,7 @@
         <input type='password' placeholder='contraseña' name='txtpassword' />
         <input type='submit' value='INGRESAR'>
     </form>
-<a href="config.php?action=registrarUser" id="botonRegistrar">
+<a href="config.php?action=registroUsers" id="botonRegistrar">
 	<h2>Registrarme</h2>
 </a>
 

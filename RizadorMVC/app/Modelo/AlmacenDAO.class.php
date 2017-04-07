@@ -5,23 +5,18 @@ class AlmacenDAO  {
 
 	
 	//Agregar usuario
-	public function agregarAlmacenBD($arrayPOST){
-	try{
+public function agregarAlmacenBD($arrayPOST){
 		//Instacia de BD
-		$conexion = new BD();
+	$conexion = new BD();
 		// conectar base de datos 
 
-	$resultado = $conexion->insertar('Usuario',$arrayPOST,$conexion);
+	$resultado = $conexion->insertar('Almacenes',$arrayPOST);
 
 	return $resultado;
 
-	}catch(Exception $e){
-
-		return false;//echo 'Excepción Capturada: ', $e->getMessage(),"\n";
-	}
 }
 
-	public function traerAlmacenBDxCodigo($codigo){
+public function traerAlmacenBDxCodigo($codigo){
 
 		$conexion = new BD();
 
@@ -29,9 +24,9 @@ class AlmacenDAO  {
 
 		return $array;
 
-	}
+}
 
-	public function traerTablaAlmacenes(){
+public function traerTablaAlmacenes(){
 
 		$conexion = new BD();
 
