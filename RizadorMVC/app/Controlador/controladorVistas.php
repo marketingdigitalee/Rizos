@@ -40,19 +40,19 @@ class controladorVistas{
 $pantalla debe enviarse el nombre del archivo .php que se quiere mostrar en la secccion RESERVAS
  */
 
-function cargarPrincipal($pagina){
+	function cargarPrincipal($pagina){
 
-		$ppal = $this->load_template();
-		$url = 'app/Vistas/secciones/'.$pagina.'.php';
-		$reserva = $this->load_page($url);
-		$ppal = $this->replace_content('/\#RESERVA\#/ms' ,$reserva , $ppal);
-		$this->view_page($ppal);
-}
+			$ppal = $this->load_template();
+			$url = 'app/Vistas/secciones/'.$pagina.'.php';
+			$reserva = $this->load_page($url);
+			$ppal = $this->replace_content('/\#RESERVA\#/ms' ,$reserva , $ppal);
+			$this->view_page($ppal);
+	}
 /*
 METODO PARA CARGAR LOS MENSAJES DE ERROR 
 SE DEBE ENVIAR MENSAJE Y LA SECION QUE VA AFECTAR Y EL NOMBRE DE LA VISTA QUE QUIERE MOSTRAR
 */
-function cargarMensajesReserva($mensaje, $VistaRespuesta,$html=null){
+	function cargarMensajesReserva($mensaje, $VistaRespuesta,$html=null){
 		if (!is_null($html)) {
 			$ppal = $this->load_template();
 			$pagMensaje = $this->load_page('app/Vistas/secciones/mensaje.php');
@@ -80,7 +80,7 @@ function cargarMensajesReserva($mensaje, $VistaRespuesta,$html=null){
 
 		}
 		
-}
+	}
 
 function crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fechaRedencion,$codReserva, $mailUsuario){
 
@@ -142,15 +142,58 @@ function cargarPrincipalConfig($header,$pagina){
 
 }
 
-function cargarMensajesLogin($mensaje, $VistaRespuesta){
+function cargarMensajesLogin($mensaje, $VistaRespuesta, $htmlUsuario=null,$htmlRespuesta=null){
+	if (!is_null($htmlUsuario) && !is_null($htmlRespuesta)) {
+		
+			$ppal = $this->load_config();
+			$pagMensaje = $this->load_page('app/Vistas/secciones/mensaje.php');
+			$contenido = $this->load_page('app/Vistas/secciones/'.$VistaRespuesta.'.php');
+			$html1 = $this->load_page('app/Vistas/secciones/VistasConfig/CargarHTMLUser.php');
+			$html2 = $this->load_page('app/Vistas/secciones/VistasConfig/CargarHTMLUser.php');
 
+
+			$html1 = $this->replace_content('/\#CONTENIDOHTMLUSER\#/ms' ,$htmlUsuario , $html1);
+			$html2 = $this->replace_content('/\#CONTENIDOHTMLUSER\#/ms' ,$htmlRespuesta , $html2);
+
+			$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje , $pagMensaje);
+			$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$html2 , $pagMensaje);
+
+			$ppal = $this->replace_content('/\#HEADERUSER\#/ms' ,$html1, , $ppal);
+			$ppal = $this->replace_content('/\#CONTENIDOUSER#/ms' ,$pagMensaje , $ppal);
+			
+			$this->view_page($ppal);
+
+		
+	}else{
 		$ppal = $this->load_config();
 		$pagMensaje = $this->load_page('app/Vistas/secciones/mensaje.php');
 		$contenido = $this->load_page('app/Vistas/secciones/'.$VistaRespuesta.'.php');
-		$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje , $pagMensaje);
-		$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$contenido , $pagMensaje);
+		
+		$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje, , $pagMensaje);
+		$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$contenido, , $pagMensaje);	
 
-		$this->view_page($pagMensaje);
+
+
+		$ppal = $this->replace_content('/\#HEADERUSER\#/ms' ,"", , $ppal);
+		$ppal = $this->replace_content('/\#CONTENIDOUSER#/ms' ,$pagMensaje , $ppal);
+
+		$this->view_page($ppal);
+	}
+		
+}
+
+function crearDataUser($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fechaRedencion,$codReserva, $mailUsuario){
+
+	$html = $this->load_page('app/Vistas/secciones/htmlMail.php');
+	$html = $this->replace_content('/\#nombreMail\#/ms' ,$nombreMail , $html);
+	$html = $this->replace_content('/\#nomAlmacen\#/ms' ,$nomAlmacen , $html);
+	$html = $this->replace_content('/\#ciudadAlmacen\#/ms' ,$ciudadAlmacen , $html);
+	$html = $this->replace_content('/\#cantidad\#/ms' ,$cantidad , $html);
+	$html = $this->replace_content('/\#fechaRedencion\#/ms' ,$fechaRedencion , $html);
+	$html = $this->replace_content('/\#codReserva\#/ms' ,$codReserva , $html);
+	$html = $this->replace_content('/\#mailUsuario\#/ms' ,$mailUsuario , $html);
+
+	return $html;
 }
 
 }

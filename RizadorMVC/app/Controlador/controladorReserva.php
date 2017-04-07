@@ -44,8 +44,13 @@ function agregarRegistro($POST){
 				//Se envia objeto nuevo creado los datos enviados
 
 					$resultado = $modUsuario->agregarUsuarioBD($nuevoArray);
-					if ($resultado) {
-						$respuesta = $POST;
+
+					
+
+					if ($resultado){
+
+						$_SESSION['dataUsuario'] = $modUsuario->traerUsuarioBDXCedula($POST['cedulaUsuario']);
+						$respuesta = 'ok';
 					}else{
 						$respuesta = 'error1';
 					}
@@ -63,66 +68,40 @@ function agregarRegistro($POST){
 	return $respuesta;
 }	
 
-function crearReserva($POST,$arraySesion,$idVen=null){	
+function crearReserva($POST,$Sesion,$idVen=null){	
 
 	$modAlmacen = new AlmacenDAO;
 	$modReserva = new ReservaDAO;
 	$modUsuario = new UsuarioDAO;
 	$vistaControl = new controladorVistas;
 	$funciones = new Funciones;
-	$cedula0 = null;
-	$cedula1 = null;
 	$cedula = null;
 	$codigo = null;
 	$cantidad = null;
+	$idVen = null;
+	$arrayUsuario = null;
 
-// your secret key
-	$secret = "6Le4_RoUAAAAAMCZtCrZS0E79nCV3rBby-ID4vlF";
-	 
-	// empty response
-	$response = null;
-	 
-	// check secret key
-	$reCaptcha = new ReCaptcha($secret);
 
-	if($POST["g-recaptcha-response"]){
-		$response = $reCaptcha->verifyResponse($_SERVER["REMOTE_ADDR"],$POST["g-recaptcha-response"]);
-
-		if ($response != null && $response->success) {
-
-		foreach ($arraySesion as  $key => $value) {
-				if($key == 'cedulaUsuario'){
-					$cedula0 = $value;
+		foreach ($Sesion as  $key => $value) {
+				if($key == 'idUser'){
+					$idVen = $value;
+				}if($key == 'dataUsuario'){
+					$arrayUsuario = $value;
 				}
+
 		}
-	
-		foreach ($arraySesion as $valor => $content) {
-			if ($valor == 'cedula') {
-				foreach ($content as $key => $value) {
-				if($key == 'cedulaUsuario'){
-					$cedula1 = $value;
-					foreach ($cedula1 as $key2 => $value2) {
-						if ($key2 == 'cedulaUsuario') {
-							$cedula1 = $value2;
-						}
-					}
+		var_dump("idVendedor");
+		var_dump($idVen);
+		var_dump("datos de Usuario");
+		var_dump($arrayUsuario);
+
+
+		foreach ($POST as  $key2 => $value2) {
+				if($key2 == 'cedula'){
+					$cedula = $value2;
 				}
-			}
-			}
 			
-		
 		}
-
-
-		if (!is_null($cedula0)){
-			$cedula = $cedula0;
-		}elseif(!is_null($cedula1)){
-			$cedula = $cedula1;
-		}else{
-			return 'error1';
-			exit;
-		}
-	
 
 		foreach ($POST as  $key2 => $value2) {
 				if($key2 == 'nomAlmacen'){
@@ -154,7 +133,7 @@ function crearReserva($POST,$arraySesion,$idVen=null){
 		}
 
 						 
-	$arrayUsuario = $modUsuario->traerUsuarioBDXCedula($cedula);
+	/*$arrayUsuario = $modUsuario->traerUsuarioBDXCedula($cedula);*/
 
 	$arrayUsuarioNEW=null;
 	
@@ -163,11 +142,14 @@ function crearReserva($POST,$arraySesion,$idVen=null){
 		$arrayUsuarioNEW = $funciones->arreglarArrayBD($arrayUsuario);
 
 		}else{
-			return 'error2';
+			return 'error3';
 			exit;
 		}
 	
-
+	if (is_null($idVen)) {
+		return 'error4';
+		exit;
+	}
 							
 	$codigoReserva = NULL;
 
@@ -184,6 +166,8 @@ function crearReserva($POST,$arraySesion,$idVen=null){
 
 	$html = $vistaControl->crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fechaRedencion,$codigoReserva, $mailUsuario);
 
+
+
 	$nuevoArray['idUsuario']= $arrayUsuarioNEW['idUsuario'] ;
 	$nuevoArray['idAlmacen']= $arrayAlmacenNEW['idAlmacen'];
 	$nuevoArray['cantReservas']= $cantidad;
@@ -191,11 +175,10 @@ function crearReserva($POST,$arraySesion,$idVen=null){
 	$nuevoArray['idEstadoReserva']= 1;
 	$nuevoArray['codigoReserva']= $codigoReserva;
 	$nuevoArray['emailUsuario']= $codigoReserva;
+	$nuevoArray['idVendedor']= $idVen;
 	$nuevoArray['htmlReserva']= $html;
+	
 
-	if (!is_null($idVen)) {
-		$nuevoArray['idVendedor']= $idVen;
-	}
 			
 	$arrayReserva = $modReserva->agregarReservaBD($nuevoArray);
 	
@@ -206,35 +189,78 @@ function crearReserva($POST,$arraySesion,$idVen=null){
 			return 'error1';
 
 		}
-		
-	 }else{
-	 	//error 2
-	 }
-
-	}else{
-		//error 3
-	}
-	
-	
 }
 
 	//TRAE EL USUARIO POR CEDULA
-function traerUsuarioXCedula($cedulaUsuario){
+function traerUsuarioXCedula($POST, $SESSION){
 
 	$modUsuario = new UsuarioDAO();
 	$resultado = null;
+	$cedulaUsuario = null;
+	$idUsuario = null;
 
-	$array = $modUsuario->traerUsuarioBDXCedula($cedulaUsuario);
+	// your secret key
+	$secret = "6Le4_RoUAAAAAMCZtCrZS0E79nCV3rBby-ID4vlF";
+	 
+	// empty response
+	$response = null;
+	 
+	// check secret key
+	$reCaptcha = new ReCaptcha($secret);
+
+	if($POST["g-recaptcha-response"]){
+		$response = $reCaptcha->verifyResponse($_SERVER["REMOTE_ADDR"],$POST["g-recaptcha-response"]);
+
+		if ($response != null && $response->success) {
+			
+			foreach ($POST as $key => $value) {
+				if ($key == 'numCedulaRegistrado') {
+						$cedulaUsuario = $value;
+						break;
+				}	
+			}
+			if (is_null($cedulaUsuario) || empty($cedulaUsuario)) {
+				var_dump("error cedula");
+			}
+
+
+			foreach ($SESSION as $key => $value) {
+				if ($key == 'idUser') {
+						$idUsuario = $value;
+				}	
+			}
+
+			if (is_null($idUsuario) || empty($idUsuario)) {
+				var_dump("error Id usuario debo salir por y volver a logearme");
+			}
+
+
+
+			$array = $modUsuario->traerUsuarioBDXCedula($cedulaUsuario);
+
+			
+			if(!is_array($array)){
+				$resultado = 'error1';		
+			
+			}else{
+				
+				$resultado = $array;
+			}
+
+			
 	
-	if(!is_array($array)){
-		$resultado = 'error1';		
-	
+		}else{
+			//error 2
+
+		}
 	}else{
-		
-		$resultado = $array;
-	}
+	//error 3
 
-	return $resultado;
+}
+
+return $resultado;
+
+
 }
 
 
