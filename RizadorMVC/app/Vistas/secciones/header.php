@@ -11,6 +11,7 @@
         <li class="comoreservar"><a href="#instructivo">COMO RESERVAR</a></li>
         <li class="puntosredencion"><a href="#puntos">PUNTOS</a></li>
         <li class="pregFrecuentes"><a href="#FAQ">FAQ</a></li>
+        <li class="reserva"><a href="#ReservaYA">PLAN SEPARE</a></li>
         <li class="reserva"><a href="#ReservaYA">RESERVA YA!</a></li>
       </ul>
     </div>
