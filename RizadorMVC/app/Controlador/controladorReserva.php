@@ -68,7 +68,7 @@ function agregarRegistro($POST){
 	return $respuesta;
 }	
 
-function crearReserva($POST,$Sesion,$idVen=null){	
+function crearReserva($POST,$Sesion){	
 
 	$modAlmacen = new AlmacenDAO;
 	$modReserva = new ReservaDAO;
@@ -90,10 +90,6 @@ function crearReserva($POST,$Sesion,$idVen=null){
 				}
 
 		}
-		var_dump("idVendedor");
-		var_dump($idVen);
-		var_dump("datos de Usuario");
-		var_dump($arrayUsuario);
 
 
 		foreach ($POST as  $key2 => $value2) {

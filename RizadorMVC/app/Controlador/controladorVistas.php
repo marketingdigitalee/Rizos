@@ -2,12 +2,8 @@
 
 class controladorVistas{
   
-	/* METODO QUE CARGA LAS PARTES PRINCIPALES DE LA PAGINA WEB
-	INPUT
-		$title | titulo en string del header
-	OUTPIT
-		$pagina | string que contiene toda el cocigo HTML de la plantilla 
-	*/
+/*----------------------FUNCIONES PAGINA INDEX  ------------*/
+
 	function load_template(){
 		
 
@@ -28,17 +24,12 @@ class controladorVistas{
 		$pagina = $this->replace_content('/\#PUNTOS\#/ms' ,$puntos , $pagina);
 		$pagina = $this->replace_content('/\#INSTRUCTIVO\#/ms' ,$instructivo , $pagina);
 		$pagina = $this->replace_content('/\#CAMPTV\#/ms' ,$campTV , $pagina);
-
 		$pagina = $this->replace_content('/\#FOOTER\#/ms' ,$footer , $pagina);
 
 		return $pagina;
 	}
 
 
- /* METODO QUE CARGA UNA PAGINA DE LA SECCION VIEW Y LA MANTIENE EN MEMORIA
- INPUT
-$pantalla debe enviarse el nombre del archivo .php que se quiere mostrar en la secccion RESERVAS
- */
 
 	function cargarPrincipal($pagina){
 
@@ -48,10 +39,7 @@ $pantalla debe enviarse el nombre del archivo .php que se quiere mostrar en la s
 			$ppal = $this->replace_content('/\#RESERVA\#/ms' ,$reserva , $ppal);
 			$this->view_page($ppal);
 	}
-/*
-METODO PARA CARGAR LOS MENSAJES DE ERROR 
-SE DEBE ENVIAR MENSAJE Y LA SECION QUE VA AFECTAR Y EL NOMBRE DE LA VISTA QUE QUIERE MOSTRAR
-*/
+
 	function cargarMensajesReserva($mensaje, $VistaRespuesta,$html=null){
 		if (!is_null($html)) {
 			$ppal = $this->load_template();
@@ -95,7 +83,7 @@ function crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fech
 
 	return $html;
 }
-
+/*------------------------------FUNCIONES PARA CREAR HTML DE LAS VISTAS -----------*/
  private function load_page($page){
  	return file_get_contents($page);
  }
@@ -120,6 +108,9 @@ function crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fech
    return preg_replace($in, $out, $pagina);
  }
 
+
+
+/*----------------------------------------TODO EL CONFIG------------------------------*/
  function load_config(){
 		
 		$pagina = $this->load_page('app/Vistas/configure.php');		
