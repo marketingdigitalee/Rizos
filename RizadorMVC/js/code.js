@@ -13,7 +13,7 @@ $(document).ready(function(){
     $(this).next().slideToggle(speed)
     
     // selects all other answers and slides up any open answer
-    .siblings('li.a').slideUp();
+   .siblings('li.a').slideUp()
   
     // Grab img from clicked question
     var img = $(this).children('img');
@@ -30,7 +30,7 @@ $(document).ready(function(){
   });
 
   $("a#inline").fancybox({
-        'hideOnContentClick': false;
+        'hideOnContentClick': false
     });
   
   $("a#idSepare").fancybox();
