@@ -81,6 +81,7 @@ class ControladorConfig{
 
 			$_SESSION['idUser'] = (int) $idUser;
 			$_SESSION['htmlUser'] = $htmlUser;
+			$_SESSION['idRoll'] = $idRoll;
 
 			if ($idRoll == '1') {
 				$result = 'admin';
@@ -107,20 +108,31 @@ class ControladorConfig{
 		$result = null;
 		
 		if($POST['txtPassUser'] == $POST['txtPassUserConfirm']){
+			$existe = $userSystem->existeCorreo($POST['txtCorreoUser']);
+			if ($existe) {
+				$result = "error1";
+				
+			}else{
+				$password = $funciones->encriptar($POST['txtPassUser']);
+				$arreglo['nomUser'] = $POST['txtNombreUser'];
+				$arreglo['cedulaUser'] = $POST['txtCedulaUser'];
+				$arreglo['cargoUser'] = $POST['txtCargoUser'];
+				$arreglo['emailUser'] = $POST['txtCorreoUser'];
+				$arreglo['passUser'] = $password;
+				$arreglo['idRoll'] = 2;//Vendedores por defecto
 
+				$respuesta = $userSystem->crearUserSystemDAO($arreglo);
+				
+				if($respuesta){
+					$result = 'ok';
 
-			$password = $funciones->encriptar($POST['txtPassUser']);
+				}else{
+					$result = 'NO SE LOGRO LA CREACIÓN DEL USUARIO';
 
-			$arreglo['nomUser'] = $POST['txtNombreUser'];
-			$arreglo['cedulaUser'] = $POST['txtCedulaUser'];
-			$arreglo['cargoUser'] = $POST['txtCargoUser'];
-			$arreglo['emailUser'] = $POST['txtCorreoUser'];
-			$arreglo['passUser'] = $password;
-			$arreglo['idRoll'] = 2;//Vendedores por defecto
+				}
 
-			$respuesta = $userSystem->crearUserSystemDAO($arreglo);
-
-			$result = $respuesta;
+			}
+			
 
 		}else{
 			$result = "La contraseña no corresponde";

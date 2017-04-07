@@ -112,10 +112,34 @@ function crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fech
 
 /*----------------------------------------TODO EL CONFIG------------------------------*/
  function load_config(){
-		
-		$pagina = $this->load_page('app/Vistas/configure.php');		
+ 	if(isset($_SESSION['idRoll'])){
+ 		if ($_SESSION['idRoll'] == '1') {
+			$pagina = $this->load_page('app/Vistas/configure.php');
+			$nav = $this->load_page('app/Vistas/secciones/VistasConfig/navAdmin.php');
+			$pagina = $this->replace_content('/\#NAVUSER\#/ms' ,$nav , $pagina);
+			
+		}elseif($_SESSION['idRoll'] == '2'){
+			$pagina = $this->load_page('app/Vistas/configure.php');
+			$nav = $this->load_page('app/Vistas/secciones/VistasConfig/navVendedor.php');
+			$pagina = $this->replace_content('/\#NAVUSER\#/ms' ,$nav , $pagina);
 
-		return $pagina;
+		}else{
+			$pagina = $this->load_page('app/Vistas/configure.php');
+			$nav = $this->load_page('app/Vistas/secciones/VistasConfig/navVendedor.php');
+			$pagina = $this->replace_content('/\#NAVUSER\#/ms' ,$nav , $pagina);
+
+		}
+
+ 	}else{
+ 		$pagina = $this->load_page('app/Vistas/configure.php');
+			$nav = $this->load_page('app/Vistas/secciones/VistasConfig/navLogin.php');
+			$pagina = $this->replace_content('/\#NAVUSER\#/ms' ,$nav , $pagina);
+
+ 	}
+		
+			
+
+	return $pagina;
 	}
 
 function cargarPrincipalConfig($header,$pagina){

@@ -1,68 +1,47 @@
-<div class="container">
+<div class="containerFormulario">
 		<h3 class="centrarTexto">FORMULARIO RESERVA</h3>
   		<p class=""> Aqui algun teaser... </p>
 	
-					
+	<div class="login-page">
+		<div class="form">
 				  <!-- Contact Form -->
 				<form action="config.php" method="post">
 						<div class="">
-								<div >
-									<label for="nombres">Nombres</label>
-					  				<input type="text" name="nomUsuario" required="true" placeholder="Nombre" >
+								
+								<input type="text" name="nomUsuario" required="true" placeholder="Nombre" >
 					  				
-					  			</div>
-								<div class="">
-								<label for="apellUsuario">Apellidos</label>
-					  				<input type="text" name="apellUsuario" required="true">
+					  			<input type="text" name="apellUsuario" required="true" placeholder="Apellidos">
 					  				
-					  			</div>
-								<div class="" >
-									<label for="cedulaUsuario">C&eacute;dula</label>
-					  				<input type="text" name="cedulaUsuario" required="true">
+					  			<input type="text" name="cedulaUsuario" required="true" placeholder="Cédula">
 					  				
-					  			</div>
-					  			<div class="">
-					  				<label for="emailUsuario">Correo electr&oacute;nico</label>
-					  				<input type="email" name="emailUsuario" required="true">
+					  			
+					  			<input type="email" name="emailUsuario" required="true" placeholder="Correo Electrónico">
 					  				
-					  			</div>
-								<div class="">
-								<label for="dirUsuario">Direcci&oacute;n f&iacute;sica</label>
-					  				<input type="text" name="dirUsuario" required="true">
+					  			<input type="text" name="dirUsuario" required="true" placeholder="Dirección Física">
 					  				
-					  			</div>
-								<div class="">
-								<label for="nomCiudad">Ciudad</label>
+					  			
+								<label for="nomCiudad">SELECCIONE LA CIUDAD </label>
+								<div class="select-style">
 									<select name="nomCiudad" id="selectCiudad">
 										
 										
 									</select>
-					  				
 					  			</div>
-								<div class="">
-								<label for="telUsuario">Celular</label>
-					  				<input type="text" name="telUsuario">
+					  			<input type="text" name="telUsuario" placeholder="Celular">
 					  				
-								</div>
-								<div class="">
-								<label for="nomRecoje">Nombre de la persona que recoje el producto</label>
-					  				<input type="text" name="nombreRecoje">
+								
+					  			<input type="text" name="nombreRecoje" placeholder="Nombre de la persona que recoje el producto">
 					  				
-								</div>
-								<div class="">
-								<label for="apellRecoje">Apellidos de la persona que recoje el producto</label>
-					  				<input type="text" name="apellRecoje">
+								<input type="text" name="apellRecoje" placeholder="Apellidos de la persona que recoje el producto">
 					  				
-								</div>
-								<div class="">
-								<label for="cedulaRecoje">Nùmero de cedula de quien recoje el producto</label>
-					  				<input type="text" name="cedulaRecoje">
+								
+								<input type="text" name="cedulaRecoje" placeholder="Nùmero de cedula de quien recoje el producto">
 					  				
-								</div>																								
+																															
 					</div>
 
 				  	<div class="input-field personales">
-								<label for="habeas" style="color:#000;float:right;top: 0rem;left: 2rem;">Acepto Políticas de Privacidad y Manejo de Información <a id="inline" href="#data">Ver más</a></label>
+								<label for="habeas" style="float:left;">Acepto Políticas de Privacidad y Manejo de Información <a id="inline" href="#data">Ver más</a></label>
 					  <input type="checkbox" name="habeas" value="ok" checked>
 
 					  <div style="display:none">
@@ -73,10 +52,15 @@
 					</div>
 							<div style="margin-top:30px;">
 								<div class="g-recaptcha" data-sitekey="6Le4_RoUAAAAAP5OXRli6RN6jndLkCaqTITTNqGL"></div>
-								<input type="submit" value="RESERVAR">
+								<button>
+									<input type="submit" value="RESERVAR">
+								</button>
+								
 								
 							</div>
 				</form>
+		</div>
+	</div>
 </div>				
 
 <script>

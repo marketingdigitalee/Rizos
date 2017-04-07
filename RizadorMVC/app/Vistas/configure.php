@@ -9,16 +9,18 @@
 	<title>Modulo Cofiguracion</title>
 </head>
 <body>
-	<div>
+<div id="navegacion">
+	#NAVUSER#	
+</div>
+<div id="contenedorConfig">
+	<div id="headerUser">
 		#HEADERUSER#
 	</div>
-	<div>
+	<div id="cuerpoConfig">
 		#CONTENIDOUSER#
 	</div>
-	<div>
-		<a href="config.php?action=home">HOME</a>
-		</br>
-		<a href="config.php?action=salir">SALIR</a>
-	</div>
+	
+</div>
+	
 </body>
 </html>

@@ -46,18 +46,19 @@
 		}elseif(isset($_POST['txtNombreUser']) && isset($_POST['txtCedulaUser'])&&isset($_POST['txtCargoUser'])&&isset($_POST['txtCorreoUser'])&&isset($_POST['txtPassUser'])&&isset($_POST['txtPassUserConfirm'])){
 
 				$resultado = $config->crearUserSystem($_POST);
-				if (is_bool($resultado)) {
-					if ($resultado) {
+				switch ($resultado) {
+					case 'ok':
 						$control->cargarMensajesLogin("USUARIO REGISTRADO CORRECTAMENTE", 'VistasConfig/login');
+						break;
+					case 'error1':
+						$control->cargarMensajesLogin("EL CORREO INGRESADO YA EXISTE REVISE SUS DATOS", 'VistasConfig/registroUsers');
+						break;
 
-					}else{
-						$control->cargarMensajesLogin("NO SE LOGRO EL REGISTRO CORRECTAMENTE CONTACTE AL ADMINISTRADOR", 'VistasConfig/login');
-
-					}
-				}else{
-					$control->cargarMensajesLogin($resultado, 'VistasConfig/registroUsers');
-
+					default:
+						$control->cargarMensajesLogin($resultado, 'VistasConfig/login');
+						break;
 				}
+				
 
 				/*----------FORMULARIO RESERVA-----------*/
 

@@ -1,10 +1,9 @@
 
 
-<div>
-  	<h4 class="">INFORMACION PERSONAL</h4>
-  </div>
-  <div class="">
-  <table class="">
+<div class="ContenedortablaUser">
+  	<h4 class="titulosUser">INFORMACION PERSONAL</h4>
+
+  <table class="tablaUserData">
     <tr>
       <th class="-">Nombre Usuario</th>
       <th class="">#nombreUser#</th>

@@ -35,6 +35,19 @@ class UserSystemDAO  {
 
 	}
 
+	function existeCorreo($email){
+		$conexion = new BD();
+
+		$array = $conexion->consulta('UserSystem','emailUser' ,$email);
+
+		if (empty($array)) {
+		 	return false;
+		 } else{
+		 	return true;
+		 }
+
+	}
+
 
 
 }

@@ -10,6 +10,17 @@ class CiudadDAO  {
 
 	return $resultado;
 	}
+
+
+	function traerCiudades(){
+	$conexion = new BD();
+	
+	$resultado = $conexion->consultaAll('Ciudades');
+
+	return $resultado;
+	}
+
+
 	
 }
 
