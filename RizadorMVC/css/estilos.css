@@ -25,7 +25,7 @@ h3{
 	font-size: 40px;
     line-height: 38px;
     font-weight: 100;
-    font-family: "Knockout-HTF50-Welterweight_0.otf";
+    font-family: "ChampionsBold.otf";
     color: #38393a;
 
 }
@@ -99,11 +99,11 @@ header{
   margin: 0;
 }
   .nav li {
-    width: 120px;
+    width: 138px;
     border-bottom: none;
     height: 80px;
     line-height: 24px;
-    font-size: 1.2em;
+    font-size: 1.02em;
 
 
   }
@@ -121,7 +121,7 @@ header{
   color: #38393a;
   display: block;
   transition: .3s background-color;
-  font-family: "Knockout-HTF50-Welterweight_0.otf";
+  font-family: "ChampionsRegular.otf";
   margin-top: 40px;
 
 
@@ -151,10 +151,10 @@ header{
 
 
 #contenedor{
-	width: 80%;
+	width: 90%;
 	margin:0 auto;
 	height: auto;
-	background: rgba(0,0,0,0.5);
+	background: rgba(117,69,116,0.5);
 	overflow: hidden;
 	margin-top: 100px;
 }
@@ -176,7 +176,7 @@ header{
 }
 
 #homePromo{
-	margin-top: 100px;
+	margin-top: 290px;
 	position: absolute;
 }
 #homeBtn{
