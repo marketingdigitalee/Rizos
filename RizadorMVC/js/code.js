@@ -30,8 +30,10 @@ $(document).ready(function(){
   });
 
   $("a#inline").fancybox({
-        'hideOnContentClick': true
+        'hideOnContentClick': false;
     });
+  
+  $("a#idSepare").fancybox();
 
 $(window).scroll(function(){
         if( $(this).scrollTop() > 50 ){

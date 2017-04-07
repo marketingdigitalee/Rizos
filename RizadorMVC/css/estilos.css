@@ -69,11 +69,11 @@ header{
 
 #contentHeader{
 	margin: 0 auto;
-	width: 95%;
+	width: 100%;
 }
 
 .logo{
-	width: 25%;
+	width: 19%;
 	height: 100px;
 	float: left;
 	padding-left: 10px;	
@@ -86,7 +86,7 @@ header{
 }
 
 .nav{
- 	width: 73%;
+ 	width: 80%;
  	float: left;
  	height: 98px;
 
@@ -99,7 +99,7 @@ header{
   margin: 0;
 }
   .nav li {
-    width: 180px;
+    width: 120px;
     border-bottom: none;
     height: 80px;
     line-height: 24px;
