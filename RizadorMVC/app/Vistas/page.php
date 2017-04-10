@@ -19,6 +19,9 @@
     <section id="home" >
         #HOME#       
     </section>
+    <section id="fichaTec">
+        #FICHATECNICA#
+    </section>
     <section id="campTV">
         #CAMPTV# 
     </section>

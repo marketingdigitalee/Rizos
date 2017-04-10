@@ -202,6 +202,7 @@ header{
 
 #fichaTec{
 	position: relative;
+    padding-top: 80px;
 }
 
 #divfichaTec{
@@ -223,6 +224,7 @@ header{
 
 #campTV{
 	margin: 0 auto;
+    padding-top: 80px;
 }
 
 #contentVideo{
@@ -233,6 +235,10 @@ header{
 
 
 /*-------------------Como Reservar------------------*/ 
+#instructivo{
+    margin:0 auto;
+  padding-top: 80px;
+}
 
 #divInstructivo{
 	width: 90%;
@@ -248,10 +254,14 @@ header{
 }
 
 /*-------------------FAQ------------------*/ 
+#FAQ{
+  margin:0 auto;
+  padding-top: 80px;
+}
 
 #contentReserva{
 	width: 90%;
-	margin:0 auto;
+
 }
 
 .faq li { 
@@ -292,6 +302,7 @@ list-style: none;
 #puntos{
 	width: 90%;
 	margin:0 auto;
+   padding-top: 80px;
 
 }
 
@@ -331,6 +342,7 @@ list-style: none;
 #ReservaYA{
 	width: 90%;
 	margin: 0 auto;
+   padding-top: 80px;
 }
 
 
