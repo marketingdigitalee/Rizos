@@ -32,11 +32,8 @@
 					$control->cargarMensajesLogin($resultado, 'VistasConfig/login');
 					break;
 			}
-			if(is_int($resultado)){
-				
-				
+			if(is_int($resultado)){			
 				$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor');
-
 
 			}elseif(is_bool($resultado)){
 				$control->cargarMensajesLogin('Escriba de nuevo sus datos','VistasConfig/login');
@@ -142,10 +139,11 @@
 			 			break;
 						
 					default:
-					$control->cargarMensajesLogin($resultado,"VistasConfig/formVendedor");
+						$control->cargarMensajesLogin($resultado,"VistasConfig/formVendedor");
 						break;
 						
-			}	
+				}	
+
 		 /*--------------CARGAR CIUDAD -------------*/				
 		}elseif(isset($_POST['nombreCiudadBD'])){
 
@@ -167,7 +165,8 @@
 				cargarMensajesLogin("NO cargo el Almacen INTENTELO DE NUEVO","VistasConfig/AddAlmacenes", $_SESSION['htmlUser'],'-');
 			}
 		}else{
-			var_dump("llego al final del if de los POST fallo");
+			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/login');
+			session_destroy();
 		}
 
 	

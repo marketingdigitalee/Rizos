@@ -96,8 +96,7 @@ if(!empty($_GET['action'])){
 					
 			}	
 	}else{
-		var_dump($_POST);
-		var_dump($_SESSION);
+		$control->cargarMensajesReserva($resultado,"botones");
 	}
 
 }elseif(isset($_SESSION)){
