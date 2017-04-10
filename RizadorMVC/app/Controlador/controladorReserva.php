@@ -53,6 +53,8 @@ function agregarRegistro($POST){
 					if ($resultado){
 
 						$_SESSION['dataUsuario'] = $modUsuario->traerUsuarioBDXCedula($POST['cedulaUsuario']);
+
+						
 						$respuesta = 'ok';
 					}else{
 						$respuesta = 'error1';
