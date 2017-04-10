@@ -1,6 +1,6 @@
 	<div class="containerFormulario">
 		<h3 class="centrarTexto">FORMULARIO RESERVA</h3>
-  		<p class=""> Aqui algun teaser... </p>
+  		<p class="textoform"> Por favor diligencia tus datos personales para realizar el proceso de registro </p>
 	
 	<div class="login-page">
 		<div class="form">
@@ -27,7 +27,7 @@
 																														
 
 		 	<div class="input-field personales">
-					<label for="habeas" style="color:#000;float:right;top: 0rem;left: 2rem;">Acepto Políticas de Privacidad y Manejo de Información <a id="inline" href="#data">Ver más</a></label>
+					<label id="terminosycondiciones" for="habeas" >Acepto Políticas de Privacidad y Manejo de Información <a id="inline" href="#data">Ver más</a></label>
 					  <input type="checkbox" name="habeas" value="ok" checked>
 
 					  <div style="display:none">

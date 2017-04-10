@@ -237,7 +237,7 @@ header{
 /*-------------------Como Reservar------------------*/ 
 #instructivo{
     margin:0 auto;
-  padding-top: 80px;
+  padding-top: 15px;
 }
 
 #divInstructivo{
@@ -272,6 +272,8 @@ list-style: none;
   background: #4FC2E;
   font-weight: bold;
   font-size: 120%;
+  font-family: "ChampionsRegular.otf";
+	color:#FFFFFF;
   border-bottom: 1px #ddd solid;
   cursor: pointer;
 }
@@ -288,13 +290,14 @@ list-style: none;
 	}
 
 .faq li.a {
-  background: #3BB0D6;
+  background: #8d3d8f;
   display: none;
   color:#fff;
+  font-family: "ChampionsRegular.otf";
 }
 
 .activado {
-	background-color: blue!important;
+	background-color: #8d3d8f!important;
 	background-image: url("../img/ok.png");
 }
 
@@ -302,7 +305,7 @@ list-style: none;
 #puntos{
 	width: 90%;
 	margin:0 auto;
-   padding-top: 80px;
+   padding-top: 75px;
 
 }
 
@@ -342,7 +345,7 @@ list-style: none;
 #ReservaYA{
 	width: 90%;
 	margin: 0 auto;
-   padding-top: 80px;
+   padding-top: 60px;
 }
 
 
@@ -397,7 +400,7 @@ list-style: none;
 
 /*-------------------Footer -----------------*/ 
 #Footer{
-	background-color: black;
+	background-color:rgba(0,0,0,0.8);
 	margin-top: 100px;
 }
 
@@ -413,6 +416,7 @@ list-style: none;
     padding-top: 25px;
     height: 1px;
     padding-left: 10px;
+	font-family: "ChampionsBold.otf";
 }
 
 #textoCodiciones{
@@ -424,6 +428,7 @@ list-style: none;
 
 #textoCodiciones p{
 	color: white;
+	font-family: "ChampionsRegular.otf";
 
 }
 
@@ -463,9 +468,16 @@ list-style: none;
 
 .login-page {
   width: 90%;
-  padding: 8% 0 0;
+  padding: 3% 0 0;
   margin: auto;
 }
+
+.textoform{
+	font-family: "ChampionsRegular.otf";
+	color: #FFFFFF;
+	text-align: center;
+}
+
 .form {
   position: relative;
   z-index: 1;
@@ -520,6 +532,22 @@ list-style: none;
 .form .register-form {
   display: '';
 }
+.g-recaptcha{margin-left:490px; }
+
+
+
+
+#terminosycondiciones{
+	color:#FFFFFF;
+	float: right;
+	top: 0rem;
+	left: 2rem;
+}
+
+#inline{color:#12a4c6;
+}
+
+
 .container {
   position: relative;
   z-index: 1;
