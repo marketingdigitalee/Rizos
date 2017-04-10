@@ -11,6 +11,7 @@ class controladorVistas{
 
 		$header = $this->load_page('app/Vistas/secciones/header.php');
 		$home = $this->load_page('app/Vistas/secciones/home.php');
+		$fichaTec = $this->load_page('app/Vistas/secciones/fichaTecnica.php');
 		$faq = $this->load_page('app/Vistas/secciones/faq.php');
 		$puntos =$this->load_page('app/Vistas/secciones/puntos.php');
 		$instructivo = $this->load_page('app/Vistas/secciones/instructivo.php');
@@ -20,6 +21,7 @@ class controladorVistas{
 
 		$pagina = $this->replace_content('/\#HEADER\#/ms' ,$header , $pagina);
 		$pagina = $this->replace_content('/\#HOME#/ms' ,$home , $pagina);
+		$pagina = $this->replace_content('/\#FICHATECNICA#/ms' ,$fichaTec , $pagina);
 		$pagina = $this->replace_content('/\#FAQ\#/ms' ,$faq , $pagina);
 		$pagina = $this->replace_content('/\#PUNTOS\#/ms' ,$puntos , $pagina);
 		$pagina = $this->replace_content('/\#INSTRUCTIVO\#/ms' ,$instructivo , $pagina);
