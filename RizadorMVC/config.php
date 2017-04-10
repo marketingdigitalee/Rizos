@@ -174,6 +174,7 @@
 	}elseif(!empty($_GET['action'])){
 
 
+
 		if($_GET['action'] == 'registroUsers'){
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/registroUsers');
 		}elseif(  $_GET['action'] == 'nuevo' ) {
@@ -186,7 +187,16 @@
 		}elseif($_GET['action'] == 'addAlmacen'){
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/AddAlmacenes');
 		}elseif($_GET['action'] == 'home'){
-			$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor',$_SESSION['htmlUser'], '');
+			if($_SESSION['idRoll'] == 1){
+				$control->cargarMensajesLogin('Bienvenido Administrador','VistasConfig/vistaAdmon',$_SESSION['htmlUser'], '');
+
+			}elseif($_SESSION['idRoll'] == 3){
+				$control->cargarMensajesLogin('Bienvenido Supervisor','VistasConfig/vistaSuper',$_SESSION['htmlUser'], '');
+
+			}else{
+				$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor',$_SESSION['htmlUser'], '');
+			}
+			
 			
 		}elseif($_GET['action'] == 'salir'){
 			session_destroy();

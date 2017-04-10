@@ -95,18 +95,21 @@ try {
 				
 				$htmlUser = $controlVistas->crearDataUser($nombreUser,$cedulaUser,$cargoUser,$correoUser,$valor);
 
-				$logEventos->CrearLog('Registro Exitoso',$idUser);
+				
 
 				$_SESSION['idUser'] = (int) $idUser;
 				$_SESSION['htmlUser'] = $htmlUser;
 				$_SESSION['idRoll'] = $idRoll;
 
 				if ($idRoll == '1') {
+					$logEventos->CrearLog('Registro Exitoso Administrador con id: ',$idUser);
 					$result = 'admin';
 				}elseif($idRoll == '3'){
+					$logEventos->CrearLog('Registro Exitoso Supervisor con id: ',$idUser);
 					$result = 'super';
 				}else{
 					$result = 'ok';
+					$logEventos->CrearLog('Registro Exitoso Vendedor con id: ',$idUser);
 				}
 			
 
