@@ -25,6 +25,8 @@ if(!empty($_GET['action'])){
 	{
 		$_SESSION['idUser'] = (int) 0;
 		  $resultado = $registro->agregarRegistro($_POST);
+		  var_dump($resultado);
+		  
 		 switch ($resultado) {
 		 	case 'ok':
 		 		$control->cargarPrincipal('reserva');

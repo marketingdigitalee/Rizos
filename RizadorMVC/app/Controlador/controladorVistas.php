@@ -23,7 +23,7 @@ class controladorVistas{
 		$pagina = $this->replace_content('/\#FAQ\#/ms' ,$faq , $pagina);
 		$pagina = $this->replace_content('/\#PUNTOS\#/ms' ,$puntos , $pagina);
 		$pagina = $this->replace_content('/\#INSTRUCTIVO\#/ms' ,$instructivo , $pagina);
-		$pagina = $this->replace_content('/\#CAMPTV\#/ms' ,$campTV , $pagina);
+		$pagina = $this->replace_content('/\#CAMPTV\#/ms', "" , $pagina);
 		$pagina = $this->replace_content('/\#FOOTER\#/ms' ,$footer , $pagina);
 
 		return $pagina;

@@ -4,12 +4,30 @@ require_once 'app/Modelo/LogEventosDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'app/Modelo/CiudadDAO.class.php';
 require_once 'app/Controlador/controladorVistas.php';
+require_once 'app/Controlador/libreria/recaptcha/recaptchalib.php';
 
 
 
 class ControladorConfig{
 
 	function login($POST){
+try {
+	
+
+// your secret key
+	$secret = "6Le4_RoUAAAAAMCZtCrZS0E79nCV3rBby-ID4vlF";
+	 
+	// empty response
+	$response = null;
+	 
+	// check secret key
+	$reCaptcha = new ReCaptcha($secret);
+
+	if($POST["g-recaptcha-response"]){
+		$response = $reCaptcha->verifyResponse($_SERVER["REMOTE_ADDR"],$POST["g-recaptcha-response"]);
+
+		if ($response != null && $response->success) {
+
 		$userSystem = new UserSystemDAO;
 		$logEventos = new LogEventosDAO;
 		$funciones = new Funciones;
@@ -35,72 +53,102 @@ class ControladorConfig{
 		$idUser = null;
 		
 
-		if (is_array($array) && !empty($array)) {
-			
-			foreach ($array as $key) {
-				foreach ($key as $key2 => $value2) {
-					if($key2 == 'idUserSystem'){
-						$idUser = $value2;
-						
-					}elseif($key2 == 'nomUser'){
-						$nombreUser = $value2;
-						
+			if (is_array($array) && !empty($array)) {
+				
+				foreach ($array as $key) {
+					foreach ($key as $key2 => $value2) {
+						if($key2 == 'idUserSystem'){
+							$idUser = $value2;
+							
+						}elseif($key2 == 'nomUser'){
+							$nombreUser = $value2;
+							
 
-					}elseif($key2 == 'cedulaUser'){
-						$cedulaUser = $value2;
-						
-						
-					}elseif($key2 == 'cargoUser'){
-						$cargoUser = $value2;
-						
-						
-					}elseif($key2 == 'emailUser'){
-						$correoUser = $value2;
-						
-					}elseif($key2 == 'idRoll'){
-						$idRoll = $value2;
-						
+						}elseif($key2 == 'cedulaUser'){
+							$cedulaUser = $value2;
+							
+							
+						}elseif($key2 == 'cargoUser'){
+							$cargoUser = $value2;
+							
+							
+						}elseif($key2 == 'emailUser'){
+							$correoUser = $value2;
+							
+						}elseif($key2 == 'idRoll'){
+							$idRoll = $value2;
+							
+						}
 					}
+					
+				}
+
+				
+
+				$numeroRegistros = $userSystem->consultarVentas($idUser);
+				foreach ($numeroRegistros as $key) {
+					foreach ($key as $key2 => $value2) {
+						$valor = $value2;
+					}
+					
 				}
 				
-			}
+				$htmlUser = $controlVistas->crearDataUser($nombreUser,$cedulaUser,$cargoUser,$correoUser,$valor);
 
-			
+				$logEventos->CrearLog('Registro Exitoso',$idUser);
 
-			$numeroRegistros = $userSystem->consultarVentas($idUser);
-			foreach ($numeroRegistros as $key) {
-				foreach ($key as $key2 => $value2) {
-					$valor = $value2;
+				$_SESSION['idUser'] = (int) $idUser;
+				$_SESSION['htmlUser'] = $htmlUser;
+				$_SESSION['idRoll'] = $idRoll;
+
+				if ($idRoll == '1') {
+					$result = 'admin';
+				}elseif($idRoll == '3'){
+					$result = 'super';
+				}else{
+					$result = 'ok';
 				}
-				
-			}
 			
-			$htmlUser = $controlVistas->crearDataUser($nombreUser,$cedulaUser,$cargoUser,$correoUser,$valor);
 
-			$logEventos->CrearLog('Registro Exitoso',$idUser);
-
-			$_SESSION['idUser'] = (int) $idUser;
-			$_SESSION['htmlUser'] = $htmlUser;
-			$_SESSION['idRoll'] = $idRoll;
-
-			if ($idRoll == '1') {
-				$result = 'admin';
-			}elseif($idRoll == '3'){
-				$result = 'super';
 			}else{
-				$result = 'ok';
+
+				$result = 'ERROR AL TRATAR DE ENCONTRAR EL ARREGLO CON INFORMACIÓN';
 			}
 		
 
 		}else{
+			$result = 'ERROR AL VALIDAR EL CAPTCHA INTENTENTELO DE NUEVO'; //Problema al validar chaptcha
 
-			$result = 'error1';
 		}
-		
-		return $result;
+	}else{
+		$result = 'VALIDE EL CAPTCHA CORRECTAMENTE O NO SE EL PERMITIRA EL ACCESO' ;
 	}
 
+
+return $result;
+
+} catch (Exception $e) {
+	return $e->getMessage();
+}
+}
+
 	function crearUserSystem($POST){
+		try {
+
+// your secret key
+	$secret = "6Le4_RoUAAAAAMCZtCrZS0E79nCV3rBby-ID4vlF";
+	 
+	// empty response
+	$response = null;
+	 
+	// check secret key
+	$reCaptcha = new ReCaptcha($secret);
+
+	if($POST["g-recaptcha-response"]){
+		$response = $reCaptcha->verifyResponse($_SERVER["REMOTE_ADDR"],$POST["g-recaptcha-response"]);
+
+		if ($response != null && $response->success) {
+
 
 		$userSystem = new UserSystemDAO;
 		$logEventos = new LogEventosDAO;
@@ -137,10 +185,22 @@ class ControladorConfig{
 		}else{
 			$result = "La contraseña no corresponde";
 		}
+	}else{
+		$result = 'ERROR AL VALIDAR EL CAPTCHA INTENTENTELO DE NUEVO'; //Problema al validar chaptcha
 
-
-		return $result;
 	}
+}else{
+$result = 'VALIDE EL CAPTCHA CORRECTAMENTE O NO SE EL PERMITIRA EL ACCESO';
+}
+
+return $result;
+			
+} catch (Exception $e) {
+			
+	return $e->getMessage();
+}
+
+}
 
 	function crearCiudad($nombreCiudad){
 

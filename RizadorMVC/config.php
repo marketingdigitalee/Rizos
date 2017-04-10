@@ -1,7 +1,8 @@
 <?php
 	require_once 'app/Controlador/controladorVistas.php';
 	require_once 'app/Controlador/controladorConfig.php';
-	require_once 'app/Controlador/controladorReserva.php';		
+	require_once 'app/Controlador/controladorReservaVendedor.php';	
+
 
 
 	$control = new controladorVistas;
@@ -28,7 +29,7 @@
 					break;
 
 				default:
-					$control->cargarMensajesLogin("NO SE LOGRO EL REGISTRO CORRECTAMENTE, INTENTELO DE NUEVO", 'VistasConfig/login');
+					$control->cargarMensajesLogin($resultado, 'VistasConfig/login');
 					break;
 			}
 			if(is_int($resultado)){
@@ -130,7 +131,7 @@
 
 		 /*--------------Buscar Usuario Registrado -------------*/	
 
-		}elseif(isset($_POST['numCedulaRegistrado'])&& isset($_POST['g-recaptcha-response'])){
+		}elseif(isset($_POST['numCedulaRegistrado'])){
 
 		$resultado = $registro->traerUsuarioXCedula($_POST, $_SESSION);
 
@@ -165,9 +166,7 @@
 			}else{
 				cargarMensajesLogin("NO cargo el Almacen INTENTELO DE NUEVO","VistasConfig/AddAlmacenes", $_SESSION['htmlUser'],'-');
 			}
-		}
-
-		else{
+		}else{
 			var_dump("llego al final del if de los POST fallo");
 		}
 

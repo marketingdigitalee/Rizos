@@ -10,6 +10,9 @@ require_once 'controladorVistas.php';
 class ControladorReserva{
 
 function agregarRegistro($POST){
+	try {
+		
+
 	$nuevoArray= null;
 	$modUsuario = new UsuarioDAO();
 	$respuesta = null;
@@ -66,9 +69,15 @@ function agregarRegistro($POST){
 	}
 	
 	return $respuesta;
+
+} catch (Exception $e) {
+	return $e->getMessage();
+}
 }	
 
-function crearReserva($POST,$Sesion){	
+function crearReserva($POST,$Sesion){
+try {
+	
 
 	$modAlmacen = new AlmacenDAO;
 	$modReserva = new ReservaDAO;
@@ -185,10 +194,17 @@ function crearReserva($POST,$Sesion){
 			return 'error1';
 
 		}
+
+} catch (Exception $e) {
+	return $e->getMessage();
+}
+
 }
 
 	//TRAE EL USUARIO POR CEDULA
 function traerUsuarioXCedula($POST, $SESSION){
+try {
+	
 
 	$modUsuario = new UsuarioDAO();
 	$resultado = null;
@@ -253,9 +269,13 @@ function traerUsuarioXCedula($POST, $SESSION){
 	}else{
 	//error 3
 
-}
+	}
 
-return $resultado;
+	return $resultado;
+
+} catch (Exception $e) {
+	return $e->getMessage();
+}
 
 
 }
