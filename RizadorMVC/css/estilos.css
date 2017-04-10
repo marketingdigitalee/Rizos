@@ -63,7 +63,7 @@ header{
 	background-color: #fff;
 	opacity: 1;
 	z-index: 100;
-	margin-top: -100px;
+
 
 }
 
@@ -156,7 +156,7 @@ header{
 	height: auto;
 	background: rgba(117,69,116,0.7);
 	overflow: hidden;
-	margin-top: 100px;
+
 }
  
 /*-------------------home------------------*/ 
@@ -168,10 +168,9 @@ header{
 	width: 1250px;
 	height: 651px;
 	background-repeat: no-repeat;
-    margin: 0 auto;
-	
-	
-   
+  margin: 0 auto;
+  margin-top: 100px;
+	  
 
 }
 
@@ -199,6 +198,7 @@ header{
 
 #fichaTec{
 	position: relative;
+    padding-top: 80px;
 }
 
 #divfichaTec{
@@ -218,6 +218,7 @@ header{
 
 #campTV{
 	margin: 0 auto;
+    padding-top: 80px;
 }
 
 #contentVideo{
@@ -228,11 +229,16 @@ header{
 
 
 /*-------------------Como Reservar------------------*/ 
+#instructivo{
+    margin: 0 auto;
+    padding-top: 80px;
+}
 
 #divInstructivo{
 	width: 90%;
 	text-align: center;
 	margin: 0 auto;
+
 }
 
 #divInstructivo img{
@@ -244,9 +250,15 @@ header{
 
 /*-------------------FAQ------------------*/ 
 
+#FAQ{
+    padding-top: 80px;
+  margin:0 auto;
+
+}
+
 #contentReserva{
 	width: 90%;
-	margin:0 auto;
+
 }
 
 .faq li { 
@@ -287,6 +299,7 @@ list-style: none;
 #puntos{
 	width: 90%;
 	margin:0 auto;
+    padding-top: 80px;
 
 }
 
@@ -307,6 +320,7 @@ list-style: none;
 #divCerrado{
 	width: 90%;
 	margin:0 auto;
+    padding-top: 80px;
 
 }
 
@@ -326,6 +340,7 @@ list-style: none;
 #ReservaYA{
 	width: 90%;
 	margin: 0 auto;
+    padding-top: 80px;
 }
 #divBotones{
 	text-align: center;

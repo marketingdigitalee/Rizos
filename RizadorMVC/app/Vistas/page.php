@@ -12,11 +12,11 @@
 
 </head>
 <body>
-  <header>
+  <header >
     #HEADER#  
   </header>
   <div id="contenedor">
-    <section id="home">
+    <section id="home" >
         #HOME#       
     </section>
     <section id="campTV">
@@ -25,11 +25,11 @@
     <section id="instructivo">
       #INSTRUCTIVO#
     </section>
-    <section id="puntos">
+    <section id="puntos" >
       #PUNTOS#
     </section>
 
-    <section id="FAQ">
+    <section id="FAQ" >
       #FAQ#
     </section>
 
