@@ -52,6 +52,9 @@ input[type=password] {
 
 .centrarTexto{
 	text-align: center;
+	font-family:"ChampionsRegular.otf";
+	color:#FFFFFF;
+	
 }
 
 /*-------------------header------------------*/
@@ -329,9 +332,25 @@ list-style: none;
 	width: 90%;
 	margin: 0 auto;
 }
+
+
+#btnNuevaReserva:hover{
+	-webkit-transform: scale(0.8);
+    transform: scale(0.9);
+	
+ }
+
+#btnRegistrado:hover{
+	-webkit-transform: scale(0.8);
+    transform: scale(0.9);
+	
+ }
+
 #divBotones{
 	text-align: center;
 	width: 90%;
+	height: 100px;
+	margin-left: 80px;
 }
 
 #contenedorBotones1{
@@ -367,6 +386,7 @@ list-style: none;
 /*-------------------Footer -----------------*/ 
 #Footer{
 	background-color: black;
+	margin-top: 100px;
 }
 
 .contentCondiciones{
@@ -437,22 +457,27 @@ list-style: none;
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  border: 3px solid #FFFFFF;
   margin: 0 auto 100px;
   padding: 45px;
+  color: #FFFFFF;
+  font-family: "ChampionsRegular.otf";
+	font-size: 18px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	
 }
 .form input {
-  font-family: "Roboto", sans-serif;
+  font-family:"ChampionsBold.otf";
+ color: #FFFFFF;
   outline: 0;
-  background: #f2f2f2;
+  background: rgba(255, 255, 255, 0.4);
   width: 100%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 15px;
 }
 .form button {
   font-family: "Roboto", sans-serif;
@@ -525,8 +550,8 @@ list-style: none;
     width: 200px;
     border-radius: 3px;
     overflow: hidden;
-    background-color: #fff;
-    background: #fff  no-repeat 90% 50%;
+    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.4)  no-repeat 90% 50%;
 }
 
 .select-style select {
