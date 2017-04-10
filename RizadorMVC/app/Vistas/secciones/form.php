@@ -36,11 +36,10 @@
 					  	</div>
 					  </div>
 			</div>
-			<div style="margin-top:30px;">
-				<div class="g-recaptcha" data-sitekey="6Le4_RoUAAAAAP5OXRli6RN6jndLkCaqTITTNqGL"></div>
-				<input type="submit" value="RESERVAR">
-								
+			<div id="contentCaptcha">
+				<div  class="g-recaptcha" data-sitekey="6Le4_RoUAAAAAP5OXRli6RN6jndLkCaqTITTNqGL"></div>
 			</div>
+			<input type="submit" value="RESERVAR">
 		</form>
 		</div>
 	</div>	

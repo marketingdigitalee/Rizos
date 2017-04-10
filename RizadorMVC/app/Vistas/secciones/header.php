@@ -12,7 +12,7 @@
         <li class="puntosredencion"><a href="#puntos">PUNTOS</a></li>
         <li class="pregFrecuentes"><a href="#FAQ">FAQ</a></li>
         <li class="planSepare">
-          <a id="idSepare" href="img/plan_separe.png">PLAN SEPARE</a>
+          <a id="idSepare" href="img/plan_separe.jpg">PLAN SEPARE</a>
         </li>
         <li class="reserva"><a href="#ReservaYA">RESERVA YA!</a></li>
       </ul>

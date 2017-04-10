@@ -237,7 +237,7 @@ header{
 /*-------------------Como Reservar------------------*/ 
 #instructivo{
     margin:0 auto;
-  padding-top: 15px;
+  padding-top: 80px;
 }
 
 #divInstructivo{
@@ -532,19 +532,15 @@ list-style: none;
 .form .register-form {
   display: '';
 }
-.g-recaptcha{margin-left:490px; }
-
-
 
 
 #terminosycondiciones{
 	color:#FFFFFF;
-	float: right;
-	top: 0rem;
-	left: 2rem;
+  margin: 0 auto;
 }
 
-#inline{color:#12a4c6;
+#inline{
+  color:#e4097d;
 }
 
 
@@ -644,4 +640,18 @@ list-style: none;
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+}
+
+/*------------CAPTCHA ------------*/
+
+#contentCaptcha{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+
+}
+
+.g-recaptcha{
+ text-align: center;
 }
