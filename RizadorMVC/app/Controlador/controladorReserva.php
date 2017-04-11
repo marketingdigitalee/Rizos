@@ -244,11 +244,11 @@ try {
 				}	
 			}
 
-			if (is_null($idUsuario) || empty($idUsuario)) {
-				var_dump("error Id usuario debo salir por y volver a logearme");
+		/*	if (is_null($idUsuario) || empty($idUsuario)) {
+				var_dump($idUsuario);
 			}
 
-
+*/
 
 			$array = $modUsuario->traerUsuarioBDXCedula($cedulaUsuario);
 

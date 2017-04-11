@@ -25,7 +25,6 @@ if(!empty($_GET['action'])){
 	{
 		$_SESSION['idUser'] = (int) 0;
 		  $resultado = $registro->agregarRegistro($_POST);
-		  var_dump($resultado);
 		  
 		 switch ($resultado) {
 		 	case 'ok':
@@ -57,8 +56,7 @@ if(!empty($_GET['action'])){
 	}elseif(isset($_POST['nomAlmacen']) && isset($_POST['cantReserva']) && isset($_SESSION)){
 			
 			$resultado = $registro->crearReserva($_POST,$_SESSION);
-			var_dump($resultado);
-
+		
 		switch ($resultado) {
 			case 'ok':
 		 		$control->cargarMensajesReserva("Felicitacion Reserva registrada Correctamente","botones",$_POST['html']);
@@ -106,7 +104,7 @@ if(!empty($_GET['action'])){
 			$control->cargarMensajesReserva("INTENTELO NUEVAMENTE","botones");
 			session_destroy();
 		}elseif(isset($_SESSION['dataUsuario']) && !empty($_SESSION['dataUsuario']) && is_array($_SESSION['dataUsuario'])) {
-			var_dump($_SESSION);
+			
 			$control->cargarPrincipal('reserva');
 		}else{
 			session_destroy();
