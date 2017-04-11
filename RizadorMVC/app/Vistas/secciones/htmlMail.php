@@ -6,21 +6,30 @@
 </head>
 <body>
 	<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-xibm{font-weight:bold;font-size:18px;background-color:#c0c0c0;vertical-align:top}
+  #contentMail{
+    width: 100%;
+    background-color: #876586;
+
+  }
+  .tituloMail{color: white;
+    font-family:Arial, sans-serif;
+
+  }
+.tg  {border-collapse:collapse;color:#501746;border-spacing:0;margin:0px auto;}
+.tg td{ font-family:Arial, sans-serif; font-size:14px;padding:10px 5px;border-style:solid;border-width:1px; border-color:white;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif; font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;border-color:black;overflow:hidden;word-break:normal;}
+.tg .tg-xibm{font-weight:bold;font-size:18px;background-color:#c0c0c0; border-color:white; vertical-align:top}
 .tg .tg-pl96{font-weight:bold;font-size:18px;vertical-align:top}
-.tg .tg-9apd{font-size:18px;background-color:#c0c0c0;text-align:center;vertical-align:top}
+.tg .tg-9apd{font-size:18px;background-color:#c0c0c0; border-color:white; text-align:center;vertical-align:top}
 .tg .tg-13pz{font-size:18px;text-align:center;vertical-align:top}
 .tituloMail{font-size: 20px;text-align: center;vertical-align: top; width: 90%;}
 .contentTablaMail{width: 90%;}
 
 </style>
 
-
-<div>
-	<h4 class="tituloMail">DATOS DE RESERVA</h4>
+<div id="contentMail">
+  <div>
+  <h4 class="tituloMail">DATOS DE RESERVA</h4>
 </div>
 <div class="contentTablaMail">
 <table class="tg">
@@ -54,5 +63,7 @@
   </tr>  
 </table>
 </div>
+</div>
+
 </body>
 </html>
