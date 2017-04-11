@@ -653,5 +653,8 @@ list-style: none;
 }
 
 .g-recaptcha{
- text-align: center;
+ margin: auto;
+display: -webkit-inline-box;
+}
+
 }
