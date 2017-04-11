@@ -53,7 +53,7 @@ input[type=password] {
 
 .centrarTexto{
 	text-align: center;
-	font-family:"ChampionsRegular.otf";
+	font-family:"ChampionsBold.otf";
 	color:#FFFFFF;
 	
 }
@@ -248,7 +248,7 @@ header{
 }
 
 #divInstructivo img{
-	width: 900px;
+	width: 90%;
 	text-align: center;
 	margin: 0 auto;
 	
@@ -325,8 +325,10 @@ list-style: none;
 
 /*-------------------CERRADO -----------------*/ 
 #divCerrado{
-	width: 90%;
-	margin:0 auto;
+width: 90%;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    box-shadow: 5px 5px #9a8aa0;
 
 }
 
