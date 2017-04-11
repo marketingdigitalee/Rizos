@@ -364,6 +364,7 @@ list-style: none;
 
 #divBotones{
 	text-align: center;
+	margin: auto;
 	width: 90%;
 	height: 100px;
 	
