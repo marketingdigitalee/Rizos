@@ -27,9 +27,9 @@
 										
 									</select>
 					  			</div>
-					  			<input type="text" name="telUsuario" placeholder="Telefono Fijo" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" >
+					  			<input type="text" maxlength="7" name="telUsuario" placeholder="Telefono Fijo" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" >
 					  			
-					  			<input type="text" name="celUsuario" placeholder="Télefono Celular" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" >
+					  			<input type="text" maxlength="10"  name="celUsuario" placeholder="Télefono Celular" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" >
 								
 					  			<input type="text" name="nombreRecoje" placeholder="Nombre de la persona que recoje el producto">
 					  				
