@@ -433,6 +433,7 @@ width: 90%;
 #textoCodiciones p{
 	color: white;
 	font-family: "ChampionsRegular.otf";
+  text-align: justify;
 
 }
 
