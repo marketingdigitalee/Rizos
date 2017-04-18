@@ -17,9 +17,8 @@
           <div style="display:none; width: 60%;">
               <div id="data1">
               <p>
-                Has también tu reserva a través del sistema Plan Separe, acércate a uno de los almacenes Éxito habilitados para la actividad y separa tu rizador con solo 10% del valor  +  3.000 (Pesos) de cuota de administración.
-
-El valor de la cuota inicial se abonará al valor del producto. Los 3.000 (Pesos) de administración no hacen parte de los abonos. Plazo máximo para reclamar el producto separado el 30 de junio de 2017, si no es reclamado en esta fecha el dinero de la cuota inicial no será reembolsado.
+                Has también tu reserva a través del sistema Plan Separe, acércate a uno de los almacenes Éxito habilitados para la actividad y separa tu rizador con solo 10% del valor + 3.000 (pesos) de cuota de administración.
+El valor de la cuota inicial se abonará al valor del producto. Los 3.000 (pesos) de administración no hacen parte de los abonos. Plazo máximo para reclamar el producto separado el 26 de junio de 2017, si no es reclamado en esta fecha el dinero de la cuota inicial no será reembolsado.
               </p>
               </div>
           </div>    
