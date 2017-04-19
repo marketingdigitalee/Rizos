@@ -1,7 +1,7 @@
 <?php
 	require_once 'app/Controlador/controladorVistas.php';
 	require_once 'app/Controlador/controladorReserva.php';
-
+ 	include_once("analyticstracking.php");
 	
 	$control = new controladorVistas();
 	$registro = new ControladorReserva();

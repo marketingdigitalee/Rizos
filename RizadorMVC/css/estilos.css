@@ -103,7 +103,7 @@ header{
   margin: 0;
 }
   .nav li {
-    width: 138px;
+    width: 127px;
     border-bottom: none;
     height: 80px;
     line-height: 24px;
@@ -230,10 +230,8 @@ header{
 
 #contentVideo{
 	width: 90%;
-	
-	margin-left: 300px;
+	margin: 0 auto;
 }
-
 
 /*-------------------Como Reservar------------------*/ 
 #instructivo{
