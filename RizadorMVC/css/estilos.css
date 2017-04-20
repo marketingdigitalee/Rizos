@@ -180,8 +180,8 @@ header{
 	position: absolute;
 }
 #homeBtn{
-	margin-top: 405px;
-	margin-left: 830px;
+	margin-top: 415px;
+	margin-left: 843px;
 	position: absolute;
 	
 }
@@ -218,18 +218,25 @@ header{
 
 /*-------------------CAMPAÑA DE TELEVISION ------------------*/ 
 
+
+
 #campTV{
-	margin: 0 auto;
+	margin: auto;
     padding-top: 80px;
-	text-align: center;
+	text-align:center;
 	
 
 	
+	
+	
 }
+
 
 #contentVideo{
 	width: 90%;
 	margin: 0 auto;
+	text-align:-webkit-center;
+	
 	
 	
 }
@@ -662,4 +669,3 @@ width: 90%;
 display: -webkit-inline-box;
 }
 
-}

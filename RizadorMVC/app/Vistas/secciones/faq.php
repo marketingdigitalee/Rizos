@@ -54,7 +54,7 @@ Además, no retiene el cabello después de rizarlo. Es un placer trabajar con es
         
         <li class="q">
           <img src="img/pregunta.png"> 
-          CALENTAMIENTO INSTANTÁNEO, 2 AJUSTES DE TEMPERATURA Y SISTEMA DE RECUPERACIÓN DEL CALOR
+          EL RIZADOR ESTÁ EQUIPADO 
         </li>
         <li class="a"><p>
           Su aparato está equipado con una resistencia de alto rendimiento que logra un calentamiento muy rápido y mantiene la temperatura constante durante el uso.  Cuenta con dos opciones de temperatura, para permitirle escoger la temperatura perfecta para su tipo de cabello, desde el más fino hasta el más grueso, y siempre obtener los resultados deseados, sin lastimar el cabello. Y esto no es todo... Su aparato también disfruta de los mismos estándares de calidad e ingeniería que los aparatos profesionales y cuenta con un sistema de recuperación del calor. 
@@ -106,13 +106,13 @@ Y el aparato se apaga automáticamente después de 60 minutos.
         </li>
         <li class="a">
           <ul>
-            <li>1. La garantía rige a partir de la fecha de compra. Para hacerla efectiva, el cliente deberá conservar la factura de compra </li>
-            <li>2. El cliente debe comunicarse a la línea de servicio al cliente 018000917545, para realizar la respectiva solicitud de garantía</li>
-            <li>3. El producto no se repara, el producto con defectos de fabricación</li>
+            <li>1. La garantía rige a partir de la fecha de compra. Para hacerla efectiva, el cliente deberá conservar la factura de compra. </li>
+            <li>2. El cliente debe comunicarse a la línea de servicio al cliente 018000917545, para realizar la respectiva solicitud de garantía.</li>
+            <li>3. El producto no se repara, el producto con defectos de fabricación.</li>
             <li>4. La garantía solamente aplica por daños comprobados de fabricación.</li>
             <li>5. La garantía no tiene validez:
             </li>
-            <li>5.1. Cuando el artículo haya sido utilizado para trabajos para los cuales no ha sido diseñado</li>
+            <li>5.1. Cuando el artículo haya sido utilizado para trabajos para los cuales no ha sido diseñado.</li>
             <li>5.2. Cuando los daños no sean defectos de fabricación, por ejemplo, daños causados por golpes, derrame de residuos dentro de las partes, daños por insectos u otros comprobados en su momento. O por el mal uso, contrario a lo indicado en el manual de instrucciones.</li>
             <li>5.3. Cuando los daños o averías causados en el artículo sean por accidentes, causas imprevistas o deliberadas, daños causados por voltajes entre un 10% mayor o menor del indicado en la placa de especificaciones del artículo.</li>
             <li>5.4. Por desgaste normal de sus componentes y/o accesorios, por causas normales de uso (Mayores al año de garantía).</li>
