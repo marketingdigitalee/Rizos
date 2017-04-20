@@ -2,6 +2,7 @@
 require 'app/Modelo/UsuarioDAO.class.php';
 require 'app/Modelo/ReservaDAO.class.php';
 require 'app/Modelo/AlmacenDAO.class.php';
+require 'app/Modelo/ConfigProductoDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'app/Controlador/libreria/recaptcha/recaptchalib.php';
 require_once 'controladorVistas.php';
@@ -86,11 +87,16 @@ try {
 	$modUsuario = new UsuarioDAO;
 	$vistaControl = new controladorVistas;
 	$funciones = new Funciones;
+	$configProducto = new ConfigProductoDAO;
+
 	$cedula = null;
 	$codigo = null;
 	$cantidad = null;
 	$idVen = null;
 	$arrayUsuario = null;
+	$fechaActiva = null;
+	$EstadoActual = null;
+	$cantidadReservas = null;
 
 
 		foreach ($Sesion as  $key => $value) {
@@ -163,6 +169,14 @@ try {
 	do {
 		$codigoReserva = $funciones->generarCodigo(6);
 	}while (!$modReserva->ExisteCodigoReserva($codigoReserva));
+
+	/*realiza la comprobacion de las reservas */
+	$cantidadReservas  = $configProducto->totalReservas(1);
+
+	if($cantidadReservas != null){
+		var_dump($cantidadReservas);
+
+	}
 
 
 	$nombreMail = $arrayUsuarioNEW['nomUsuario'].' '.$arrayUsuarioNEW['apellUsuario'];

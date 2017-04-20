@@ -1,12 +1,12 @@
 <?php
 require_once 'BD.class.php';
 
-class CiudadDAO  {
+class ConfigProductoDAO  {
 
-	function crearCiudad($arrayCiudad){
+	function totalReservas($idProducto){
 	$conexion = new BD();
 	
-	$resultado = $conexion->insertar('Ciudades',$arrayCiudad);
+	$resultado = $conexion->consultaColumna('cantTotalReservas', 'ConfigProducto','idConfigProducto',$idProducto)
 
 	return $resultado;
 	}
