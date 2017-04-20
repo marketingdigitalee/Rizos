@@ -223,14 +223,17 @@ header{
 
 /*-------------------CAMPAÑA DE TELEVISION ------------------*/ 
 
+
+
 #campTV{
+	width:80%;
 	margin: 0 auto;
     padding-top: 80px;
 	text-align: center;
 	
-
 	
 }
+
 
 #contentVideo{
 	width: 90%;
@@ -667,4 +670,3 @@ width: 90%;
 display: -webkit-inline-box;
 }
 
-}
