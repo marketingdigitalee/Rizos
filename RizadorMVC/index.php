@@ -94,7 +94,7 @@ if(!empty($_GET['action'])){
 					
 			}	
 	}else{
-		$control->cargarMensajesReserva($resultado,"cerrado");
+		$control->cargarMensajesReserva($resultado,"botones");
 	}
 
 }elseif(isset($_SESSION)){
@@ -112,15 +112,14 @@ if(!empty($_GET['action'])){
 		}
 	}else{
 			session_destroy();
-			$control->cargarPrincipal('cerrado');
+			$control->cargarPrincipal('botones');
 		}
 
 }else{
 	
-	$control->cargarPrincipal('cerrado');
+	$control->cargarPrincipal('botones');
 
 }
 
 
 ?>
-
