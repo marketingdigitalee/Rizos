@@ -18,7 +18,7 @@ include 'libreria/ADOdb/adodb.inc.php';
 
 	foreach ($result as $row) {
 	 									
-			echo '<option value="'.$row['codAlmacen'].'">'.$row['nomAlmacen'].'</option>';
+			echo '<option value="'.$row['codAlmacen'].'">'.$row['nomCiudad']. ' - '.$row['nomAlmacen'].'</option>';
 																					
 		}
 
