@@ -2,7 +2,7 @@
 require 'app/Modelo/UsuarioDAO.class.php';
 require 'app/Modelo/ReservaDAO.class.php';
 require 'app/Modelo/AlmacenDAO.class.php';
-require 'app/Modelo/ConfigProductoDAO.class.php';
+require 'app/Modelo/ProductoDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'controladorVistas.php';
 
@@ -54,7 +54,8 @@ class ControladorReserva{
 		$modUsuario = new UsuarioDAO;
 		$vistaControl = new controladorVistas;
 		$funciones = new Funciones;
-		$configProducto = new ConfigProductoDAO;
+		$Producto = new ProductoDAO;
+		$Redenciones = new RedencionesDAO;
 
 		$cedula = null;
 		$codigo = null;
@@ -63,7 +64,10 @@ class ControladorReserva{
 		$arrayUsuario = null;
 		$fechaActiva = null;
 		$EstadoActual = null;
+		$arrayConfig = null;
 		$cantidadReservas = null;
+		$estadoProducto = null;
+		$estadoReserva = 1;
 
 
 			foreach ($Sesion as  $key => $value) {
@@ -116,7 +120,7 @@ class ControladorReserva{
 		/*$arrayUsuario = $modUsuario->traerUsuarioBDXCedula($cedula);*/
 
 		$arrayUsuarioNEW=null;
-		
+
 		if (!is_null($arrayUsuario) && is_array($arrayUsuario)) {
 		
 			$arrayUsuarioNEW = $funciones->arreglarArrayBD($arrayUsuario);
@@ -138,10 +142,107 @@ class ControladorReserva{
 		}while (!$modReserva->ExisteCodigoReserva($codigoReserva));
 
 			/*realiza la comprobacion de las reservas */
-		$cantidadReservas  = $configProducto->totalReservas(1);
+		
+		$arrayProductoNEW= null;
 
-		if($cantidadReservas != null){
-			var_dump($cantidadReservas);
+		$arrayProducto  = $Producto->traerProductoXid(1);
+		
+		if(!is_null($arrayProducto) && is_array($arrayProducto){
+
+			$arrayProductoNEW = $funciones->arreglarArrayBD($arrayProducto);
+			foreach ($arrayProductoNEW as $key3 => $value3) {
+					
+					if($key3 == 'estadoProducto'){
+						$estadoProducto = $value3;
+					}
+
+					if($key3 == 'stockProducto'){
+						$cantidadReservas = $value3;
+					}
+			}
+
+			if($estadoProducto == 3){
+				return 'error5';
+				exit;
+			}else{
+				$totalReservas = $modReserva->contarCantProdReserv();
+
+				$arrayTotalReserv = $funciones->arreglarArrayBD($totalReservas);
+				$totalReservas = null;
+
+				foreach ($arrayTotalReserv as $key => $value) {
+					if($key == 'total'){
+						$totalReservas = $value;
+					}
+				}
+
+				if($totalReservas>$arrayProductoNEW['cantTotalReservas']){
+					$estadoReserva = 2;
+
+				}else{
+
+					$estadoReserva = 1;
+				}
+
+				
+			}
+
+		}
+
+		$arrayRedencionNEW= null;
+		$resultadoFecha = false;
+		$arrayRedenciones = $Redenciones->traerRedencionesActivaXid(1)
+		$cantProd
+
+
+		
+
+		if(!is_null($arrayRedenciones) && is_array($arrayRedenciones){
+
+			do {
+
+				$arrayRedencionNEW = $funciones->arreglarArrayBD($arrayRedenciones);
+			
+				foreach ($arrayRedencionNEW as $key => $value) {
+					
+					if($key3 == 'cantidadProductos'){
+						$estadoProducto = $value3;
+					}
+
+					if($key3 == 'stockProducto'){
+						$cantidadReservas = $value3;
+					}
+				}
+				
+			} while ( $resultadoFecha);
+
+
+
+			if($estadoProducto == 3){
+				return 'error5';
+				exit;
+			}else{
+				$totalReservas = $modReserva->contarCantProdReserv();
+
+				$arrayTotalReserv = $funciones->arreglarArrayBD($totalReservas);
+				$totalReservas = null;
+
+				foreach ($arrayTotalReserv as $key => $value) {
+					if($key == 'total'){
+						$totalReservas = $value;
+					}
+				}
+
+				if($totalReservas>$arrayProductoNEW['cantTotalReservas']){
+					$estadoReserva = 2;
+
+				}else{
+
+					$estadoReserva = 1;
+				}
+
+				
+			}
 
 		}
 
@@ -160,11 +261,12 @@ class ControladorReserva{
 		$nuevoArray['idAlmacen']= $arrayAlmacenNEW['idAlmacen'];
 		$nuevoArray['cantReservas']= $cantidad;
 		$nuevoArray['fechaReserva']=  $date;
-		$nuevoArray['idEstadoReserva']= 1;
+		$nuevoArray['idEstadoReserva']= $estadoReserva;
 		$nuevoArray['codigoReserva']= $codigoReserva;
 		$nuevoArray['emailUsuario']= $codigoReserva;
 		$nuevoArray['idVendedor']= $idVen;
 		$nuevoArray['htmlReserva']= $html;
+		$nuevoArray['idRedenciones']= ;
 		
 
 				
@@ -172,7 +274,12 @@ class ControladorReserva{
 		
 			if ($arrayReserva){
 				$_POST['html'] = $html;
-			return 'ok';
+				if($estadoReserva == 1){
+					return 'ok';
+				}else{
+					return 'error4';
+				}
+				
 			}else{
 				return 'error1';
 

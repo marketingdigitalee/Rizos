@@ -124,5 +124,18 @@ public function insertar($tabla,$array){
 
  } 
 
+   public function contarAllColumn($nombreTabla,$nombreColumna){
+
+    $sql = "SELECT COUNT($nombreColumna) AS total FROM $nombreTabla";
+        
+    $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
+
+    $array = $db->getAll($sql);
+    
+    return $array;
+
+ } 
+
 }
 ?>

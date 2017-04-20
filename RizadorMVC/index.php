@@ -67,8 +67,16 @@ if(!empty($_GET['action'])){
 		 		$control->cargarMensajesReserva("NO SE LOGRO GUARDAR LA RESERVA","reserva");
 		 		session_destroy();
 		 		break;
+		 	case 'error4':
+		 		$control->cargarMensajesReserva("USTED ENTRA EN LISTA DE ESPERA","espera");
+		 		session_destroy();
+		 		break;
 
-		 		
+		 	case 'error5':
+		 		$control->cargarMensajesReserva("LAS RESERVAS YA HAN SIDO CERRADAS","cerrada");
+		 		session_destroy();
+		 		break;
+
 		 	default:
 		 		$control->cargarMensajesReserva("NO SE LOGRO REALIZAR LA RESERVA ERROR DESCONOCIDO INTENTELO DE NUEVO ","botones");
 		 		session_destroy();

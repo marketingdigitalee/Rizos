@@ -39,5 +39,14 @@ class ReservaDAO  {
 
 	}
 
+	public function contarCantProdReserv(){
+	$conexion = new BD();
+	
+	$resultado = $conexion->contarAllColumn('Reservas','cantReservas');
+
+	return $resultado;
+	}
+
+
 
 }
