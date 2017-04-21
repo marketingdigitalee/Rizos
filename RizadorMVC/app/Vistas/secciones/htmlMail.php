@@ -42,7 +42,7 @@
     <td class="tg-13pz">#nomAlmacen#</td>
   </tr>
   <tr>
-    <td class="tg-xibm">Ciudad Redencion</td>
+    <td class="tg-xibm">Ciudad Redención</td>
     <td class="tg-9apd">#ciudadAlmacen#</td>
   </tr>
   <tr>
@@ -58,7 +58,7 @@
     <td class="tg-13pz">#codReserva#</td>
   </tr>
   <tr>
-    <td class="tg-xibm">Córreo Electrónico</td>
+    <td class="tg-xibm">Correo Electrónico</td>
     <td class="tg-9apd">#mailUsuario#</td>
   </tr>  
 </table>

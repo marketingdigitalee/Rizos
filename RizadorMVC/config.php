@@ -115,7 +115,15 @@
 			 		break;
 			 	case 'error4':
 			 		$control->cargarMensajesLogin("no se logro cargar el id del Vendedor","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
-			 		
+			 		break;
+			 	case 'error5':
+			 		$control->cargarMensajesLogin("Este Cliente queda registrado pero NO SE CREAN RESERVAS YA CERRARON para este producto","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
+
+			 		break;
+
+			 	case 'error6':
+			 		$control->cargarMensajesLogin("Este Cliente queda en lista de Espera","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
+
 			 		break;
 
 			 	default:

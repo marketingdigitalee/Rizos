@@ -115,7 +115,7 @@ try {
 
 			}else{
 
-				$result = 'ERROR AL TRATAR DE ENCONTRAR EL ARREGLO CON INFORMACIÓN';
+				$result = 'USUARIO NO EXISTE';
 			}
 		
 

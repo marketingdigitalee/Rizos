@@ -1,7 +1,7 @@
 <?php
 require_once 'BD.class.php';
 
-class RedencionesDAO{
+class RedencionesDAO {
 
 	public function traerRedencionesXidProducto($idProducto){
 

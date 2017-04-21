@@ -3,6 +3,7 @@ require 'app/Modelo/UsuarioDAO.class.php';
 require 'app/Modelo/ReservaDAO.class.php';
 require 'app/Modelo/AlmacenDAO.class.php';
 require 'app/Modelo/ProductoDAO.class.php';
+require 'app/Modelo/RedencionesDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'controladorVistas.php';
 
@@ -145,11 +146,12 @@ class ControladorReserva{
 		
 		$arrayProductoNEW= null;
 
-		$arrayProducto  = $Producto->traerProductoXid(1);
+		$arrayProducto = $Producto->traerProductoXid(1);
 		
-		if(!is_null($arrayProducto) && is_array($arrayProducto){
+		if(!is_null($arrayProducto) && is_array($arrayProducto)){
 
 			$arrayProductoNEW = $funciones->arreglarArrayBD($arrayProducto);
+
 			foreach ($arrayProductoNEW as $key3 => $value3) {
 					
 					if($key3 == 'estadoProducto'){
@@ -176,7 +178,7 @@ class ControladorReserva{
 					}
 				}
 
-				if($totalReservas>$arrayProductoNEW['cantTotalReservas']){
+				if($totalReservas == $arrayProductoNEW['cantTotalReservas']){
 					$estadoReserva = 2;
 
 				}else{
@@ -191,16 +193,16 @@ class ControladorReserva{
 
 		$arrayRedencionNEW= null;
 		$resultadoFecha = false;
-		$arrayRedenciones = $Redenciones->traerRedencionesActivaXid(1)
+		$arrayRedenciones = $Redenciones->traerRedencionesActivaXid(1);
 		$cantProd = null;
 		$fechaRedencion = null;
-
+		$idRedencion = null;
 		
 
-		if(!is_null($arrayRedenciones) && is_array($arrayRedenciones){
+		if(!is_null($arrayRedenciones) && is_array($arrayRedenciones)){
 
 			do {
-				$idRedencion = null;
+				
 				$ordemanientoActual = null;
 
 				$arrayRedencionNEW = $funciones->arreglarArrayBD($arrayRedenciones);
@@ -225,64 +227,44 @@ class ControladorReserva{
 				}
 				$cantidadActual = $modReserva->contarCantProdReserv();
 				
-				if($cantidadActual > $cantProd){
+				if($cantidadActual < $cantProd){
+					var_dump('entro aqui');
+					var_dump($cantProd);
+					var_dump($cantidadActual);
 					$Redenciones->cambiarEstadoRendencion($idRedencion, 0);
 
 					$allRedenciones = $Redenciones->traerRedencionesXidProducto(1);
 					$allRedenciones = $funciones->arreglarArrayBD($allRedenciones);
 					$idNuevaRedencion =null;
+					$cont = $ordemanientoActual;
+					$msm = 'error6';
 
-					for ($i=0; $i < count($allRedenciones); $i++) { 
-						if($allRedenciones +1 == $allRedenciones['ordenamientoRedenciones']){
-							$idNuevaRedencion = $allRedenciones['idRedenciones'];
-							$Redenciones->cambiarEstadoRendencion($idRedencion, 1);
+					foreach ($allRedenciones as $key => $value) {
+						foreach ($value as $key1 => $value1) {
+							if($key1 == 'ordenamientoRedenciones'){
+								if($cont + 1 == $value1){
+
+									$idNuevaRedencion = $value['idRedenciones'];
+									$Redenciones->cambiarEstadoRendencion($idRedencion, 1);
+									$msm = 'ok';
+									break;
+								}
+							}
+								
+							
 						}
 
-
+						$cont = $cont +1;
 					}
 
-					$nuevaFechaRedencion = $Redenciones
-
-					;
-						}
-
-
-
-
-				}else{
 					$resultadoFecha = true;
-				}
+				
+				}else{
+					$resultadoFecha = false;
 
+				}
 				
 			} while ( $resultadoFecha);
-
-
-
-			if($estadoProducto == 3){
-				return 'error5';
-				exit;
-			}else{
-				$totalReservas = $modReserva->contarCantProdReserv();
-
-				$arrayTotalReserv = $funciones->arreglarArrayBD($totalReservas);
-				$totalReservas = null;
-
-				foreach ($arrayTotalReserv as $key => $value) {
-					if($key == 'total'){
-						$totalReservas = $value;
-					}
-				}
-
-				if($totalReservas>$arrayProductoNEW['cantTotalReservas']){
-					$estadoReserva = 2;
-
-				}else{
-
-					$estadoReserva = 1;
-				}
-
-				
-			}
 
 		}
 
@@ -290,7 +272,7 @@ class ControladorReserva{
 		$nombreMail = $arrayUsuarioNEW['nomUsuario'].' '.$arrayUsuarioNEW['apellUsuario'];
 		$nomAlmacen = $arrayAlmacenNEW['nomAlmacen'];
 		$ciudadAlmacen = $arrayAlmacenNEW['nomCiudad'];
-		$fechaRedencion ='12/03/2017';
+		$fechaRedencion = $fechaRedencion;
 		$mailUsuario = $arrayUsuarioNEW['emailUsuario'];
 
 		$html = $vistaControl->crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fechaRedencion,$codigoReserva, $mailUsuario);
@@ -306,7 +288,7 @@ class ControladorReserva{
 		$nuevoArray['emailUsuario']= $codigoReserva;
 		$nuevoArray['idVendedor']= $idVen;
 		$nuevoArray['htmlReserva']= $html;
-		$nuevoArray['idRedenciones']= ;
+		$nuevoArray['idRedenciones']= $idRedencion;
 		
 
 				
