@@ -192,27 +192,67 @@ class ControladorReserva{
 		$arrayRedencionNEW= null;
 		$resultadoFecha = false;
 		$arrayRedenciones = $Redenciones->traerRedencionesActivaXid(1)
-		$cantProd
-
+		$cantProd = null;
+		$fechaRedencion = null;
 
 		
 
 		if(!is_null($arrayRedenciones) && is_array($arrayRedenciones){
 
 			do {
+				$idRedencion = null;
+				$ordemanientoActual = null;
 
 				$arrayRedencionNEW = $funciones->arreglarArrayBD($arrayRedenciones);
 			
 				foreach ($arrayRedencionNEW as $key => $value) {
 					
-					if($key3 == 'cantidadProductos'){
-						$estadoProducto = $value3;
+					if($key == 'cantidadProductos'){
+						$cantProd = $value;
 					}
 
-					if($key3 == 'stockProducto'){
-						$cantidadReservas = $value3;
+					if($key == 'fechaRedencion'){
+						$fechaRedencion = $value;
+					}
+
+					if($key == 'idRedenciones'){
+						$idRedencion = $value;
+					}
+
+					if($key == 'ordenamientoRedenciones'){
+						$ordemanientoActual = $value;
 					}
 				}
+				$cantidadActual = $modReserva->contarCantProdReserv();
+				
+				if($cantidadActual > $cantProd){
+					$Redenciones->cambiarEstadoRendencion($idRedencion, 0);
+
+					$allRedenciones = $Redenciones->traerRedencionesXidProducto(1);
+					$allRedenciones = $funciones->arreglarArrayBD($allRedenciones);
+					$idNuevaRedencion =null;
+
+					for ($i=0; $i < count($allRedenciones); $i++) { 
+						if($allRedenciones +1 == $allRedenciones['ordenamientoRedenciones']){
+							$idNuevaRedencion = $allRedenciones['idRedenciones'];
+							$Redenciones->cambiarEstadoRendencion($idRedencion, 1);
+						}
+
+
+					}
+
+					$nuevaFechaRedencion = $Redenciones
+
+					;
+						}
+
+
+
+
+				}else{
+					$resultadoFecha = true;
+				}
+
 				
 			} while ( $resultadoFecha);
 

@@ -3,7 +3,7 @@ require_once 'BD.class.php';
 
 class RedencionesDAO{
 
-	public function traerRedencionesXid($idProducto){
+	public function traerRedencionesXidProducto($idProducto){
 
 			$conexion = new BD();
 
@@ -24,6 +24,21 @@ class RedencionesDAO{
 			return $array;
 
 	}
+
+	public function cambiarEstadoRendencion($idRedencion, $estado){
+
+		$conexion = new BD();
+		$sql = "UPDATE Redenciones SET activada ='$estado' WHERE idRedenciones ='$idRedencion'";
+
+			$array = $conexion->consultaSQL($sql);
+
+			return $array;
+
+	}
+
+
+
+
 
 
 }

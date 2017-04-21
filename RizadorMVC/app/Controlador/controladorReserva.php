@@ -2,7 +2,7 @@
 require 'app/Modelo/UsuarioDAO.class.php';
 require 'app/Modelo/ReservaDAO.class.php';
 require 'app/Modelo/AlmacenDAO.class.php';
-require 'app/Modelo/ConfigProductoDAO.class.php';
+require 'app/Modelo/ProductoDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'app/Controlador/libreria/recaptcha/recaptchalib.php';
 require_once 'controladorVistas.php';
