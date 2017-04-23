@@ -124,9 +124,9 @@ public function insertar($tabla,$array){
 
  } 
 
-   public function contarAllColumn($nombreTabla,$nombreColumna){
+   public function SumarAllColumn($nombreTabla,$nombreColumna){
 
-    $sql = "SELECT COUNT($nombreColumna) AS total FROM $nombreTabla";
+    $sql = "SELECT SUM($nombreColumna) AS total FROM $nombreTabla";
         
     $db = $this->conectar();
     $db->SetFetchMode(ADODB_FETCH_ASSOC); 

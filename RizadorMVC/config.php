@@ -145,9 +145,11 @@
 
 			 			$control->cargarMensajesLogin('VistasConfig/headerUser','VistasConfig/reservaVendedor', $_SESSION['htmlUser'],'-');
 			 			break;
-						
+					case 'error1':
+						$control->cargarMensajesLogin("Los campos no pueden estar vacios",'VistasConfig/botonesVendedor', $_SESSION['htmlUser'],'-');
+						break;
 					default:
-						$control->cargarMensajesLogin($resultado,"VistasConfig/formVendedor");
+						$control->cargarMensajesLogin($resultado,"VistasConfig/formVendedor", $_SESSION['htmlUser'],'-');
 						break;
 						
 				}	

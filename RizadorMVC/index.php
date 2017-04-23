@@ -16,7 +16,7 @@ if(!empty($_GET['action'])){
 	elseif($_GET['action'] == 'registrado') {
 		$control->cargarPrincipal("registrado");	
 	}else{
-		$control->cargarPrincipal('botones');
+		$control->cargarPrincipal('cerrado');
 	}
 /*----------------------LLENADO DE FORMULARIO------------------*/
 }elseif(!empty($_POST)){
@@ -102,30 +102,30 @@ if(!empty($_GET['action'])){
 					
 			}	
 	}else{
-		$control->cargarMensajesReserva($resultado,"botones");
+		$control->cargarMensajesReserva($resultado,"cerrado");
 	}
 
 }elseif(isset($_SESSION)){
 
 	if (isset($_SESSION['idUserd'])) {
 		if (isset($_SESSION['dataUsuario']) && empty($_SESSION['dataUsuario'])) {
-			$control->cargarMensajesReserva("INTENTELO NUEVAMENTE","botones");
+			$control->cargarMensajesReserva("INTENTELO NUEVAMENTE","cerrado");
 			session_destroy();
 		}elseif(isset($_SESSION['dataUsuario']) && !empty($_SESSION['dataUsuario']) && is_array($_SESSION['dataUsuario'])) {
 			
 			$control->cargarPrincipal('reserva');
 		}else{
 			session_destroy();
-			$control->cargarPrincipal('botones');
+			$control->cargarPrincipal('cerrado');
 		}
 	}else{
 			session_destroy();
-			$control->cargarPrincipal('botones');
+			$control->cargarPrincipal('cerrado');
 		}
 
 }else{
 	
-	$control->cargarPrincipal('botones');
+	$control->cargarPrincipal('cerrado');
 
 }
 

@@ -42,7 +42,7 @@ class ReservaDAO  {
 	public function contarCantProdReserv(){
 	$conexion = new BD();
 	
-	$resultado = $conexion->contarAllColumn('Reservas','cantReservas');
+	$resultado = $conexion->SumarAllColumn('Reservas','cantReservas');
 
 	return $resultado;
 	}

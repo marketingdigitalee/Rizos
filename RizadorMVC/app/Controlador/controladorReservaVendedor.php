@@ -6,6 +6,7 @@ require 'app/Modelo/ProductoDAO.class.php';
 require 'app/Modelo/RedencionesDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'controladorVistas.php';
+require_once 'app/Modelo/LogEventosDAO.class.php';
 
 
 class ControladorReserva{
@@ -57,6 +58,7 @@ class ControladorReserva{
 		$funciones = new Funciones;
 		$Producto = new ProductoDAO;
 		$Redenciones = new RedencionesDAO;
+		$logEventos = new LogEventosDAO;
 
 		$cedula = null;
 		$codigo = null;
@@ -177,8 +179,8 @@ class ControladorReserva{
 						$totalReservas = $value;
 					}
 				}
-
-				if($totalReservas == $arrayProductoNEW['cantTotalReservas']){
+				
+				if($totalReservas == $arrayProductoNEW['stockProducto']){
 					$estadoReserva = 2;
 
 				}else{
@@ -192,17 +194,16 @@ class ControladorReserva{
 		}
 
 		$arrayRedencionNEW= null;
-		$resultadoFecha = false;
+		$resultadoFecha = true;
 		$arrayRedenciones = $Redenciones->traerRedencionesActivaXid(1);
 		$cantProd = null;
 		$fechaRedencion = null;
 		$idRedencion = null;
 		
 
-		if(!is_null($arrayRedenciones) && is_array($arrayRedenciones)){
+		if(!empty($arrayRedenciones) && is_array($arrayRedenciones)){
 
 			do {
-				
 				$ordemanientoActual = null;
 
 				$arrayRedencionNEW = $funciones->arreglarArrayBD($arrayRedenciones);
@@ -226,45 +227,57 @@ class ControladorReserva{
 					}
 				}
 				$cantidadActual = $modReserva->contarCantProdReserv();
-				
-				if($cantidadActual < $cantProd){
-					var_dump('entro aqui');
-					var_dump($cantProd);
-					var_dump($cantidadActual);
-					$Redenciones->cambiarEstadoRendencion($idRedencion, 0);
+				$cantidadActual = $funciones->arreglarArrayBD($cantidadActual);
+				$cantActualEntera = (int) $cantidadActual['total'];
+				$cantProdEntera = (int) $cantProd;
+				$idRedencion = (int) $idRedencion;
 
+				if($cantActualEntera > $cantProdEntera){
+					$Redenciones->cambiarEstadoRendencion('1', '0');
+					$Redenciones->cambiarEstadoRendencion('2', '1');
+					$logEventos->CrearLog("Se ha cambiado la fecha de redencion de forma automatica ",$arrayUsuarioNEW['idUsuario']);
+					
+/*
 					$allRedenciones = $Redenciones->traerRedencionesXidProducto(1);
-					$allRedenciones = $funciones->arreglarArrayBD($allRedenciones);
 					$idNuevaRedencion =null;
-					$cont = $ordemanientoActual;
+					$cont = (int) $ordemanientoActual;
 					$msm = 'error6';
+					var_dump($allRedenciones);
 
 					foreach ($allRedenciones as $key => $value) {
 						foreach ($value as $key1 => $value1) {
-							if($key1 == 'ordenamientoRedenciones'){
+							if($key1 == 'ordenRedenciones'){
 								if($cont + 1 == $value1){
 
 									$idNuevaRedencion = $value['idRedenciones'];
+									var_dump($idNuevaRedencion);
 									$Redenciones->cambiarEstadoRendencion($idRedencion, 1);
+									$logEventos->CrearLog("Se ha cambiado la fecha de redencion de forma automatica ",$arrayUsuarioNEW['idUsuario']);
+									//$Redenciones->cambiarEstadoRendencion($idRedencion, 0);
 									$msm = 'ok';
 									break;
 								}
 							}
-								
 							
 						}
 
-						$cont = $cont +1;
+						if($msn == 'ok'){
+								break;
+						}else{
+							$cont = $cont +1;
+						}	
+
+						
 					}
 
-					$resultadoFecha = true;
+//					*/
 				
 				}else{
 					$resultadoFecha = false;
 
 				}
 				
-			} while ( $resultadoFecha);
+			} while ($resultadoFecha);
 
 		}
 
@@ -289,6 +302,8 @@ class ControladorReserva{
 		$nuevoArray['idVendedor']= $idVen;
 		$nuevoArray['htmlReserva']= $html;
 		$nuevoArray['idRedenciones']= $idRedencion;
+		$nuevoArray['envioNotificacion']= 0;
+
 		
 
 				
@@ -324,7 +339,8 @@ class ControladorReserva{
 		}
 		
 		if (is_null($cedulaUsuario) || empty($cedulaUsuario)) {
-			var_dump("error cedula");
+			return 'error1';		
+			exit;
 		}
 
 		foreach ($SESSION as $key => $value) {
@@ -334,13 +350,14 @@ class ControladorReserva{
 		}
 
 		if (is_null($idUsuario) || empty($idUsuario)) {
-			var_dump("error Id usuario debo salir por y volver a logearme");
+			return "error Id usuario debo salir por y volver a logearme";
 		}
 
 
 		$array = $modUsuario->traerUsuarioBDXCedula($cedulaUsuario);
+
 			
-		if(!is_array($array)){
+		if(!is_array($array) || empty($array)){
 			$resultado = "NO SE ENCUENTRA REGISTRADO POR FAVOR REGISTRESE";		
 		}else{
 			$_SESSION['dataUsuario'] = $array;

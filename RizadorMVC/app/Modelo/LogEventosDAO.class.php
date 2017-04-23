@@ -6,7 +6,7 @@ require_once 'funciones.php';
 
 class LogEventosDAO  {
 
-	function CrearLog($mensaje,$idUser){
+	public function CrearLog($mensaje,$idUser){
 		$conexion = new BD();
 		$date = date('Y-m-d H:i:s');
 		date_default_timezone_set('America/Bogota');
