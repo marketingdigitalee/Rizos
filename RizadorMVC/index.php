@@ -1,10 +1,12 @@
 <?php
 	require_once 'app/Controlador/controladorVistas.php';
 	require_once 'app/Controlador/controladorReserva.php';
+	require_once 'app/Modelo/funciones.php';
  	include_once("analyticstracking.php");
 	
 	$control = new controladorVistas();
 	$registro = new ControladorReserva();
+	$funciones = new Funciones;
 session_start();
 
 if(!empty($_GET['action'])){
@@ -16,7 +18,7 @@ if(!empty($_GET['action'])){
 	elseif($_GET['action'] == 'registrado') {
 		$control->cargarPrincipal("registrado");	
 	}else{
-		$control->cargarPrincipal('cerrado');
+		$control->cargarPrincipal('botones');
 	}
 /*----------------------LLENADO DE FORMULARIO------------------*/
 }elseif(!empty($_POST)){
@@ -28,7 +30,7 @@ if(!empty($_GET['action'])){
 		  
 		 switch ($resultado) {
 		 	case 'ok':
-		 		$control->cargarPrincipal('reserva');
+		 		$control->cargarMensajesReserva('SELECCIONE EL ALMACEN Y LA CANTIDAD','reserva');
 		 		break;
 		 	case 'error1':
 		 		$control->cargarMensajesReserva("NO SE LOGRO GUARDAR EL REGISTRO","botones");
@@ -60,6 +62,7 @@ if(!empty($_GET['action'])){
 		switch ($resultado) {
 			case 'ok':
 		 		$control->cargarMensajesReserva("Felicitacion Reserva registrada Correctamente","botones",$_POST['html']);
+		 		//$respu = $funciones->envioMail($_POST,$_SESSION);
 		 		
 		 		break;	
 
@@ -93,7 +96,7 @@ if(!empty($_GET['action'])){
 
 		switch ($resultado) {
 			case 'ok':
-				$control->cargarPrincipal('reserva');
+				$control->cargarMensajesReserva('SELECCIONE EL ALMACEN Y LA CANTIDAD','reserva');
 		 		break;
 
 			default:
@@ -102,30 +105,30 @@ if(!empty($_GET['action'])){
 					
 			}	
 	}else{
-		$control->cargarMensajesReserva($resultado,"cerrado");
+		$control->cargarMensajesReserva($resultado,"botones");
 	}
 
 }elseif(isset($_SESSION)){
 
 	if (isset($_SESSION['idUserd'])) {
 		if (isset($_SESSION['dataUsuario']) && empty($_SESSION['dataUsuario'])) {
-			$control->cargarMensajesReserva("INTENTELO NUEVAMENTE","cerrado");
+			$control->cargarMensajesReserva("INTENTELO NUEVAMENTE","botones");
 			session_destroy();
 		}elseif(isset($_SESSION['dataUsuario']) && !empty($_SESSION['dataUsuario']) && is_array($_SESSION['dataUsuario'])) {
 			
 			$control->cargarPrincipal('reserva');
 		}else{
 			session_destroy();
-			$control->cargarPrincipal('cerrado');
+			$control->cargarPrincipal('botones');
 		}
 	}else{
 			session_destroy();
-			$control->cargarPrincipal('cerrado');
+			$control->cargarPrincipal('botones');
 		}
 
 }else{
 	
-	$control->cargarPrincipal('cerrado');
+	$control->cargarPrincipal('botones');
 
 }
 

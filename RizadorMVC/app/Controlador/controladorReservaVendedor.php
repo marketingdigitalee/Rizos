@@ -9,6 +9,7 @@ require_once 'controladorVistas.php';
 require_once 'app/Modelo/LogEventosDAO.class.php';
 
 
+
 class ControladorReserva{
 
 	function agregarRegistro($POST){
@@ -236,41 +237,7 @@ class ControladorReserva{
 					$Redenciones->cambiarEstadoRendencion('1', '0');
 					$Redenciones->cambiarEstadoRendencion('2', '1');
 					$logEventos->CrearLog("Se ha cambiado la fecha de redencion de forma automatica ",$arrayUsuarioNEW['idUsuario']);
-					
-/*
-					$allRedenciones = $Redenciones->traerRedencionesXidProducto(1);
-					$idNuevaRedencion =null;
-					$cont = (int) $ordemanientoActual;
-					$msm = 'error6';
-					var_dump($allRedenciones);
-
-					foreach ($allRedenciones as $key => $value) {
-						foreach ($value as $key1 => $value1) {
-							if($key1 == 'ordenRedenciones'){
-								if($cont + 1 == $value1){
-
-									$idNuevaRedencion = $value['idRedenciones'];
-									var_dump($idNuevaRedencion);
-									$Redenciones->cambiarEstadoRendencion($idRedencion, 1);
-									$logEventos->CrearLog("Se ha cambiado la fecha de redencion de forma automatica ",$arrayUsuarioNEW['idUsuario']);
-									//$Redenciones->cambiarEstadoRendencion($idRedencion, 0);
-									$msm = 'ok';
-									break;
-								}
-							}
-							
-						}
-
-						if($msn == 'ok'){
-								break;
-						}else{
-							$cont = $cont +1;
-						}	
-
-						
-					}
-
-//					*/
+	
 				
 				}else{
 					$resultadoFecha = false;
@@ -304,7 +271,7 @@ class ControladorReserva{
 		$nuevoArray['idRedenciones']= $idRedencion;
 		$nuevoArray['envioNotificacion']= 0;
 
-		
+		$arregloMail = null;
 
 				
 		$arrayReserva = $modReserva->agregarReservaBD($nuevoArray);
@@ -312,7 +279,42 @@ class ControladorReserva{
 			if ($arrayReserva){
 				$_POST['html'] = $html;
 				if($estadoReserva == 1){
-					return 'ok';
+					$arregloMail['CustomFields_2_22']= $arrayUsuarioNEW['nomUsuario']." ".$arrayUsuarioNEW['apellUsuario'];
+					$arregloMail['CustomFields_61_22']= $nomAlmacen;
+					$arregloMail['CustomFields_8_22']= $ciudadAlmacen;
+					$arregloMail['CustomFields_62_22']= $cantidad;
+					$arregloMail['CustomFields_65_22']= $fechaRedencion;
+					$arregloMail['CustomFields_64_22']= $codigoReserva;
+					$arregloMail['CustomFields_3_22']= $nombreMail;
+
+					$respu = $funciones->envioMail($arregloMail);
+
+			 		if($respu){
+			 			$arregloReserva2 = $modReserva->TraerReservaXCodigo($codigoReserva);
+			 			$valorid = null;
+			 			$arregloReserva2 = $funciones->arreglarArrayBD($arregloReserva2);
+			 			var_dump($arregloReserva2);
+			 			foreach ($arregloReserva2 as $key => $value) {
+			 				if($key == 'idReservas'){
+			 					$valorid = 	$value;
+			 					break;
+			 				}
+			 			}
+			 			$resulCambio = $modReserva->cambiarColumnaEnvioCorreo($valorid,1);
+			 			if($resulCambio ){
+			 				return 'ok';
+			 			}else{
+			 				$logEventos->CrearLog("No cambio el estado del envio de la reserva numero -".$valorid. " -Pero si envio el correo electronico",$arrayUsuarioNEW['idUsuario']);
+			 				return 'error8';
+			 			}
+
+			 			
+			 		}else{
+			 			return 'error7';
+			 		}
+
+					
+
 				}else{
 					return 'error4';
 				}

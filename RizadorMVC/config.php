@@ -5,9 +5,11 @@
 
 
 
+
 	$control = new controladorVistas;
 	$config = new ControladorConfig;
 	$registro = new ControladorReserva;
+	$funciones = new Funciones;
 
 	session_start();
 
@@ -100,10 +102,12 @@
 			switch ($resultado) {
 			 	case 'error1':
 			 		$control->cargarMensajesLogin("NO SE LOGRO GUARDAR LA RESERVA","VistasConfig/reservaVendedor", $_SESSION['htmlUser'],'-');
+
 			 		break;
 
 			 	case 'ok':
 			 		$control->cargarMensajesLogin("Felicitacion Reserva registrada Correctamente","VistasConfig/botonesVendedor",$_SESSION['htmlUser'], $_POST['html']);
+
 			 		break;	
 			 	case 'erro2':
 			 		$control->cargarMensajesLogin("no se logro cargar el Almacen RESERVA FALLIDA ","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
@@ -123,6 +127,14 @@
 
 			 	case 'error6':
 			 		$control->cargarMensajesLogin("Este Cliente queda en lista de Espera","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
+
+			 		break;
+			 	case 'error7':
+			 		$control->cargarMensajesLogin("Cargo correctamente la Reserva, pero no se envio el correo","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
+
+			 		break;
+			 	case 'error8':
+			 		$control->cargarMensajesLogin("Cargo correctamente la Reserva, se envió el correo correctamente","VistasConfig/botonesVendedor", $_SESSION['htmlUser'],'-');
 
 			 		break;
 

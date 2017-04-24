@@ -3,9 +3,11 @@ require 'app/Modelo/UsuarioDAO.class.php';
 require 'app/Modelo/ReservaDAO.class.php';
 require 'app/Modelo/AlmacenDAO.class.php';
 require 'app/Modelo/ProductoDAO.class.php';
+require 'app/Modelo/RedencionesDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'app/Controlador/libreria/recaptcha/recaptchalib.php';
 require_once 'controladorVistas.php';
+require_once 'app/Modelo/LogEventosDAO.class.php';
 
 
 class ControladorReserva{
@@ -87,7 +89,9 @@ try {
 	$modUsuario = new UsuarioDAO;
 	$vistaControl = new controladorVistas;
 	$funciones = new Funciones;
-	$configProducto = new ConfigProductoDAO;
+	$Producto = new ProductoDAO;
+	$Redenciones = new RedencionesDAO;
+	$logEventos = new LogEventosDAO;
 
 	$cedula = null;
 	$codigo = null;
@@ -96,37 +100,41 @@ try {
 	$arrayUsuario = null;
 	$fechaActiva = null;
 	$EstadoActual = null;
+	$arrayConfig = null;
 	$cantidadReservas = null;
+	$estadoProducto = null;
+	$estadoReserva = 1;
 
 
-		foreach ($Sesion as  $key => $value) {
-				if($key == 'idUser'){
-					$idVen = $value;
-				}if($key == 'dataUsuario'){
-					$arrayUsuario = $value;
-				}
-
+	foreach ($Sesion as  $key => $value) {
+		if($key == 'idUser'){
+			$idVen = $value;
+		}
+		if($key == 'dataUsuario'){
+			$arrayUsuario = $value;
 		}
 
+	}
 
-		foreach ($POST as  $key2 => $value2) {
-				if($key2 == 'cedula'){
-					$cedula = $value2;
-				}
-			
-		}
 
-		foreach ($POST as  $key2 => $value2) {
-				if($key2 == 'nomAlmacen'){
-					$codigo = $value2;
-				}
-			
+	foreach ($POST as  $key2 => $value2) {
+		if($key2 == 'cedula'){
+			$cedula = $value2;
 		}
-		foreach ($POST as $key3 => $value3) {
-				if($key3 == 'cantReserva'){
-					$cantidad = $value3;
-				}
+				
+	}
+
+	foreach ($POST as  $key2 => $value2) {
+		if($key2 == 'nomAlmacen'){
+			$codigo = $value2;
 		}
+				
+	}
+	foreach ($POST as $key3 => $value3) {
+		if($key3 == 'cantReserva'){
+			$cantidad = $value3;
+		}
+	}
 
 
 	date_default_timezone_set('America/Bogota');
@@ -170,13 +178,108 @@ try {
 		$codigoReserva = $funciones->generarCodigo(6);
 	}while (!$modReserva->ExisteCodigoReserva($codigoReserva));
 
-	/*realiza la comprobacion de las reservas */
-	$cantidadReservas  = $configProducto->totalReservas(1);
+			/*realiza la comprobacion de las reservas */
+		
+		$arrayProductoNEW= null;
 
-	if($cantidadReservas != null){
-		var_dump($cantidadReservas);
+		$arrayProducto = $Producto->traerProductoXid(1);
+		
+		if(!is_null($arrayProducto) && is_array($arrayProducto)){
 
-	}
+			$arrayProductoNEW = $funciones->arreglarArrayBD($arrayProducto);
+
+			foreach ($arrayProductoNEW as $key3 => $value3) {
+					
+					if($key3 == 'estadoProducto'){
+						$estadoProducto = $value3;
+					}
+
+					if($key3 == 'stockProducto'){
+						$cantidadReservas = $value3;
+					}
+			}
+
+			if($estadoProducto == 3){
+				return 'error5';
+				exit;
+			}else{
+				$totalReservas = $modReserva->contarCantProdReserv();
+
+				$arrayTotalReserv = $funciones->arreglarArrayBD($totalReservas);
+				$totalReservas = null;
+
+				foreach ($arrayTotalReserv as $key => $value) {
+					if($key == 'total'){
+						$totalReservas = $value;
+					}
+				}
+				
+				if($totalReservas == $arrayProductoNEW['stockProducto']){
+					$estadoReserva = 2;
+
+				}else{
+
+					$estadoReserva = 1;
+				}
+
+				
+			}
+
+		}
+
+		$arrayRedencionNEW= null;
+		$resultadoFecha = true;
+		$arrayRedenciones = $Redenciones->traerRedencionesActivaXid(1);
+		$cantProd = null;
+		$fechaRedencion = null;
+		$idRedencion = null;
+		
+
+		if(!empty($arrayRedenciones) && is_array($arrayRedenciones)){
+
+			do {
+				$ordemanientoActual = null;
+
+				$arrayRedencionNEW = $funciones->arreglarArrayBD($arrayRedenciones);
+			
+				foreach ($arrayRedencionNEW as $key => $value) {
+					
+					if($key == 'cantidadProductos'){
+						$cantProd = $value;
+					}
+
+					if($key == 'fechaRedencion'){
+						$fechaRedencion = $value;
+					}
+
+					if($key == 'idRedenciones'){
+						$idRedencion = $value;
+					}
+
+					if($key == 'ordenamientoRedenciones'){
+						$ordemanientoActual = $value;
+					}
+				}
+				$cantidadActual = $modReserva->contarCantProdReserv();
+				$cantidadActual = $funciones->arreglarArrayBD($cantidadActual);
+				$cantActualEntera = (int) $cantidadActual['total'];
+				$cantProdEntera = (int) $cantProd;
+				$idRedencion = (int) $idRedencion;
+
+				if($cantActualEntera > $cantProdEntera){
+					$Redenciones->cambiarEstadoRendencion('1', '0');
+					$Redenciones->cambiarEstadoRendencion('2', '1');
+					$logEventos->CrearLog("Se ha cambiado la fecha de redencion de forma automatica ",$arrayUsuarioNEW['idUsuario']);
+	
+				
+				}else{
+					$resultadoFecha = false;
+
+				}
+				
+			} while ($resultadoFecha);
+
+		}
 
 
 	$nombreMail = $arrayUsuarioNEW['nomUsuario'].' '.$arrayUsuarioNEW['apellUsuario'];
@@ -198,20 +301,26 @@ try {
 	$nuevoArray['emailUsuario']= $codigoReserva;
 	$nuevoArray['idVendedor']= $idVen;
 	$nuevoArray['htmlReserva']= $html;
+	$nuevoArray['idRedenciones']= $idRedencion;
+	$nuevoArray['envioNotificacion']= 0;
 	
 
 			
 	$arrayReserva = $modReserva->agregarReservaBD($nuevoArray);
 	
-		if ($arrayReserva){
-			$_POST['html'] = $html;
-		return 'ok';
+	if ($arrayReserva){
+		$_POST['html'] = $html;
+		if($estadoReserva == 1){
+			return 'ok';
 		}else{
-			return 'error1';
-
+			return 'error4';
 		}
+				
+	}else{
+		return 'error1';
+	}
 
-} catch (Exception $e) {
+}catch (Exception $e) {
 	return $e->getMessage();
 }
 
@@ -247,9 +356,11 @@ try {
 						break;
 				}	
 			}
+
 			if (is_null($cedulaUsuario) || empty($cedulaUsuario)) {
-				var_dump("error cedula");
-			}
+					return 'error1';		
+					exit;
+				}
 
 
 			foreach ($SESSION as $key => $value) {
@@ -257,12 +368,6 @@ try {
 						$idUsuario = $value;
 				}	
 			}
-
-		/*	if (is_null($idUsuario) || empty($idUsuario)) {
-				var_dump($idUsuario);
-			}
-
-*/
 
 			$array = $modUsuario->traerUsuarioBDXCedula($cedulaUsuario);
 
@@ -279,11 +384,11 @@ try {
 			
 	
 		}else{
-			//error 2
+			return 'Valide todos los campos';
 
 		}
 	}else{
-	//error 3
+	return 'Compruebe que no es un robot';
 
 	}
 

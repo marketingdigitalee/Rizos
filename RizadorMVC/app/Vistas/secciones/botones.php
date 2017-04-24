@@ -1,5 +1,5 @@
       <div id="divBotones">
-      <h3>Seleccione que desea</h3>
+      <h3>¡RESERVA YA!</h3>
         <div id="contenedorBotones1">
         	<a href="index.php?action=nuevo#ReservaYA" id="boton1">
         		<label for="btnNuevaReserva"></label>

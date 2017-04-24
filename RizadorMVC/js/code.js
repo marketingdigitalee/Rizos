@@ -5,6 +5,15 @@ var speed = "500";
 $(document).ready(function(){
  
 
+ function sendForm()
+ {
+
+
+
+
+    
+ }
+
 // Question handler
   $('li.q').on(action, function(){
 

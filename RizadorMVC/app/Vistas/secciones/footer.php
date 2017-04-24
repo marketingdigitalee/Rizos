@@ -20,7 +20,7 @@
         <!-- Social -->
   <div id="redes">
       <a href="https://www.instagram.com/larevistavea/" target="_blank"><img class="redesBox" src="img/insta.png" alt=""></a>
-      <a href="https://www.facebook.com/RevistaVEA"><img class="redesBox" src="img/face.png" alt=""></a>
-      <a href="https://twitter.com/larevistavea"><img class="redesBox"  src="img/twitter.png" alt=""></a>     
+      <a href="https://www.facebook.com/RevistaVEA" target="_blank"><img class="redesBox" src="img/face.png" alt=""></a>
+      <a href="https://twitter.com/larevistavea" target="_blank"><img class="redesBox"  src="img/twitter.png" alt=""></a>     
     </div>
   </div>

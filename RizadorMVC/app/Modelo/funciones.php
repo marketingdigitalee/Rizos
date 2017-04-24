@@ -4,7 +4,7 @@
  define('SECRET_KEY','Comunican2017');
  define('SECRET_IV', '201703');
 
-class Funciones {
+ class Funciones {
 
 
     public static function encriptar ($clave) {
@@ -51,17 +51,6 @@ class Funciones {
 
     }
 
-/*    public  function agregarIpArreglo($array, $nombreCampo){
-        $nuevoArray = $array;
-        $ip = $this->getRealIP();
-
-        $nuevoArray["'".$nombreCampo."'"] = $ip;
-
-        return $nuevoArray;
-        var_dump($nuevoArray);
-
-    }
-*/
     public static function recuperarDatoArray($array, $nombreCampo){
         $result = null;
         
@@ -115,6 +104,24 @@ class Funciones {
         return $key;
     }
 
+    public function envioMail($arregloMail){
+
+    $url = "http://mailer.atrapium.com/form.php?form=22";  
+    $postData = $arregloMail;  
+    /*Convierte el array en el formato adecuado para cURL*/  
+    $elements = array();  
+    foreach ($postData as $name=>$value) {  
+       $elements[] = "{$name}=".urlencode($value);  
+    }  
+    $handler = curl_init();  
+    curl_setopt($handler, CURLOPT_URL, $url);  
+    curl_setopt($handler, CURLOPT_POST,true);  
+    curl_setopt($handler, CURLOPT_POSTFIELDS, $elements);  
+    $response = curl_exec ($handler);  
+    curl_close($handler);
+    return $response;  
+
+    }
 
 }
 

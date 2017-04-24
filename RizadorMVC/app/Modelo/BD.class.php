@@ -135,7 +135,21 @@ public function insertar($tabla,$array){
     
     return $array;
 
- } 
+ }
+
+
+   public function ActualizarColumn($nombreTabla,$nombreColumCambiar,$ColumCondicion,$datoCambiar,$valorCondicion){
+
+    $sql = "UPDATE '$nombreTabla' SET '$nombreColumCambiar'='$datoCambiar' WHERE '$ColumCondicion'='$valorCondicion'";
+        
+    $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
+
+    $array = $db->getAll($sql);
+    
+    return $array;
+
+ }  
 
 }
 ?>

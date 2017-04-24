@@ -22,7 +22,7 @@
 .tg .tg-pl96{font-weight:bold;font-size:18px;vertical-align:top}
 .tg .tg-9apd{font-size:18px;background-color:#c0c0c0; border-color:white; text-align:center;vertical-align:top}
 .tg .tg-13pz{font-size:18px;text-align:center;vertical-align:top}
-.tituloMail{font-size: 20px;text-align: center;vertical-align: top; width: 90%;}
+.tituloMail{font-size: 20px;text-align: center;vertical-align: top; width: 100%;}
 .contentTablaMail{width: 90%;}
 
 </style>
