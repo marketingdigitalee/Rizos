@@ -278,6 +278,9 @@ class ControladorReserva{
 		
 			if ($arrayReserva){
 				$_POST['html'] = $html;
+/*
+//Funcionalidad envio de correo automatico 
+
 				if($estadoReserva == 1){
 					$arregloMail['CustomFields_2_22']= $arrayUsuarioNEW['nomUsuario']." ".$arrayUsuarioNEW['apellUsuario'];
 					$arregloMail['CustomFields_61_22']= $nomAlmacen;
@@ -317,8 +320,8 @@ class ControladorReserva{
 
 				}else{
 					return 'error4';
-				}
-				
+				}*/
+				return 'ok';
 			}else{
 				return 'error1';
 

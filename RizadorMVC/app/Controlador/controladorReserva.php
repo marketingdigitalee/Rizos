@@ -373,7 +373,7 @@ try {
 			$array = $modUsuario->traerUsuarioBDXCedula($cedulaUsuario);
 
 			
-			if(!is_array($array)){
+			if(!is_array($array) || empty($array)){
 				$resultado = "NO SE ENCUENTRA REGISTRADO POR FAVOR REGISTRESE";		
 			
 			}else{
