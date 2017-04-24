@@ -11,7 +11,7 @@
 					<input type="text" name="apellUsuario" placeholder="Apellidos" required="true">
 					<input type="text" name="cedulaUsuario" placeholder="Cédula" required="true" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');">
 					<input type="email" name="emailUsuario" placeholder="Correo Electrónico" required="true">
-					<input type="text" name="dirUsuario" placeholder="Dirección físcia" required="true">
+					<input type="text" name="dirUsuario" placeholder="Dirección Física" required="true">
 					<label for="nomCiudad">Ciudad</label>
 					<div class="select-style">
 						<select name="nomCiudad" id="selectCiudad">
@@ -19,11 +19,11 @@
 								
 						</select>
 					</div>
-					<input name="telUsuario" maxlength="7"  onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text" placeholder="Telefono fijo" >
-					<input type="text" placeholder="Telefono Celular" maxlength="10" name="celUsuario" required="true" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');">
-					<input type="text" name="nombreRecoje" placeholder="Nombre de la persona que recoje el producto">
+					<input name="telUsuario" maxlength="7"  onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text" placeholder="Teléfono fijo" >
+					<input type="text" placeholder="Teléfono celular" maxlength="10" name="celUsuario" required="true" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');">
+					<input type="text" name="nombreRecoje" placeholder="Nombre de la persona que recoge el producto">
 					<input type="text" name="apellRecoje" placeholder="Apellidos de la persona que recoje el producto">
-					<input type="text" name="cedulaRecoje" placeholder="Nùmero de cedula de quien recoje el producto">
+					<input type="text" name="cedulaRecoje" placeholder="Número de cédula de quién recoge el producto">
 																														
 
 		 	<div class="input-field personales">
