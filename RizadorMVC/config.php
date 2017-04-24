@@ -3,9 +3,6 @@
 	require_once 'app/Controlador/controladorConfig.php';
 	require_once 'app/Controlador/controladorReservaVendedor.php';	
 
-
-
-
 	$control = new controladorVistas;
 	$config = new ControladorConfig;
 	$registro = new ControladorReserva;

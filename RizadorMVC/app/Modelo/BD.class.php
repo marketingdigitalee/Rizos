@@ -124,7 +124,21 @@ public function insertar($tabla,$array){
 
  } 
 
-   public function SumarAllColumn($nombreTabla,$nombreColumna){
+   public function sumarAllregistros($nomTabla){
+
+    $sql = "SELECT COUNT(*) AS total FROM $nomTabla";
+
+    $db = $this->conectar();
+    $db->SetFetchMode(ADODB_FETCH_ASSOC); 
+
+    $array = $db->getAll($sql);
+    
+    return $array;
+
+ }
+
+
+   public function SumarCantidadProductosReservados($nombreTabla,$nombreColumna){
 
     $sql = "SELECT SUM($nombreColumna) AS total FROM $nombreTabla";
         

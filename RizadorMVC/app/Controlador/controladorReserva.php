@@ -282,10 +282,11 @@ try {
 		}
 
 
+
 	$nombreMail = $arrayUsuarioNEW['nomUsuario'].' '.$arrayUsuarioNEW['apellUsuario'];
 	$nomAlmacen = $arrayAlmacenNEW['nomAlmacen'];
 	$ciudadAlmacen = $arrayAlmacenNEW['nomCiudad'];
-	$fechaRedencion ='12/03/2017';
+	$fechaRedencion =$fechaRedencion;
 	$mailUsuario = $arrayUsuarioNEW['emailUsuario'];
 
 	$html = $vistaControl->crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fechaRedencion,$codigoReserva, $mailUsuario);

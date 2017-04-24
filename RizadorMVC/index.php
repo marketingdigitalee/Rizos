@@ -61,7 +61,7 @@ if(!empty($_GET['action'])){
 		
 		switch ($resultado) {
 			case 'ok':
-		 		$control->cargarMensajesReserva("Felicitacion Reserva registrada Correctamente","botones",$_POST['html']);
+		 		$control->cargarMensajesReserva("Felicitaciones, Reserva Registrada Correctamente","botones",$_POST['html']);
 		 		//$respu = $funciones->envioMail($_POST,$_SESSION);
 		 		
 		 		break;	

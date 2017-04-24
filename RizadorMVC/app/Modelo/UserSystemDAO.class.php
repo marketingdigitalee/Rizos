@@ -48,6 +48,27 @@ class UserSystemDAO  {
 
 	}
 
+	function consultarNumeroProductosReservados(){
+		$conexion = new BD();
+
+
+		$resultUser = $conexion->SumarCantidadProductosReservados('Reservas', 'cantReservas');
+
+		return $resultUser;
+
+
+	}
+
+	function consultarReservasAll(){
+		$conexion = new BD();
+
+		$resultUser = $conexion->sumarAllregistros('Reservas');
+
+		return $resultUser;
+
+
+	}
+
 
 
 }

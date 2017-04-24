@@ -83,15 +83,49 @@ try {
 					
 				}
 
-				
+				if($idRoll == 1){
+					$numRegistros = null;
+					$numeroRizadores = null;
 
-				$numeroRegistros = $userSystem->consultarVentas($idUser);
-				foreach ($numeroRegistros as $key) {
-					foreach ($key as $key2 => $value2) {
-						$valor = $value2;
-					}
+					$numeroRegistros = $userSystem->consultarReservasAll();
+					$numeroRegistros = $funciones->arreglarArrayBD($numeroRegistros);
+			
+						foreach ($numeroRegistros as $key => $value) {
+							if($key == 'total'){
+								$numRegistros = $value;
+								break;
+							}
+							
+						}
+					$numeroProductosReg = $userSystem->consultarNumeroProductosReservados();
 					
+
+					$numeroProductosReg = $funciones->arreglarArrayBD($numeroProductosReg);
+
+			
+						foreach ($numeroProductosReg as $key2 => $value2) {
+							if($key2 == 'total'){
+								$numeroRizadores = $value2;
+								break;
+							}
+						}
+						
+					
+					$valor = "Cantidad de Reservas Realizadas = ".$numRegistros." Cantidad de Productos Reservados = ".$numeroRizadores;
+					
+
+
+				}else{
+
+					$numeroRegistros = $userSystem->consultarVentas($idUser);
+					foreach ($numeroRegistros as $key) {
+						foreach ($key as $key2 => $value2) {
+							$valor = $value2;
+						}
+					
+					}
 				}
+
 				
 				$htmlUser = $controlVistas->crearDataUser($nombreUser,$cedulaUser,$cargoUser,$correoUser,$valor);
 

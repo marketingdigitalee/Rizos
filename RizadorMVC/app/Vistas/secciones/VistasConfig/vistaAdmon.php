@@ -7,4 +7,5 @@
         <div class="btn">
         	<a href="config.php?action=addAlmacen">Agregar Almacenes</a>
         </div>
+
 </div>
