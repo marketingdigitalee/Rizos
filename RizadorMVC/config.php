@@ -222,6 +222,15 @@
 			session_destroy();
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/login');
 			
+		}elseif($_GET['action'] == 'verReporte1'){
+			$control->cargarMensajesLogin('Reporte Cantidad por Almacen','VistasConfig/reporte',$_SESSION['htmlUser'], '');
+
+		}elseif($_GET['action'] == 'verReporte2'){
+			$control->cargarMensajesLogin('Reporte Cantidad por Ciudad','VistasConfig/reporte2',$_SESSION['htmlUser'], '');
+
+		}elseif($_GET['action'] == 'verReporte3'){
+			$control->cargarMensajesLogin('Reporte reservas Call vs Web','VistasConfig/reporte3',$_SESSION['htmlUser'], '');
+
 		}
 
 	}elseif(!empty($_SESSION['idUser'])){

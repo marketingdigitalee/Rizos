@@ -1,4 +1,4 @@
-<div id="tablaReporte1">
+<div id="tablaReporte2">
 	
 </div>
 <script>
@@ -6,11 +6,11 @@
     $.ajax({
 
                             type: "POST",
-                            url: "app/Controlador/traerReporte1ws.php",
+                            url: "app/Controlador/traerReporte2ws.php",
                             success: function(response)
                             {
-                                $('#tablaReporte1').empty();
-                                $('#tablaReporte1').html(response).fadeIn();
+                                $('#tablaReporte2').empty();
+                                $('#tablaReporte2').html(response).fadeIn();
                             }
                     });
     })();

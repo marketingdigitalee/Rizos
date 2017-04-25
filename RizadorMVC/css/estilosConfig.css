@@ -237,3 +237,22 @@ table{
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+/*--------------TABLA REPORTES 1-----------*/
+
+.tablaReporte1 {
+  width: 100%;
+  margin-top: 61px;
+  margin-bottom: 27px;
+  height: auto;
+}
+
+.tablaRep{
+  width:80%;
+  text-align: center;
+  margin-top:40px; 
+}
+
+.boldTexto{
+   font-weight: bold;
+   font-size: 17px;
+}
