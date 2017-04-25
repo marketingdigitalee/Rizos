@@ -105,20 +105,16 @@
     }
 
     public function envioMail($arregloMail){
-
+      
     $url = "http://mailer.atrapium.com/form.php?form=22";  
-    $postData = $arregloMail;  
-    /*Convierte el array en el formato adecuado para cURL*/  
-    $elements = array();  
-    foreach ($postData as $name=>$value) {  
-       $elements[] = "{$name}=".urlencode($value);  
-    }  
+    $postData = $arregloMail;   
+    $elements = array();   
     $handler = curl_init();  
     curl_setopt($handler, CURLOPT_URL, $url);  
     curl_setopt($handler, CURLOPT_POST,true);  
-    curl_setopt($handler, CURLOPT_POSTFIELDS, $elements);  
+    curl_setopt($handler, CURLOPT_POSTFIELDS, http_build_query($postData));  
     $response = curl_exec ($handler);  
-    curl_close($handler);
+    curl_close($handler); 
     return $response;  
 
     }

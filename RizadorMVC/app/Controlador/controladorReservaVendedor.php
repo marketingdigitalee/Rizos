@@ -271,24 +271,22 @@ class ControladorReserva{
 		$nuevoArray['idRedenciones']= $idRedencion;
 		$nuevoArray['envioNotificacion']= 0;
 
-		$arregloMail = null;
+		$CustomFields = null;
 
 				
 		$arrayReserva = $modReserva->agregarReservaBD($nuevoArray);
 		
 			if ($arrayReserva){
 				$_POST['html'] = $html;
-/*
+
 //Funcionalidad envio de correo automatico 
 
 				if($estadoReserva == 1){
-					$arregloMail['CustomFields_2_22']= $arrayUsuarioNEW['nomUsuario']." ".$arrayUsuarioNEW['apellUsuario'];
-					$arregloMail['CustomFields_61_22']= $nomAlmacen;
-					$arregloMail['CustomFields_8_22']= $ciudadAlmacen;
-					$arregloMail['CustomFields_62_22']= $cantidad;
-					$arregloMail['CustomFields_65_22']= $fechaRedencion;
-					$arregloMail['CustomFields_64_22']= $codigoReserva;
-					$arregloMail['CustomFields_3_22']= $nombreMail;
+					
+					$nombre= $arrayUsuarioNEW['nomUsuario'];
+					$apellido= $arrayUsuarioNEW['apellUsuario'];
+					$arregloMail['CustomFields'] =  array(2 => $nombre,61=> $nomAlmacen, 8=> $ciudadAlmacen, 62 => $cantidad,65=> $fechaRedencion,64=>$codigoReserva,3=>$apellido);
+					$arregloMail["email"] = 'lromero@leandro.com';
 
 					$respu = $funciones->envioMail($arregloMail);
 
@@ -296,7 +294,7 @@ class ControladorReserva{
 			 			$arregloReserva2 = $modReserva->TraerReservaXCodigo($codigoReserva);
 			 			$valorid = null;
 			 			$arregloReserva2 = $funciones->arreglarArrayBD($arregloReserva2);
-			 			var_dump($arregloReserva2);
+			 			
 			 			foreach ($arregloReserva2 as $key => $value) {
 			 				if($key == 'idReservas'){
 			 					$valorid = 	$value;
@@ -320,8 +318,8 @@ class ControladorReserva{
 
 				}else{
 					return 'error4';
-				}*/
-				return 'ok';
+				}
+				//return 'ok';
 			}else{
 				return 'error1';
 

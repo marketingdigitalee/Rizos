@@ -184,6 +184,7 @@
 				cargarMensajesLogin("NO cargo el Almacen INTENTELO DE NUEVO","VistasConfig/AddAlmacenes", $_SESSION['htmlUser'],'-');
 			}
 		}else{
+			//var_dump($_POST);
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/login');
 			session_destroy();
 		}
