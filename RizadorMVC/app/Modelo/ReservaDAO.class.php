@@ -60,9 +60,14 @@ class ReservaDAO  {
 	public function cambiarColumnaEnvioCorreo($idReserva,$datoCambiar){
 
 		$conexion = new BD();
-		$resultado = $conexion->ActualizarColumn('Reserva','envioNotificacion','idReservas',$datoCambiar,$idReserva);
+		$resultado = $conexion->ActualizarColumn('Reservas','envioNotificacion','idReservas',$datoCambiar,$idReserva);
 
-		return $resultado;
+		if(empty($resultado)){
+			return true;
+		} else{
+			return false;
+		}
+		
 	}
 
 

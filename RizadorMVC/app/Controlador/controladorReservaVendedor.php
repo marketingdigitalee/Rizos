@@ -281,45 +281,48 @@ class ControladorReserva{
 
 //Funcionalidad envio de correo automatico 
 
-				if($estadoReserva == 1){
+				// if($estadoReserva == 1){
 					
-					$nombre= $arrayUsuarioNEW['nomUsuario'];
-					$apellido= $arrayUsuarioNEW['apellUsuario'];
-					$arregloMail['CustomFields'] =  array(2 => $nombre,61=> $nomAlmacen, 8=> $ciudadAlmacen, 62 => $cantidad,65=> $fechaRedencion,64=>$codigoReserva,3=>$apellido);
-					$arregloMail["email"] = 'lromero@leandro.com';
+				// 	$nombre= $arrayUsuarioNEW['nomUsuario'];
+				// 	$apellido= $arrayUsuarioNEW['apellUsuario'];
+				// 	$arregloMail['CustomFields'] =  array(2 => $nombre,61=> $nomAlmacen, 8=> $ciudadAlmacen, 62 => $cantidad,66=> $fechaRedencion,64=>$codigoReserva,3=>$apellido);
+				// 	$arregloMail["email"] = $mailUsuario;
+				// 	var_dump($arregloMail);
 
-					$respu = $funciones->envioMail($arregloMail);
-
-			 		if($respu){
-			 			$arregloReserva2 = $modReserva->TraerReservaXCodigo($codigoReserva);
-			 			$valorid = null;
-			 			$arregloReserva2 = $funciones->arreglarArrayBD($arregloReserva2);
+				// 	$respu = $funciones->envioMail($arregloMail);
+			 // 		if($respu){
+			 // 			$arregloReserva2 = $modReserva->TraerReservaXCodigo($codigoReserva);
+			 // 			$valorid = null;
+			 // 			$arregloReserva2 = $funciones->arreglarArrayBD($arregloReserva2);
 			 			
-			 			foreach ($arregloReserva2 as $key => $value) {
-			 				if($key == 'idReservas'){
-			 					$valorid = 	$value;
-			 					break;
-			 				}
-			 			}
-			 			$resulCambio = $modReserva->cambiarColumnaEnvioCorreo($valorid,1);
-			 			if($resulCambio ){
-			 				return 'ok';
-			 			}else{
-			 				$logEventos->CrearLog("No cambio el estado del envio de la reserva numero -".$valorid. " -Pero si envio el correo electronico",$arrayUsuarioNEW['idUsuario']);
-			 				return 'error8';
-			 			}
+			 // 			foreach ($arregloReserva2 as $key => $value) {
+			 // 				if($key == 'idReservas'){
+			 // 					$valorid = 	$value;
+			 // 					break;
+			 // 				}
+			 // 			}
+			 // 			$resulCambio = $modReserva->cambiarColumnaEnvioCorreo($valorid,1);
+			 			
+
+			 // 			if($resulCambio){
+
+			 // 				return 'ok';
+			 // 			}else{
+			 // 				$logEventos->CrearLog("No cambio el estado del envio de la reserva numero -".$valorid. " -Pero si envio el correo electronico",$arrayUsuarioNEW['idUsuario']);
+			 // 				return 'error8';
+			 // 			}
 
 			 			
-			 		}else{
-			 			return 'error7';
-			 		}
+			 // 		}else{
+			 // 			return 'error7';
+			 // 		}
 
 					
 
-				}else{
-					return 'error4';
-				}
-				//return 'ok';
+				// }else{
+				// 	return 'error4';
+				// }
+				return 'ok';
 			}else{
 				return 'error1';
 

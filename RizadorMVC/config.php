@@ -80,7 +80,7 @@
 		 		break;
 		 	case 'ok';
 		 				 				 		
-		 		$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/reservaVendedor', $_SESSION['htmlUser']);
+		 		$control->cargarMensajesLogin('SELECCIONE EL ALMACEN Y LA CANTIDAD','VistasConfig/reservaVendedor', $_SESSION['htmlUser']);
 		 		break;
 
 		 	
@@ -95,7 +95,6 @@
 		}elseif(isset($_POST['nomAlmacen']) && isset($_POST['cantReserva']) && isset($_SESSION['idUser']) && isset($_SESSION['dataUsuario'])){
 			
 			$resultado = $registro->crearReserva($_POST,$_SESSION);
-
 			switch ($resultado) {
 			 	case 'error1':
 			 		$control->cargarMensajesLogin("NO SE LOGRO GUARDAR LA RESERVA","VistasConfig/reservaVendedor", $_SESSION['htmlUser'],'-');
@@ -151,7 +150,6 @@
 
 			switch ($resultado) {
 					case 'ok':
-
 			 			$control->cargarMensajesLogin('VistasConfig/headerUser','VistasConfig/reservaVendedor', $_SESSION['htmlUser'],'-');
 			 			break;
 					case 'error1':
@@ -207,17 +205,23 @@
 		}elseif($_GET['action'] == 'addAlmacen'){
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/AddAlmacenes');
 		}elseif($_GET['action'] == 'home'){
-			if($_SESSION['idRoll'] == 1){
-				$control->cargarMensajesLogin('Bienvenido Administrador','VistasConfig/vistaAdmon',$_SESSION['htmlUser'], '');
+			if(isset($_SESSION['idRoll'])){
+				if($_SESSION['idRoll'] == 1){
+					$control->cargarMensajesLogin('Bienvenido Administrador','VistasConfig/vistaAdmon',$_SESSION['htmlUser'], '');
 
-			}elseif($_SESSION['idRoll'] == 3){
-				$control->cargarMensajesLogin('Bienvenido Supervisor','VistasConfig/vistaSuper',$_SESSION['htmlUser'], '');
+				}elseif($_SESSION['idRoll'] == 3){
+					$control->cargarMensajesLogin('Bienvenido Supervisor','VistasConfig/vistaSuper',$_SESSION['htmlUser'], '');
+
+				}else{
+					$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor',$_SESSION['htmlUser'], '');
+				}
 
 			}else{
-				$control->cargarMensajesLogin('Bienvenido','VistasConfig/botonesVendedor',$_SESSION['htmlUser'], '');
+				session_destroy();
+			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/login');
+
 			}
-			
-			
+
 		}elseif($_GET['action'] == 'salir'){
 			session_destroy();
 			$control->cargarPrincipalConfig('VistasConfig/headerUser','VistasConfig/login');
@@ -235,7 +239,7 @@
 
 	}elseif(!empty($_SESSION['idUser'])){
 		$_SESSION['dataUsuario'] = null;
-				$control->cargarMensajesLogin('Continua con tus reservas','VistasConfig/botonesVendedor');
+				$control->cargarMensajesLogin('Continua con tus reservas','VistasConfig/botonesVendedor', $_SESSION['htmlUser'], '');
 
 
 	}else{

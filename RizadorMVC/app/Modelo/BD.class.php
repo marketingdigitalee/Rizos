@@ -29,7 +29,6 @@ class BD{
  public function consulta($nomTabla,$filtro,$valor){
 
     $sql = "SELECT * FROM $nomTabla WHERE $filtro = '$valor'";
-
     $db = $this->conectar();
 
     $array = $db->getAll($sql);
@@ -154,8 +153,8 @@ public function insertar($tabla,$array){
 
    public function ActualizarColumn($nombreTabla,$nombreColumCambiar,$ColumCondicion,$datoCambiar,$valorCondicion){
 
-    $sql = "UPDATE '$nombreTabla' SET '$nombreColumCambiar'='$datoCambiar' WHERE '$ColumCondicion'='$valorCondicion'";
-        
+    $sql = "UPDATE $nombreTabla SET $nombreColumCambiar=$datoCambiar WHERE $ColumCondicion=$valorCondicion";
+
     $db = $this->conectar();
     $db->SetFetchMode(ADODB_FETCH_ASSOC); 
 

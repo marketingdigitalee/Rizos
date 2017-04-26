@@ -106,7 +106,7 @@
 
     public function envioMail($arregloMail){
       
-    $url = "http://mailer.atrapium.com/form.php?form=22";  
+    $url = "http://mailer.atrapium.com/form.php?form=23";  
     $postData = $arregloMail;   
     $elements = array();   
     $handler = curl_init();  

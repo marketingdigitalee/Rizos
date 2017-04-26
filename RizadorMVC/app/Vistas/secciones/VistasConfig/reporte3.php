@@ -1,4 +1,4 @@
-<div id="tablaReporte3">
+<div id="tablaReporte3" class="tablaReporte3">
 	
 </div>
 <script>

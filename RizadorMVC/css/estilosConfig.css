@@ -10,7 +10,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
+.classh1{
+  text-align: center;
 
+}
+
+.classh2{
+  text-align: center;
+}
 h3{
 	font-size: 27px;
     padding: 10px;
@@ -58,6 +65,7 @@ h3{
 #cuerpoConfig{
 	width: 95%;
 	margin: 0 auto;
+  text-align: center;
 }
 
 /*------------- FORMULARIOS INPUT -----------------------*/
@@ -255,4 +263,8 @@ table{
 .boldTexto{
    font-weight: bold;
    font-size: 17px;
+}
+
+div#tablaReporte3.tablaReporte3{
+  text-align: center;
 }

@@ -1,11 +1,17 @@
 <div>
-	<form action="config.php" method="post">
-		<select name="reportes" id="reportes">
-			<OPTION VALUE="1">Reporte Pedidos X Almacen</OPTION> 
-			<OPTION VALUE="2">Reporte 2</OPTION> 
-			<OPTION VALUE="1">Reporte 3</OPTION> 
-			<OPTION VALUE="1">Reporte 4</OPTION> 
-		</select>
-		<input type="submit" value="Buscar">
-	</form>
+	<div class="btn">
+       	<a href="config.php?action=verReporte1">Ver Reporte Almacenes</a>
+    </div>
+    <div class="btn">
+    	<a href="config.php?action=verReporte2">Ver Reporte Ciudades</a>
+    </div>
+    <div class="btn">
+    	<a href="config.php?action=verReporte3">Ver Reporte Reservas</a>
+    </div>
+	<div class="btn">
+      	<a href="config.php?action=addCiudad">Agregar Ciudades</a>
+    </div>
+    <div class="btn">
+      	<a href="config.php?action=addAlmacen">Agregar Almacenes</a>
+    </div>
 </div>

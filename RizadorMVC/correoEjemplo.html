@@ -141,3 +141,77 @@ return true;
  
 // ]]>
 </script>
+
+
+
+
+<!--
+Do not modify the NAME value of any of the INPUT fields
+the FORM action, or any of the hidden fields (eg. input type=hidden).
+These are all required for this form to function correctly.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+<title></title>
+		<style type="text/css">
+
+			.myForm td, input {
+				font-family: tahoma;
+				font-size: 12px;
+			}
+
+			.required {
+				color: red;
+			}
+
+		</style>
+	</head>
+	<body>
+		<form method="post" action="%%FORMACTION%%">
+			<table border="0" class="myForm" cellpadding="2">
+				<tr>
+	<td><span class="required">*</span>&nbsp;
+Your email address:</td>
+	<td><input type="text" name="email" value="%%Email%%" /></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;Apellidos:</td>
+	<td><input type="text" name="CustomFields[3]" id="CustomFields_3" value="%%CustomField_3%%" size='50'></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;Cantidad:</td>
+	<td><input type="text" name="CustomFields[62]" id="CustomFields_62" value="%%CustomField_62%%"></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;Ciudad:</td>
+	<td><input type="text" name="CustomFields[8]" id="CustomFields_8" value="%%CustomField_8%%" size='50'></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;CodRedencion:</td>
+	<td><input type="text" name="CustomFields[64]" id="CustomFields_64" value="%%CustomField_64%%"></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;FRedencion:</td>
+	<td><input type="text" name="CustomFields[66]" id="CustomFields_66" value="%%CustomField_66%%"></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;Nombre:</td>
+	<td><input type="text" name="CustomFields[2]" id="CustomFields_2" value="%%CustomField_2%%" size='50'></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;Tienda:</td>
+	<td><input type="text" name="CustomFields[61]" id="CustomFields_61" value="%%CustomField_61%%"></td>
+</tr>
+<input type="hidden" name="lists" value="506" />
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input type="submit" value="Update your details" />
+						<br/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
