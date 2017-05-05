@@ -22,7 +22,8 @@ include 'libreria/ADOdb/adodb.inc.php';
                               
 foreach ($resultCall as $valores) {
   echo '<h1 class="classh1">Reservas de Call Center</h1>';
-  echo '<h2 class="classh2">'.$valores['telefono'].'</h2>';                        
+  echo '<h2 class="classh2">'.$valores['telefono'].'</h2>';
+                       
 }
 
 echo '</br>';
@@ -30,7 +31,8 @@ echo '</br>';
 
 foreach ($resultWeb as $valores2) {
   echo '<h1 class="classh1">Reservas de la WEB</h1>';
-  echo '<h2 class="classh2">'.$valores2['web'].'</h2>';                      
+  echo '<h2 class="classh2">'.$valores2['web'].'</h2>'; 
+                 
 }
 
 

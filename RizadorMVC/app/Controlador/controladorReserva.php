@@ -267,11 +267,9 @@ try {
 				$idRedencion = (int) $idRedencion;
 
 				if($cantActualEntera > $cantProdEntera){
-					$Redenciones->cambiarEstadoRendencion('1', '0');
-					$Redenciones->cambiarEstadoRendencion('2', '1');
-					$logEventos->CrearLog("Se ha cambiado la fecha de redencion de forma automatica ",$arrayUsuarioNEW['idUsuario']);
-	
-				
+					$Redenciones->cambiarEstadoRendencion('2', '0');
+					$Redenciones->cambiarEstadoRendencion('3', '1');
+					$logEventos->CrearLog("Se ha cambiado la fecha de redencion de forma automatica ",$arrayUsuarioNEW['idUsuario']);			
 				}else{
 					$resultadoFecha = false;
 

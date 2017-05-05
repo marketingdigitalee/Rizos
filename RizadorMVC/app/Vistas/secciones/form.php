@@ -22,7 +22,7 @@
 					<input name="telUsuario" maxlength="7"  onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text" placeholder="Teléfono fijo" >
 					<input type="text" placeholder="Teléfono celular" maxlength="10" name="celUsuario" required="true" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');">
 					<input type="text" name="nombreRecoje" placeholder="Nombre de la persona que recoge el producto">
-					<input type="text" name="apellRecoje" placeholder="Apellidos de la persona que recoje el producto">
+					<input type="text" name="apellRecoje" placeholder="Apellidos de la persona que recoge el producto">
 					<input type="text" name="cedulaRecoje" placeholder="Número de cédula de quién recoge el producto">
 																														
 
