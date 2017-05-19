@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>Profesión Líder</title>
+  <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.0.0.min.js"></script>
-  <script src='https://www.google.com/recaptcha/api.js'></script>
+
   <script type="text/javascript" src="js/plugins/jquery.fancybox.js"></script>
   <link rel="stylesheet" href="css/cssFancybox/jquery.fancybox.css" type="text/css" media="screen" />
 
-  <!-- 
-  SLIDER
-  -->
-
-
-
+  <!--  SLIDER -->
   <script type="text/javascript" src="js/plugins/owl/owl.carousel.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/owl/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" href="css/owl/owl.theme.default.min.css">
 
-   <link rel="stylesheet" type="text/css" href="css/owl/owl.carousel.min.css">
-   <link rel="stylesheet" type="text/css" href="css/owl/owl.theme.default.min.css">
+   <!--  LIBRO -->
+  <script type="text/javascript" src="js/plugins/turn/turn.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/owl/owl.carousel.min.css">
+
 </head>
 <body>
 

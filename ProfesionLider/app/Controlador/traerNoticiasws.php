@@ -17,6 +17,8 @@ header("Content-Type: text/html;charset=utf-8");
 
     $result = $db->getAll($sql);
 
+    echo 'Prueba';
+
 foreach ($result as $row) {
   echo '<article class="Noticia">';
   echo '<img src="img/'.$row['fotoNoticia'].'" alt="" class="imgNoti">';

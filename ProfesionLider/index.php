@@ -23,6 +23,7 @@ if(!empty($_GET['reg'])){
 /*----------------------LLENADO DE FORMULARIO------------------*/
 
  }elseif(!empty($_POST)){
+ 	$control->cargarPrincipal('noticias');
 
 // 	if(isset($_POST['nomUsuario']) && isset($_POST['apellUsuario']) && isset($_POST['cedulaUsuario']) && isset($_POST['emailUsuario']) && isset($_POST['dirUsuario'])&& isset($_POST['nomCiudad']) && isset($_POST['telUsuario']) && isset($_POST['nombreRecoje']) && isset($_POST['apellRecoje']) && isset($_POST['cedulaRecoje'] ))
 // 	{
