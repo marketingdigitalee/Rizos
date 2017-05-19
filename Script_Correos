@@ -3,5 +3,5 @@ u.celUsuario as  celularCliente, u.telUsuario as  fijoCliente, a.nomAlmacen as A
  a.nomCiudad CiudadAlmacen, r.codigoReserva as  codigoReserva, r.cantReservas as CantidadReserva, replace( replace(r.htmlReserva, ', sans-serif','') , '\n','') 
 FROM rizador.Reservas as r join rizador.Usuario as u on r.idUsuario = u.idUsuario
 join rizador.Almacenes as a on r.idAlmacen = a.idAlmacen
-where r.idReservas > 2771
-order by r.idReservas;
+where r.idReservas > 2992
+order by r.idReservas;Noticias

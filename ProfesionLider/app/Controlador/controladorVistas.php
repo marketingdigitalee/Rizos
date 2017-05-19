@@ -7,29 +7,35 @@ class controladorVistas{
 	function load_template(){
 		
 
-		$pagina = $this->load_page('app/Vistas/page.php');		
+		
 
+		$eventos =$this->load_page('app/Vistas/secciones/eventos.php');
+
+		$premio = $this->load_page('app/Vistas/secciones/premio.php');	
+		$encu = $this->load_page('app/Vistas/secciones/encuentro.php');
+
+		$eventos = $this->replace_content('/\#PREMIO\#/ms' ,$premio , $eventos);
+		$eventos = $this->replace_content('/\#ENCUENTRO#/ms' ,$encu , $eventos);
+
+
+		$pagina = $this->load_page('app/Vistas/page.php');	
 		$header = $this->load_page('app/Vistas/secciones/header.php');
 		$home = $this->load_page('app/Vistas/secciones/home.php');
-		$noticias = $this->load_page('app/Vistas/secciones/noticias.php');
+		//$noticias = $this->load_page('app/Vistas/secciones/noticias.php');
 		$videos = $this->load_page('app/Vistas/secciones/videos.php');
-		$galerias =$this->load_page('app/Vistas/secciones/galerias.php');
+		
 		$sostenibilidad = $this->load_page('app/Vistas/secciones/sostenibilidad.php');
 		$fasciculos = $this->load_page('app/Vistas/secciones/fasciculos.php');
-		$premio = $this->load_page('app/Vistas/secciones/premio.php');
-		$encuentro = $this->load_page('app/Vistas/secciones/encuentro.php');
 		$footer = $this->load_page('app/Vistas/secciones/footer.php');
 	
 
 		$pagina = $this->replace_content('/\#HEADER\#/ms' ,$header , $pagina);
 		$pagina = $this->replace_content('/\#HOME#/ms' ,$home , $pagina);
-		$pagina = $this->replace_content('/\#NOTICIAS#/ms' ,$noticias , $pagina);
+		//$pagina = $this->replace_content('/\#NOTICIAS#/ms' ,$noticias , $pagina);
 		$pagina = $this->replace_content('/\#VIDEOS\#/ms' ,$videos , $pagina);
-		$pagina = $this->replace_content('/\#GALERIAS\#/ms' ,$galerias , $pagina);
+		$pagina = $this->replace_content('/\#EVENTOS\#/ms' ,$eventos , $pagina);
 		$pagina = $this->replace_content('/\#SOSTENIBILIDAD\#/ms' ,$sostenibilidad , $pagina);
 		$pagina = $this->replace_content('/\#FASCICULOS\#/ms', $fasciculos , $pagina);
-		$pagina = $this->replace_content('/\#PREMIO\#/ms', $premio , $pagina);
-		$pagina = $this->replace_content('/\#ENCUENTRO\#/ms', $encuentro , $pagina);
 		$pagina = $this->replace_content('/\#FOOTER\#/ms' ,$footer , $pagina);
 
 
@@ -42,75 +48,20 @@ class controladorVistas{
 
 			$ppal = $this->load_template();
 			$url = 'app/Vistas/secciones/'.$pagina.'.php';
-			//$reserva = $this->load_page($url);
-			//$ppal = $this->replace_content('/\#RESERVA\#/ms' ,$reserva , $ppal);
+			$reserva = $this->load_page($url);
+			$ppal = $this->replace_content('/\#NOTICIAS\#/ms' ,$reserva , $ppal);
 			$this->view_page($ppal);
 	}
 
-	function cargarMensajesReserva($mensaje, $VistaRespuesta,$html=null){
-		if (!is_null($html)) {
-			$ppal = $this->load_template();
-			$pagMensaje = $this->load_page('app/Vistas/secciones/mensaje.php');
-			$contenido = $this->load_page('app/Vistas/secciones/'.$VistaRespuesta.'.php');
-			$htmlPage = $this->load_page('app/Vistas/secciones/cargarHTML.php');
-
-			$htmlPage = $this->replace_content('/\#HTML\#/ms' ,$html , $htmlPage);
-			$htmlPage = $this->replace_content('/\#CONTENDIDO\#/ms' ,$contenido , $htmlPage);
-
-			$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje , $pagMensaje);
-			$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$htmlPage , $pagMensaje);
-			$ppal = $this->replace_content('/\#RESERVA\#/ms' ,$pagMensaje , $ppal);
-
-			$this->view_page($ppal);
-
-		}else{
-			$ppal = $this->load_template();
-			$pagMensaje = $this->load_page('app/Vistas/secciones/mensaje.php');
-			$contenido = $this->load_page('app/Vistas/secciones/'.$VistaRespuesta.'.php');
-			$pagMensaje = $this->replace_content('/\#MENSAJE\#/ms' ,$mensaje , $pagMensaje);
-			$pagMensaje = $this->replace_content('/\#CONTENIDO\#/ms' ,$contenido , $pagMensaje);
-			$ppal = $this->replace_content('/\#RESERVA\#/ms' ,$pagMensaje , $ppal);
-
-			$this->view_page($ppal);
-
-		}
-		
-	}
-
-	function crearMensajeHtml($nombreMail,$nomAlmacen,$ciudadAlmacen,$cantidad,$fechaRedencion,$codReserva, $mailUsuario){
-
-		$html = $this->load_page('app/Vistas/secciones/htmlMail.php');
-		$html = $this->replace_content('/\#nombreMail\#/ms' ,$nombreMail , $html);
-		$html = $this->replace_content('/\#nomAlmacen\#/ms' ,$nomAlmacen , $html);
-		$html = $this->replace_content('/\#ciudadAlmacen\#/ms' ,$ciudadAlmacen , $html);
-		$html = $this->replace_content('/\#cantidad\#/ms' ,$cantidad , $html);
-		$html = $this->replace_content('/\#fechaRedencion\#/ms' ,$fechaRedencion , $html);
-		$html = $this->replace_content('/\#codReserva\#/ms' ,$codReserva , $html);
-		$html = $this->replace_content('/\#mailUsuario\#/ms' ,$mailUsuario , $html);
-
-		return $html;
-	}
 /*------------------------------FUNCIONES PARA CREAR HTML DE LAS VISTAS -----------*/
 	 private function load_page($page){
 	 	return file_get_contents($page);
 	 }
-/* METODO QUE ESCRIBE EL CODIGO PARA QUE SEA VISTO POR EL USUARIO
- INPUT
- $html | codigo html
- OUTPUT
- HTML | codigo html 
- */
+
 	 function view_page($html){
 	  echo $html;
 	 }
 
-  /* PARSEA LA PAGINA CON LOS NUEVOS DATOS ANTES DE MOSTRARLA AL USUARIO
- INPUT
- $out | es el codigo html con el que sera reemplazada la etiqueta CONTENIDO
- $pagina | es el codigo html de la pagina que contiene la etiqueta CONTENIDO
- OUTPUT
- HTML | cuando realiza el reemplazo devuelve el codigo completo de la pagina
- */
 	 private function replace_content($in, $out,$pagina) {
 	   return preg_replace($in, $out, $pagina);
 	 }

@@ -10,15 +10,19 @@
   <script type="text/javascript" src="js/plugins/jquery.fancybox.js"></script>
   <link rel="stylesheet" href="css/cssFancybox/jquery.fancybox.css" type="text/css" media="screen" />
 
-  <script type="text/javascript" src="js/plugins/FLexSlider/jcarousel.connected-carousels.js">
-  </script>
-   <link rel="stylesheet" type="text/css" href="css/cssFlexSlider/jcarousel.connected-carousels.css">
+  <!-- 
+  SLIDER
+  -->
+
+
+
+  <script type="text/javascript" src="js/plugins/owl/owl.carousel.js"></script>
+
+   <link rel="stylesheet" type="text/css" href="css/owl/owl.carousel.min.css">
+   <link rel="stylesheet" type="text/css" href="css/owl/owl.theme.default.min.css">
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FQVPR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <div id="redesSociales">
   <a class="redes" href="https://www.facebook.com/profesionlider/?ref=bookmarks" target="_blank">
@@ -37,33 +41,23 @@
   </header>
   <div id="contenedor">
     <section id="Cabecera" >
-        #HOME#       
+      #HOME#       
     </section>
     <section id="Noticias">
-        #NOTICIAS#
+      #NOTICIAS#
     </section>
     <section id="Videos">
-        #VIDEOS# 
+      #VIDEOS# 
     </section>
-    <section id="Galerias">
-      #GALERIAS#
+    <section id="Eventos">
+      #EVENTOS#
     </section>
     <section id="Sostenibilidad" >
       #SOSTENIBILIDAD#
     </section>
-
     <section id="Fasciculos" >
       #FASCICULOS#
     </section>
-
-    <section id="Premio">
-      #PREMIO#
-    </section>
-
-    <section id="Encuentro">
-      #ENCUENTRO#
-    </section>
-
   <footer id="Footer">
     #FOOTER#
   </footer>
