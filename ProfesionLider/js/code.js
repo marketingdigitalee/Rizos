@@ -5,11 +5,6 @@ $("[data-fancybox]").fancybox({
     // Options will go here
   });
 
-
-
-
-});
-
 $('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
@@ -27,40 +22,22 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
-function loadApp() {
 
-    // Create the flipbook
-
-    $('.flipbook').turn({
-            // Width
-
-            width:922,
-            
-            // Height
-
-            height:600,
-
-            // Elevation
-
-            elevation: 50,
-            
-            // Enable gradients
-
-            gradients: true,
-            
-            // Auto center this flipbook
-
-            autoCenter: true
-
+ //single book
+    $('#mybook').booklet({
+        width:'90%',
+        height:646,
+        pagePadding: 0,
+        manual: true,
+        overlays:true,
+        hovers:   true,
+        pageNumbers: false,
+        closed: true,
+        autoCenter: true
     });
-}
 
-// Load the HTML4 version if there's not CSS transform
 
-yepnope({
-    test : Modernizr.csstransforms,
-    yep: ['../../lib/turn.js'],
-    nope: ['../../lib/turn.html4.min.js'],
-    both: ['css/basic.css'],
-    complete: loadApp
 });
+
+
+

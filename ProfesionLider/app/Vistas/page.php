@@ -6,8 +6,13 @@
   <title>Profesión Líder</title>
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/jquery-3.0.0.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script> window.jQuery || document.write('<script src="booklet/jquery-2.1.0.min.js"><\/script>') </script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="js/plugins/booklet/jquery.easing.1.3.js"></script>
+<script src="js/plugins/booklet/jquery.booklet.latest.min.js"></script>
 
+<!-- FANCYBOX -->
   <script type="text/javascript" src="js/plugins/jquery.fancybox.js"></script>
   <link rel="stylesheet" href="css/cssFancybox/jquery.fancybox.css" type="text/css" media="screen" />
 
@@ -17,8 +22,8 @@
   <link rel="stylesheet" type="text/css" href="css/owl/owl.theme.default.min.css">
 
    <!--  LIBRO -->
-  <script type="text/javascript" src="js/plugins/turn/turn.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/owl/owl.carousel.min.css">
+<link href="js/plugins/booklet/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+<script type="text/javascript" src="js/plugins/booklet/jquery.booklet.latest.js"></script>
 
 </head>
 <body>

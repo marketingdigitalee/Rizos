@@ -1,7 +1,0 @@
-Recomendaciones
-
-para que funcione la encriptacion
-
-sudo mv /etc/php5/conf.d/mcrypt.ini /etc/php5/mods-available/
-$ sudo php5enmod mcrypt
-$ sudo service apache2 restart
