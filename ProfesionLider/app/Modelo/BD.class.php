@@ -12,7 +12,7 @@ class BD{
   $DB_HOST = 'localhost';
   $DB_USER = 'root';
   $DB_PASS = 'usuario$1';
-  $DB_NAME = 'rizador';
+  $DB_NAME = 'profesionlider';
 
   $db = ADONewConnection('mysqli');
   $db->debug = false;

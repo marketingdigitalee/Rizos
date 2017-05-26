@@ -36,7 +36,14 @@ $('.owl-carousel').owlCarousel({
         autoCenter: true
     });
 
+    $('.descargaFasciculo').click(function(){
+        $("header").css("display","none");
 
+    })
+    $('body').click(function(){
+        $("header").css("display","");
+
+    })
 });
 
 

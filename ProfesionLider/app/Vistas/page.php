@@ -25,6 +25,11 @@
 <link href="js/plugins/booklet/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
 <script type="text/javascript" src="js/plugins/booklet/jquery.booklet.latest.js"></script>
 
+   <!-- POPUP -->
+<link href="css/modal/sky-forms.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+<script type="text/javascript" src="js/plugins/modal/jquery.modal.js"></script>
+
+
 </head>
 <body>
 
@@ -63,10 +68,12 @@
     <section id="Fasciculos" >
       #FASCICULOS#
     </section>
-  <footer id="Footer">
+    <section>
+      #FORMULARIO#
+    </section>
+  <section id="Footer">
     #FOOTER#
-  </footer>
-    
+  </section>
   </div>
     <script src="js/code.js"></script>
 </body>

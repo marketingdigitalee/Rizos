@@ -1,8 +1,8 @@
 <div class="Titulo">
 			<img src="img/banners-01.jpg" alt="">
-		</div>
+</div>
 		<article class="ppalVideo">
-			<iframe width="1020" height="578" src="https://www.youtube.com/embed/ZIXsfiwgBJU" frameborder="0" allowfullscreen></iframe>
+		<iframe width="1020" height="578" src="https://www.youtube.com/embed/xPBJTaamg2k?list=PLiupuggSxf-cu5xnB8wQEKXJbA8C_zFQI" frameborder="0" allowfullscreen></iframe>
 		</article>
 		<div id="contentMiniVideos">
 			<article class="boxVideo">

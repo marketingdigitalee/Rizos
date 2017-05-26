@@ -5,9 +5,7 @@ class controladorVistas{
 /*----------------------FUNCIONES PAGINA INDEX  ------------*/
 
 	function load_template(){
-		
-
-		
+				
 
 		$eventos =$this->load_page('app/Vistas/secciones/eventos.php');
 
@@ -21,17 +19,18 @@ class controladorVistas{
 		$pagina = $this->load_page('app/Vistas/page.php');	
 		$header = $this->load_page('app/Vistas/secciones/header.php');
 		$home = $this->load_page('app/Vistas/secciones/home.php');
-		//$noticias = $this->load_page('app/Vistas/secciones/noticias.php');
+		$noticias = $this->load_page('app/Vistas/secciones/noticias.php');
 		$videos = $this->load_page('app/Vistas/secciones/videos.php');
 		
 		$sostenibilidad = $this->load_page('app/Vistas/secciones/sostenibilidad.php');
 		$fasciculos = $this->load_page('app/Vistas/secciones/fasciculos.php');
 		$footer = $this->load_page('app/Vistas/secciones/footer.php');
+
 	
 
 		$pagina = $this->replace_content('/\#HEADER\#/ms' ,$header , $pagina);
 		$pagina = $this->replace_content('/\#HOME#/ms' ,$home , $pagina);
-		//$pagina = $this->replace_content('/\#NOTICIAS#/ms' ,$noticias , $pagina);
+		$pagina = $this->replace_content('/\#NOTICIAS#/ms' ,$noticias , $pagina);
 		$pagina = $this->replace_content('/\#VIDEOS\#/ms' ,$videos , $pagina);
 		$pagina = $this->replace_content('/\#EVENTOS\#/ms' ,$eventos , $pagina);
 		$pagina = $this->replace_content('/\#SOSTENIBILIDAD\#/ms' ,$sostenibilidad , $pagina);
@@ -42,14 +41,16 @@ class controladorVistas{
 		return $pagina;
 	}
 
+	function cargarMensajesPopup($Mensaje){
 
+	}
 
 	function cargarPrincipal($pagina){
 
 			$ppal = $this->load_template();
 			$url = 'app/Vistas/secciones/'.$pagina.'.php';
-			$reserva = $this->load_page($url);
-			$ppal = $this->replace_content('/\#NOTICIAS\#/ms' ,$reserva , $ppal);
+			$cargar = $this->load_page($url);
+			$ppal = $this->replace_content('/\#FORMULARIO\#/ms' ,$cargar , $ppal);
 			$this->view_page($ppal);
 	}
 

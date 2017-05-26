@@ -2,11 +2,21 @@
 <div class="Titulo">
 	<img src="img/banners-03.jpg" alt="">
 </div>
-<div id="notiContendido" class="divContenedorNoticias" >
+		<div class="divContenedorNoticias">
+			<article class="Noticia">
+				<img src="img/ana_maria_uribe.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti"> “Liderar es valorar el trabajo de la gente”: jefa de Servicio al Consumidor de la SIC</h1>
+					<p class="pnoti"> Esa es la visión de Ana María Uribe, jefa de Servicio al Consumidor y Apoyo al Empresario de la Superintendencia de Industria y Comercio.</p>
+				</div>
+				<a href=" http://www.elespectador.com/economia/liderar-es-valorar-el-trabajo-de-la-gente-jefa-de-servicio-al-consumidor-de-la-sic-articulo-695147" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>				
+			</article>
 			<article class="Noticia">
 				<img src="img/AnaKarina.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
-					<h1 class="h1noti">““Hay que tener una política de puertas, mente y corazón abiertos”.</h1>
+					<h1 class="h1noti">“Hay que tener una política de puertas, mente y corazón abiertos”.</h1>
 					<p class="pnoti"> Así describe su modelo de liderazgo Ana Karina Quessep, la directora ejecutiva de la Asociación Colombiana de Contact Center &amp; BPO, que le aporta 250.000 empleados a la economía.</p>
 					
 				</div>
@@ -24,6 +34,12 @@
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
 			</article>
+			
+		</div>
+		<div class="divContenedorNoticias">
+			<article class="NoticiaVacia">
+			
+			</article>
 			<article class="Noticia">
 				<img src="img/Anato.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -35,7 +51,7 @@
 				</a>				
 			</article>
 			
-</div>
+		</div>
 <script>
 (function CargarNoticias(){
     $.ajax({

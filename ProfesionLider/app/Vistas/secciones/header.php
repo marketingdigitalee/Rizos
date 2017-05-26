@@ -38,7 +38,7 @@
       </li>
       <li ><a href="#Sostenibilidad">SOSTENIBILIDAD</a></li>
       <li ><a href="#Fasciculos">FASCÍULOS</a></li>
-      <li ><a href="#">PREMIO</a></li>
+      <li ><a href="#sky-form" class="modal-opener">PREMIO</a></li>
   </ul>
   </ul>
 </div>

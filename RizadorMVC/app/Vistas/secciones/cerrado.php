@@ -1,4 +1,4 @@
 <div id="divCerrado">
-	<h3 class="centrarTexto">HAZ TU RESERVA A PARTIR DEL 24 DE ABRIL DE 2017</h3>
+	<h3 class="centrarTexto">Acércate con tu cupón + 159.900 al almacén Éxito y reclama tu rizador.</h3>
 	
 </div>
