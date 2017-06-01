@@ -43,7 +43,10 @@ $('.owl-carousel').owlCarousel({
     $('body').click(function(){
         $("header").css("display","");
 
-    })
+    });
+    $(".button").click(function(){
+        $("header").css("display","");
+    });
 });
 
 

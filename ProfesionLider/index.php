@@ -1,6 +1,6 @@
 <?php
+	require_once 'app/Controlador/controladorFormularios.php';
 	require_once 'app/Controlador/controladorVistas.php';
-	require_once 'app/Controlador/controladorReserva.php';
 	require_once 'app/Modelo/funciones.php';
  	include_once("analyticstracking.php");
 	
@@ -29,7 +29,12 @@ if(!empty($_GET['reg'])){
 		$resultado = null;
 
 		if(is_null($_POST['doccedula'])){
-			$resultado = $formularios->ValidarUsuario($_POST['doccedula']);
+			
+			if($$formularios->ValidarUsuario($_POST['doccedula'])){
+				$resultado = 'ok';
+			}else{
+				$resultado = 'error1';
+			}
 		}else{
 			$resultado = $formularios->AgregarPersona($_POST);
 		}
@@ -42,27 +47,12 @@ if(!empty($_GET['reg'])){
 		 		$control->cargarMensajesReserva("NO SE LOGRO GUARDAR EL REGISTRO","botones");
 		 		break;
 
-		 	case 'error2':
-		 		$control->cargarMensajesReserva("NO ACEPTASTE LOS TERMINOS Y CONDICIONES, NO SE REALIARÀ EL REGISTRO", 'form');
-		 		break;
-
-		 	case 'error3':
-		 		$control->cargarMensajesReserva("YA SE ENCUENTRA REGISTRADO POR FAVOR PRESIONE EL BOTON DE YA ME ENCUENTRO REGISTRADO", 'botones');
-		 		break;
-
-		 	case 'error4':
-		 		$control->cargarMensajesReserva("VALIDACION CAPTCHA NO VALIDA, POR FAVOR INTENTELO DE NUEVO", 'botones');
-		 		break;
-		 	
 		 	default:
 			 	$control->cargarMensajesReserva("Error desconocido", 'botones');
 		 		break;
 		 				 		
 		 		
 		 	}
-		 }elseif(){
-
-
 		 }
 
 

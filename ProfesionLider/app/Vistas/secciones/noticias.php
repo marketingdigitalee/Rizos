@@ -4,6 +4,16 @@
 </div>
 		<div class="divContenedorNoticias">
 			<article class="Noticia">
+				<img src="img/Sandra_Forero_Camacol.jpg" alt="Sandra Forero" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">Hay que Construir equipos en donde todos opinen" </h1>
+					<p class="pnoti">Esa es la política de Sandra Forero, Presidenta de Camacol, con la que ha logrado llevar en alto la bandera del éxito profesionaly personal.</p>
+				</div>
+				<a href="http://www.elespectador.com/economia/hay-que-construir-equipos-en-donde-todos-opinen-presidenta-de-camacol-articulo-696168" target="_blank">
+					<button type="button"  class="css3button">VER MÁS</button>
+				</a>
+			</article>
+			<article class="Noticia">
 				<img src="img/ana_maria_uribe.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti"> “Liderar es valorar el trabajo de la gente”: jefa de Servicio al Consumidor de la SIC</h1>
@@ -24,6 +34,13 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>		
+			
+			
+		</div>
+		<div class="divContenedorNoticias">
+<!-- 			<article class="NoticiaVacia">
+			
+			</article> -->
 			<article class="Noticia">
 				<img src="img/astrid_a.jpg" alt="Astrid Àlvarez" class="imgNoti">
 				<div class="descripNoti">
@@ -33,12 +50,6 @@
 				<a href="http://www.elespectador.com/economia/la-mujer-que-lidera-el-grupo-de-energia-de-bogota-articulo-693018" target="_blank">
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
-			</article>
-			
-		</div>
-		<div class="divContenedorNoticias">
-			<article class="NoticiaVacia">
-			
 			</article>
 			<article class="Noticia">
 				<img src="img/Anato.jpg" alt="" class="imgNoti">

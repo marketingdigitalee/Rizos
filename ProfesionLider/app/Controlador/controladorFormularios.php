@@ -18,13 +18,13 @@ function ValidarUsuario($POST){
 	if(array_key_exists("doccedula", $POST)){
 		
 		if($modPersonas->existeXCedula($POST['doccedula'])){
-			$respuesta = 'ok';
+			var_dump('Entraste aqui');
+			$respuesta = true;
 		}else{
-
+			var_dump('Entrastes al else');
+			$respuesta = false;
 		}
 	}
-
-				
 
 }
 
@@ -36,15 +36,13 @@ function AgregarPersona($POST){
 		}else{
 
 			$nuevoArray = $funciones->quitarDatosArreglo($POST,'terminos');
+			$nuevoArray = $funciones->quitarDatosArreglo($nuevoArray,'doccedula');
 			$servidor = $_SERVER;
 			$nuevoArray['ip_Persona'] = $funciones->getRealIP($servidor);
 				
 		//Se envia objeto nuevo creado los datos enviados
 
 			$resultado = $modUsuario->agregarUsuarioBD($nuevoArray);
-
-					
-
 					if ($resultado){
 
 						$_SESSION['dataUsuario'] = $modUsuario->traerUsuarioBDXCedula($POST['cedulaUsuario']);
