@@ -15,9 +15,9 @@
           <li>
             <a href="#Encuentro">Encuentro Liderazgo</a>
               <ul>
-                <li>
+               <!--  <li>
                   <a href="#Encuentro2017">Información 2017</a>  
-                </li>
+                </li> -->
                 <li>
                   <a href="#fotoEnc2016">Fotos 2016</a>  
                 </li>
@@ -26,9 +26,9 @@
           <li>
             <a href="#Premio">Premio Liderazgo</a>
             <ul>
-                <li>
+                <!-- <li>
                   <a href="#Premio2017">Información 2017</a>  
-                </li>
+                </li> -->
                 <li>
                   <a href="#fotoPrem2016">Fotos 2016</a>  
                 </li>
@@ -36,9 +36,9 @@
           </li>
         </ul>
       </li>
-      <li ><a href="#Sostenibilidad">SOSTENIBILIDAD</a></li>
-      <li ><a href="#Fasciculos">FASCÍULOS</a></li>
-      <li ><a href="#sky-form" class="modal-opener">PREMIO</a></li>
+       <li ><a href="#Sostenibilidad">SOSTENIBILIDAD</a></li>
+      <LI ><A href="#Fasciculos">FASCÍULOS</A></LI>
+<!--      <li ><a href="#sky-form" class="modal-opener">PREMIO</a></li> -->
   </ul>
   </ul>
 </div>

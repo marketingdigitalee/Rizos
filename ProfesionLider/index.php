@@ -27,6 +27,7 @@ if(!empty($_GET['reg'])){
 	if(isset($_POST['doccedula']) && isset($_POST['nom_Persona']) && isset($_POST['apell_Persona']) && isset($_POST['correo_Persona']) && isset($_POST['cedula_Persona']) && isset($_POST['tel_Persona'])&& isset($_POST['genero_Persona']) && isset($_POST['terminos']) && isset($_POST['numForm']))
 	{	
 		$resultado = null;
+		var_dump("Entro aqui");
 
 		if(is_null($_POST['doccedula'])){
 			
@@ -39,16 +40,18 @@ if(!empty($_GET['reg'])){
 			$resultado = $formularios->AgregarPersona($_POST);
 		}
 
+
 		switch ($resultado) {
 		 	case 'ok':
 		 		$control->cargarMensajesPopup('SELECCIONE EL ALMACEN Y LA CANTIDAD','reserva');
 		 		break;
 		 	case 'error1':
 		 		$control->cargarMensajesReserva("NO SE LOGRO GUARDAR EL REGISTRO","botones");
+		 		var_dump("entro al error 1");
 		 		break;
 
 		 	default:
-			 	$control->cargarMensajesReserva("Error desconocido", 'botones');
+			 	$control->cargarPrincipal('fromInscripcion');
 		 		break;
 		 				 		
 		 		

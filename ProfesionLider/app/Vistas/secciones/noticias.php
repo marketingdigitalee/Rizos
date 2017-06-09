@@ -4,9 +4,20 @@
 </div>
 		<div class="divContenedorNoticias">
 			<article class="Noticia">
+				<img src="img/AdrianaSuarez.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">Cuando enfrentarse a los miedos se convierte en un estilo de liderar</h1>
+					<p class="pnoti"> Adriana Suárez, directora ejecutiva de Fundación Edeavor, habla de cómo un líder debe retarse constantemente</p>
+					
+				</div>
+				<a href="http://www.elespectador.com/economia/cuando-enfrentarse-los-miedos-se-convierte-en-un-estilo-de-liderar-articulo-697209" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>
+			</article>	
+			<article class="Noticia">
 				<img src="img/Sandra_Forero_Camacol.jpg" alt="Sandra Forero" class="imgNoti">
 				<div class="descripNoti">
-					<h1 class="h1noti">Hay que Construir equipos en donde todos opinen" </h1>
+					<h1 class="h1noti">"Hay que Construir equipos en donde todos opinen" </h1>
 					<p class="pnoti">Esa es la política de Sandra Forero, Presidenta de Camacol, con la que ha logrado llevar en alto la bandera del éxito profesionaly personal.</p>
 				</div>
 				<a href="http://www.elespectador.com/economia/hay-que-construir-equipos-en-donde-todos-opinen-presidenta-de-camacol-articulo-696168" target="_blank">
@@ -23,6 +34,11 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>				
 			</article>
+	
+			
+			
+		</div>
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/AnaKarina.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -33,14 +49,7 @@
 				<a href="http://www.elespectador.com/economia/hay-que-tener-una-politica-de-puertas-mente-y-corazon-abiertos-articulo-694096" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
-			</article>		
-			
-			
-		</div>
-		<div class="divContenedorNoticias">
-<!-- 			<article class="NoticiaVacia">
-			
-			</article> -->
+			</article>	
 			<article class="Noticia">
 				<img src="img/astrid_a.jpg" alt="Astrid Àlvarez" class="imgNoti">
 				<div class="descripNoti">

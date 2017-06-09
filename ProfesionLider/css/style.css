@@ -64,7 +64,7 @@ header{
 
 
 #header {
-	width:900px;
+	width: 800px;
 	height: 100px;
 	font-family: "ChampionsRegular.otf";
 	margin: auto;
@@ -392,6 +392,7 @@ button.css3button {
 
 
 /*--------------- FASCICULOS --------------*/
+
 #Fasciculos {
     padding-top: 90px;
     width: 100%;
@@ -405,13 +406,56 @@ button.css3button {
 
 }
 
+.tableFasci_01{
+	width: 400px;
+	height: 120px;
+	margin-top: -200px;
+    margin-left: 53px;
+    overflow: hidden;
+
+}
+
+.tableFasci_02{
+	width: 400px;
+	height: 120px;
+	margin-top: -265px;
+    margin-left: 53px;
+    overflow: hidden;
+
+}
+
+.tableFasci_03{
+	width: 400px;
+	height: 120px;
+	margin-top: -260px;
+    margin-left: 53px;
+    overflow: hidden;
+
+}
+
 .descargaFasciculo{
-    width: 395px;
-    height: 317px;
+    width: 150px;
+    height: 120px;
     background-image: url(../img/pages/des_inactivo.png);
     position: relative;
-    top: -450px;
-    margin-left: 50px;
+    background-size: 100%;
+    float: left;
+
+}
+
+.contentFasiculo{
+	width: 250px;
+    height: 120px;
+    float: left;
+    position: relative;
+    background-color: black;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.nameFasci{
+	color: white;
+
 }
 
 .descargaFasciculo:hover{
