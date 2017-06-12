@@ -406,10 +406,10 @@ button.css3button {
 
 }
 
-.tableFasci_01{
+.tableFasci_03{
 	width: 400px;
 	height: 120px;
-	margin-top: -200px;
+	margin-top: 24px;
     margin-left: 53px;
     overflow: hidden;
 
@@ -418,16 +418,16 @@ button.css3button {
 .tableFasci_02{
 	width: 400px;
 	height: 120px;
-	margin-top: -265px;
+	margin-top: 20px;
     margin-left: 53px;
     overflow: hidden;
 
 }
 
-.tableFasci_03{
+.tableFasci_01{
 	width: 400px;
 	height: 120px;
-	margin-top: -260px;
+	margin-top: -517px;
     margin-left: 53px;
     overflow: hidden;
 
@@ -436,7 +436,7 @@ button.css3button {
 .descargaFasciculo{
     width: 150px;
     height: 120px;
-    background-image: url(../img/pages/des_inactivo.png);
+    background-image: url(../img/pages/des_activo.png);
     position: relative;
     background-size: 100%;
     float: left;
@@ -448,20 +448,29 @@ button.css3button {
     height: 120px;
     float: left;
     position: relative;
-    background-color: black;
+    background-color: white;
     text-align: center;
     opacity: 0.8;
 }
 
 .nameFasci{
-	color: white;
+	color: black;
 
 }
 
 .descargaFasciculo:hover{
 
-    background-image: url(../img/pages/des_activo.png) !important;
+    background-image: url(../img/pages/des_inactivo.png) !important;
 
+}
+
+.proximaDescarga{
+	width: 150px;
+    height: 120px;
+    background-image: url(../img/pages/des_inactivo.png);
+    position: relative;
+    background-size: 100%;
+    float: left;
 }
 
 /*----------------FOOTER --------------*/
