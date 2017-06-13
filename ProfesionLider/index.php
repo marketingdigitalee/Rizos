@@ -7,7 +7,6 @@
 	$control = new controladorVistas();
 	$formularios = new ControladorFormularios();
 	$funciones = new Funciones;
-session_start();
 
 if(!empty($_GET['reg'])){
 
@@ -23,46 +22,54 @@ if(!empty($_GET['reg'])){
 /*----------------------LLENADO DE FORMULARIO------------------*/
 
  }elseif(!empty($_POST)){
+ 	if(isset($_POST['numForm'])){
+ 		
+ 		if($_POST['numForm'] == "1"){
+ 			var_dump($_POST);
+ 			
+	 		if(isset($_POST['doccedula']) && isset($_POST['nom_Persona']) && isset($_POST['apell_Persona']) && isset($_POST['correo_Persona']) && isset($_POST['genero_Persona']) && isset($_POST['cedula_Persona']) && isset($_POST['tel_Persona']) && isset($_POST['emp_Persona']) && isset($_POST['acepto_Persona']) ){	
 
-	if(isset($_POST['doccedula']) && isset($_POST['nom_Persona']) && isset($_POST['apell_Persona']) && isset($_POST['correo_Persona']) && isset($_POST['cedula_Persona']) && isset($_POST['tel_Persona'])&& isset($_POST['genero_Persona']) && isset($_POST['terminos']) && isset($_POST['numForm']))
-	{	
-		$resultado = null;
-		var_dump("Entro aqui");
+					$resultado = null;
+					if(empty($_POST['doccedula'])){
+						$resultado = $formularios->AgregarPersona($_POST);
+					}else{
+						
+						$resultado = $formularios->ValidarUsuario($_POST);
+					}
 
-		if(is_null($_POST['doccedula'])){
-			
-			if($$formularios->ValidarUsuario($_POST['doccedula'])){
-				$resultado = 'ok';
-			}else{
-				$resultado = 'error1';
+
+					switch ($resultado) {
+					 	case 'ok':
+					 		//Descargar PDF
+					 		var_dump("Descargar PDF");
+					 		break;
+					 	case 'error1':
+					 		var_dump("ya estabas registrado");
+					 		break;
+					 	case 'error3':
+					 		var_dump("no estabas registrado");
+					 		break;
+
+					 	case 'error2':
+					 		var_dump("Debe aceptar los terminos");
+					 		break;
+
+					 	default:
+						 	var_dump("entro al default");
+					 		break;
+					 	}
+				} 			
+			}elseif ($_POST['numForm'] == "2") {
+				var_dump("Entro al 2");
 			}
-		}else{
-			$resultado = $formularios->AgregarPersona($_POST);
-		}
+ 	}else{
+ 		var_dump("no Entro ");
+ 	}
 
 
-		switch ($resultado) {
-		 	case 'ok':
-		 		$control->cargarMensajesPopup('SELECCIONE EL ALMACEN Y LA CANTIDAD','reserva');
-		 		break;
-		 	case 'error1':
-		 		$control->cargarMensajesReserva("NO SE LOGRO GUARDAR EL REGISTRO","botones");
-		 		var_dump("entro al error 1");
-		 		break;
 
-		 	default:
-			 	$control->cargarPrincipal('fromInscripcion');
-		 		break;
-		 				 		
-		 		
-		 	}
-		 }
-
-
-}else{
-	
+}else{	
 	$control->cargarPrincipal('fromInscripcion');
-
 }
 
 

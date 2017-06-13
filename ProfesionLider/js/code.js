@@ -47,6 +47,13 @@ $('.owl-carousel').owlCarousel({
     $(".button").click(function(){
         $("header").css("display","");
     });
+
+    $(".modal-opener").click(function(){
+        var $idAncore = $(this).attr("id");
+        alert($idAncore);
+        $.post("index.php", { idDes: $idAncore});
+
+    });
 });
 
 

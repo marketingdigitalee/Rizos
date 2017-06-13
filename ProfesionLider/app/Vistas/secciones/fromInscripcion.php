@@ -54,45 +54,45 @@
 		<div class="row">
 			<section class="col col-11">
 				<label class="select">
-					<select name="gen_Persona">
+					<select name="genero_Persona">
 					<option value="Masculino">Masculino</option>
 					<option value="Femenino">Femenino</option>
 					</select>
 				</label>
 			</section>
 		</div>
-<div class="row">
-	<section class="col col-11">
-						<label class="input">
-							<i class="icon-append fa fa-credit-card"></i>
-							<input type="text" name="cedula" placeholder="C&eacute;dula">
-							<b class="tooltip tooltip-bottom-right">Num. documento, Sin comas ni puntos</b>
-						</label>
-					</section>
-					</div>
-						<div class="row">
-					<section class="col col-11">
-						<label class="input">
-							<i class="icon-append fa fa-mobile-phone"></i>
-							<input type="text" name="celular" placeholder="Numero Celular">
-							<b class="tooltip tooltip-bottom-right">Numero Celular</b>
-						</label>
-					</section>
-					</div>
-					<div class="row">
-					<section class="col col-11">
-						<label class="input">
-							<i class="icon-append fa fa-globe"></i>
-							<input type="text" name="empresa" placeholder="Empresa">
-							<b class="tooltip tooltip-bottom-right">Empresa</b>
-						</label>
-					</section>
-					</div>
-					<div class="row">
-					<section class="col col-11">
-						<label class="checkbox"><input type="checkbox" name="terminos" checked><i></i><span style="color:#000;font-size:12px;">Acepto Pol&iacute;ticas de Privacidad y Manejo de Informaci&oacute;n <a href="#overlay" class="modal-opener">Ver m&aacute;s >></a></span></label>
-					</section>
-					</div>				
+	<div class="row">
+		<section class="col col-11">
+			<label class="input">
+				<i class="icon-append fa fa-credit-card"></i>
+				<input type="text" name="cedula_Persona" placeholder="Cédula">
+				<b class="tooltip tooltip-bottom-right">Num. documento, Sin comas ni puntos</b>
+			</label>
+		</section>
+	</div>
+	<div class="row">
+		<section class="col col-11">
+			<label class="input">
+				<i class="icon-append fa fa-mobile-phone"></i>
+				<input type="text" name="tel_Persona" placeholder="Numero Celular">
+				<b class="tooltip tooltip-bottom-right">Numero Celular</b>
+			</label>
+		</section>
+	</div>
+	<div class="row">
+		<section class="col col-11">
+			<label class="input">
+				<i class="icon-append fa fa-globe"></i>
+				<input type="text" name="emp_Persona" placeholder="Empresa">
+				<b class="tooltip tooltip-bottom-right">Empresa</b>
+			</label>
+		</section>
+	</div>
+	<div class="row">
+		<section class="col col-11">
+			<label class="checkbox"><input type="checkbox" name="acepto_Persona" checked><i></i><span style="color:#000;font-size:12px;">Acepto Pol&iacute;ticas de Privacidad y Manejo de Informaci&oacute;n <a href="#overlay" class="modal-opener">Ver m&aacute;s >></a></span></label>
+		</section>
+	</div>				
 </fieldset>
 <footer>
 	<input type="hidden" name="numForm" id="numForm" value="1">

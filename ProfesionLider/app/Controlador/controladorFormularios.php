@@ -1,9 +1,6 @@
 <?php 
 require 'app/Modelo/PersonasDAO.class.php';
-require 'app/Modelo/ReservaDAO.class.php';
 require 'app/Modelo/AlmacenDAO.class.php';
-require 'app/Modelo/ProductoDAO.class.php';
-require 'app/Modelo/RedencionesDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'app/Controlador/libreria/recaptcha/recaptchalib.php';
 require_once 'controladorVistas.php';
@@ -13,51 +10,58 @@ class ControladorFormularios{
 
 function ValidarUsuario($POST){
 	$modPersonas = new PersonasDAO();
+
 	$respuesta = null;
 
 	if(array_key_exists("doccedula", $POST)){
 		
 		if($modPersonas->existeXCedula($POST['doccedula'])){
-			var_dump('Entraste aqui');
-			$respuesta = true;
+			$respuesta = 'ok';
 		}else{
-			var_dump('Entrastes al else');
-			$respuesta = false;
+			$respuesta = 'error3';
 		}
 	}
+
+	return $respuesta;
 
 }
 
 function AgregarPersona($POST){
-	if(array_key_exists('terminos', $POST)){
+	$modPersonas = new PersonasDAO();
+	$funciones = new Funciones();
+	$respuesta = null;
+	if($POST['acepto_Persona'] == 'on'){
+
+		$POST['acepto_Persona'] = true;
 				
-		if($modUsuario->existeUsuario($POST['cedula'])){
-			$respuesta = 'ok';
+		if($modPersonas->existeXCedula($POST['cedula_Persona'])){
+			$respuesta = 'error1';
 		}else{
 
-			$nuevoArray = $funciones->quitarDatosArreglo($POST,'terminos');
-			$nuevoArray = $funciones->quitarDatosArreglo($nuevoArray,'doccedula');
+			$nuevoArray = $funciones->quitarDatosArreglo($POST,'doccedula');
+			$nuevoArray = $funciones->quitarDatosArreglo($nuevoArray,'numForm');
 			$servidor = $_SERVER;
 			$nuevoArray['ip_Persona'] = $funciones->getRealIP($servidor);
-				
+
+
 		//Se envia objeto nuevo creado los datos enviados
 
-			$resultado = $modUsuario->agregarUsuarioBD($nuevoArray);
-					if ($resultado){
+			$resultado = $modPersonas->AgregarPersona($nuevoArray);
+			var_dump($resultado);
 
-						$_SESSION['dataUsuario'] = $modUsuario->traerUsuarioBDXCedula($POST['cedulaUsuario']);
-
-						
-						$respuesta = 'ok';
-					}else{
-						$respuesta = 'error1';
-					}
-
+				if ($resultado){
+					$respuesta = 'ok';
+				}else{
+					$respuesta = 'error1';
 				}
-			}else{
-				$respuesta = 'error2';
-			}
+
+		}
+	}else{
+		$respuesta = 'error2';
+	}
+return $respuesta;
 }
+
 
 }
 
