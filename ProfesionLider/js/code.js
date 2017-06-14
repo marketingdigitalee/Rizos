@@ -18,8 +18,8 @@ $('.owl-carousel').owlCarousel({
             items:1
         },
         1000:{
-            items:2,
-        }
+            items:2
+        },
     }
 });
 
@@ -38,23 +38,20 @@ $('.owl-carousel').owlCarousel({
 
     $('.descargaFasciculo').click(function(){
         $("header").css("display","none");
+    });
 
-    })
     $('body').click(function(){
         $("header").css("display","");
-
     });
+
     $(".button").click(function(){
         $("header").css("display","");
     });
 
     $(".modal-opener").click(function(){
-        var $idAncore = $(this).attr("id");
-        alert($idAncore);
-        $.post("index.php", { idDes: $idAncore});
-
+        var idAncore = $(this).attr("id");
+        alert(idAncore);
+        $.post("index.php", {idDes: idAncore});
     });
+
 });
-
-
-

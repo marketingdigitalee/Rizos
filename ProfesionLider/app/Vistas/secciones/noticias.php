@@ -4,6 +4,16 @@
 </div>
 		<div class="divContenedorNoticias">
 			<article class="Noticia">
+				<img src="img/Rosita_Manrique.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">Un sueño y una buena causa no son suficientes para liderar.</h1>
+					<p class="pnoti"> Rosita Manrique, presidenta de la junta directiva de la fundación Origen, cuenta cómo el juntar líderes de varios sectores sociales crea cambios profundos en la sociedad.</p>
+				</div>
+				<a href="http://www.elespectador.com/economia/un-sueno-y-una-buena-causa-no-son-suficientes-para-liderar-articulo-698284" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>				
+			</article>
+			<article class="Noticia">
 				<img src="img/AdrianaSuarez.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti">Cuando enfrentarse a los miedos se convierte en un estilo de liderar</h1>
@@ -24,21 +34,22 @@
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
 			</article>
+
+	
+			
+			
+		</div>
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/ana_maria_uribe.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti"> “Liderar es valorar el trabajo de la gente”: jefa de Servicio al Consumidor de la SIC</h1>
 					<p class="pnoti"> Esa es la visión de Ana María Uribe, jefa de Servicio al Consumidor y Apoyo al Empresario de la Superintendencia de Industria y Comercio.</p>
 				</div>
-				<a href=" http://www.elespectador.com/economia/liderar-es-valorar-el-trabajo-de-la-gente-jefa-de-servicio-al-consumidor-de-la-sic-articulo-695147" target="_blank">
+				<a href="http://www.elespectador.com/economia/liderar-es-valorar-el-trabajo-de-la-gente-jefa-de-servicio-al-consumidor-de-la-sic-articulo-695147" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>				
 			</article>
-	
-			
-			
-		</div>
-		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/AnaKarina.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -59,6 +70,12 @@
 				<a href="http://www.elespectador.com/economia/la-mujer-que-lidera-el-grupo-de-energia-de-bogota-articulo-693018" target="_blank">
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
+			</article>
+			
+		</div>
+		<div class="divContenedorNoticias">
+			<article class="NoticiaVacia">
+				
 			</article>
 			<article class="Noticia">
 				<img src="img/Anato.jpg" alt="" class="imgNoti">

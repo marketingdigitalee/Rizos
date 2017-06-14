@@ -32,51 +32,49 @@
 
 </head>
 <body>
+  <div id="redesSociales">
+    <a class="redes" href="https://www.facebook.com/profesionlider/?ref=bookmarks" target="_blank">
+      <img src="img/face.png" alt="">
+    </a>
+    <a class="redes" href="https://twitter.com/ProfesionLider" target="_blank">
+      <img src="img/twitter.png" alt="">
+    </a>
+    <a class="redes" href="https://www.linkedin.com/in/profesi%C3%B3n-l%C3%ADder-85175913a/" target="_blank">
+      <img src="img/in.png" alt="">
+    </a>  
+  </div>
 
-
-<div id="redesSociales">
-  <a class="redes" href="https://www.facebook.com/profesionlider/?ref=bookmarks" target="_blank">
-    <img src="img/face.png" alt="">
-  </a>
-  <a class="redes" href="https://twitter.com/ProfesionLider" target="_blank">
-    <img src="img/twitter.png" alt="">
-  </a>
-  <a class="redes" href="https://www.linkedin.com/in/profesi%C3%B3n-l%C3%ADder-85175913a/" target="_blank">
-    <img src="img/in.png" alt="">
-  </a>  
-</div>
-
-<header>
-  #HEADER#  
-</header>
-<div id="contenedor">
-  <section id="Cabecera" >
-    #HOME#       
-  </section>
-  <section id="Noticias">
-    #NOTICIAS#
-  </section>
-  <section id="Videos">
-    #VIDEOS# 
-  </section>
-  <section id="Eventos">
-    #EVENTOS#
-  </section>
-  <section id="Sostenibilidad" >
-    #SOSTENIBILIDAD#
-  </section>
-  <section id="Fasciculos" >
-    #FASCICULOS#
-  </section>
-  <section>
-    #FORMULARIO#
-  </section>
-  <section id="Footer">
-    #FOOTER#
-  </section>
-</div>
-    
-<script src="js/code.js"></script>
+  <header>
+    #HEADER#  
+  </header>
+  <div id="contenedor">
+    <section id="Cabecera" >
+      #HOME#       
+    </section>
+    <section id="Noticias">
+      #NOTICIAS#
+    </section>
+    <section id="Videos">
+      #VIDEOS# 
+    </section>
+    <section id="Eventos">
+      #EVENTOS#
+    </section>
+    <section id="Sostenibilidad" >
+      #SOSTENIBILIDAD#
+    </section>
+    <section id="Fasciculos" >
+      #FASCICULOS#
+    </section>
+    <section>
+      #FORMULARIO#
+    </section>
+    <section id="Footer">
+      #FOOTER#
+    </section>
+  </div>
+      
+  <script src="js/code.js"></script>
 </body>
 </html>
 
