@@ -1,14 +1,27 @@
 <?php
 
 class controladorVistas{
-  
+
+/*------------------------------FUNCIONES PARA CREAR HTML DE LAS VISTAS -----------*/
+	private function load_page($page){
+	 	return file_get_contents($page);
+	 }
+
+	function view_page($html){
+		echo $html;
+	 }
+
+	private function replace_content($in, $out,$pagina) {
+		return preg_replace($in, $out, $pagina);
+	 }
+
+
 /*----------------------FUNCIONES PAGINA INDEX  ------------*/
 
 	function load_template(){
 				
 
 		$eventos =$this->load_page('app/Vistas/secciones/eventos.php');
-
 		$premio = $this->load_page('app/Vistas/secciones/premio.php');	
 		$encu = $this->load_page('app/Vistas/secciones/encuentro.php');
 
@@ -25,8 +38,6 @@ class controladorVistas{
 		$sostenibilidad = $this->load_page('app/Vistas/secciones/sostenibilidad.php');
 		$fasciculos = $this->load_page('app/Vistas/secciones/fasciculos.php');
 		$footer = $this->load_page('app/Vistas/secciones/footer.php');
-
-	
 
 		$pagina = $this->replace_content('/\#HEADER\#/ms' ,$header , $pagina);
 		$pagina = $this->replace_content('/\#HOME#/ms' ,$home , $pagina);
@@ -47,30 +58,17 @@ class controladorVistas{
 
 	function cargarPrincipal($pagina){
 
-			$ppal = $this->load_template();
-			$url = 'app/Vistas/secciones/'.$pagina.'.php';
-			$cargar = $this->load_page($url);
-			$ppal = $this->replace_content('/\#FORMULARIO\#/ms' ,$cargar , $ppal);
-			$this->view_page($ppal);
+		$ppal = $this->load_template();
+		$url = 'app/Vistas/secciones/'.$pagina.'.php';
+		$cargar = $this->load_page($url);
+		$ppal = $this->replace_content('/\#FORMULARIO\#/ms' ,$cargar , $ppal);
+		$this->view_page($ppal);
 	}
-
-/*------------------------------FUNCIONES PARA CREAR HTML DE LAS VISTAS -----------*/
-	 private function load_page($page){
-	 	return file_get_contents($page);
-	 }
-
-	 function view_page($html){
-	  echo $html;
-	 }
-
-	 private function replace_content($in, $out,$pagina) {
-	   return preg_replace($in, $out, $pagina);
-	 }
 
 
 
 /*----------------------------------------TODO EL CONFIG------------------------------*/
-	 function load_config(){
+	function load_config(){
 	 	if(isset($_SESSION['idRoll'])){
 	 		if ($_SESSION['idRoll'] == '1') {
 				$pagina = $this->load_page('app/Vistas/configure.php');

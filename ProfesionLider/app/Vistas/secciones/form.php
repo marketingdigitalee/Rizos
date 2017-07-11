@@ -5,7 +5,8 @@
 	<div class="login-page">
 		<div class="form">
 				  <!-- Contact Form -->
-				<form action="index.php#ReservaYA" method="post">
+				<form id="formInscrip" action="index.php#Fasciculos" method="post">
+					  <input id="oculto" type="hidden" name="idDescarga" value="">
 
 					 <input type="text" name="nomUsuario" required="true" placeholder="Nombre" >
 					<input type="text" name="apellUsuario" placeholder="Apellidos" required="true">

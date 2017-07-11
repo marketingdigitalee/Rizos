@@ -31,7 +31,7 @@
 
 
 </head>
-<body>
+<body id="body1">
   <div id="redesSociales">
     <a class="redes" href="https://www.facebook.com/profesionlider/?ref=bookmarks" target="_blank">
       <img src="img/face.png" alt="">

@@ -27,7 +27,7 @@ if(!empty($_GET['reg'])){
  		if($_POST['numForm'] == "1"){
  			var_dump($_POST);
  			
-	 		if(isset($_POST['doccedula']) && isset($_POST['nom_Persona']) && isset($_POST['apell_Persona']) && isset($_POST['correo_Persona']) && isset($_POST['genero_Persona']) && isset($_POST['cedula_Persona']) && isset($_POST['tel_Persona']) && isset($_POST['emp_Persona']) && isset($_POST['acepto_Persona']) ){	
+	 		if(isset($_POST['idDescarga']) && isset($_POST['doccedula']) && isset($_POST['nom_Persona']) && isset($_POST['apell_Persona']) && isset($_POST['correo_Persona']) && isset($_POST['genero_Persona']) && isset($_POST['cedula_Persona']) && isset($_POST['tel_Persona']) && isset($_POST['emp_Persona']) && isset($_POST['acepto_Persona']) ){	
 
 					$resultado = null;
 					if(empty($_POST['doccedula'])){
@@ -41,7 +41,12 @@ if(!empty($_GET['reg'])){
 					switch ($resultado) {
 					 	case 'ok':
 					 		//Descargar PDF
-					 		var_dump("Descargar PDF");
+					 		$funciones->descargaPDF($_POST['idDescarga']);
+					 		$control->cargarPrincipal('fromInscripcion');
+					 		$funciones->ejecutarJS('LimpiarForm');
+					 		echo '<SCRIPT LANGUAGE="JavaScript">  ';
+							echo 'alert("TU PAGINA");  ';
+							echo '</SCRIPT>';
 					 		break;
 					 	case 'error1':
 					 		var_dump("ya estabas registrado");

@@ -1,0 +1,61 @@
+
+#modelo{
+    width: 130px;
+    margin-left: 45px;
+}
+
+#contenedor{
+	margin: 0 auto;
+	width: 1200px
+}
+
+section#cont1{
+	background-color: #8c0095;
+}
+#btnGalery{
+	position: absolute;
+	margin-top: 300px;
+	margin-left: 200px;
+	width: 100px;
+	height: 50px;
+}
+
+iframe {
+	background:transparent;
+}
+
+
+#galeryContent{
+	position: relative;
+	margin: 0px auto;
+	display: none;
+	width:200px;
+	height:200px;
+	background:rgba(0,0,0,0);
+}
+
+#galeria{
+	position: relative;
+	margin: auto;
+	width: 400px;
+}
+
+#galeria li{
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	overflow: hidden;
+	border:2px solid white;
+	cursor: pointer;
+}
+
+#galeria li:hover{
+
+	opacity: 0.6;
+}
+
+#galeria li img{
+	width:180%;
+}
+

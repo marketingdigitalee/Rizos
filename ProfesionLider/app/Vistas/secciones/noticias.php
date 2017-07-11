@@ -4,6 +4,43 @@
 </div>
 		<div class="divContenedorNoticias">
 			<article class="Noticia">
+				<img src="img/MISI.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">“Hay que pasar de la terquedad a la perseverancia”</h1>
+					<p class="pnoti">María Isabel Murillo es la líder detrás del teatro musical más importante de Colombia, en el que los protagonistas son niños y adolescentes.</p>
+					
+				</div>
+				<a href="http://www.elespectador.com/economia/hay-que-pasar-de-la-terquedad-la-perseverancia-articulo-701381" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>
+			</article>	
+			<article class="Noticia">
+				<img src="img/Cecilia_Nunes.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">La mujer que lidera empoderando a otras mujeres.</h1>
+					<p class="pnoti">Cecilia Nunes está al frente de Tupperware. Para ella, la clave en la empresa y en el hogar está en dar confianza, guiar y valorar.</p>
+					
+				</div>
+				<a href="http://www.elespectador.com/economia/la-mujer-que-lidera-empoderando-otras-mujeres-articulo-700276" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>
+			</article>				
+			<article class="Noticia">
+				<img src="img/Patricia_Urrea.jpg" alt="Patricia Urrea" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">"Los centros comerciales son como los clubes de Barrio"</h1>
+					<p class="pnoti">Patricia Urrea, gerente de Salitre Plaza, cree que un buen liderazgo es el que escucha al cliente y actúa para cumplir sus necesidades.</p>
+				</div>
+				<a href="http://www.elespectador.com/economia/los-centros-comerciales-son-como-los-clubes-de-barrio-articulo-699239" target="_blank">
+					<button type="button"  class="css3button">VER MÁS</button>
+				</a>
+			</article>		
+
+
+		
+		</div>
+		<div class="divContenedorNoticias">
+			<article class="Noticia">
 				<img src="img/Rosita_Manrique.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti">Un sueño y una buena causa no son suficientes para liderar.</h1>
@@ -23,7 +60,7 @@
 				<a href="http://www.elespectador.com/economia/cuando-enfrentarse-los-miedos-se-convierte-en-un-estilo-de-liderar-articulo-697209" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
-			</article>	
+			</article>			
 			<article class="Noticia">
 				<img src="img/Sandra_Forero_Camacol.jpg" alt="Sandra Forero" class="imgNoti">
 				<div class="descripNoti">
@@ -35,10 +72,11 @@
 				</a>
 			</article>
 
-	
-			
+
+
 			
 		</div>
+		
 		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/ana_maria_uribe.jpg" alt="" class="imgNoti">
@@ -60,7 +98,7 @@
 				<a href="http://www.elespectador.com/economia/hay-que-tener-una-politica-de-puertas-mente-y-corazon-abiertos-articulo-694096" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
-			</article>	
+			</article>				
 			<article class="Noticia">
 				<img src="img/astrid_a.jpg" alt="Astrid Àlvarez" class="imgNoti">
 				<div class="descripNoti">
@@ -71,12 +109,11 @@
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
 			</article>
+
 			
 		</div>
 		<div class="divContenedorNoticias">
-			<article class="NoticiaVacia">
-				
-			</article>
+			<article class="NoticiaVacia"></article>
 			<article class="Noticia">
 				<img src="img/Anato.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -87,7 +124,6 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>				
 			</article>
-			
 		</div>
 <script>
 (function CargarNoticias(){

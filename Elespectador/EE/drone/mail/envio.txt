@@ -1,0 +1,25 @@
+function sndmail(){
+require_once('class.phpmailer.php');
+extract($_POST);
+$mail             = new PHPMailer();
+$mail->IsSMTP();
+$mail->Host       = "mail.2kstudio.com";
+$mail->SMTPAuth   = true;
+$mail->Host       = "mail.2kstudio.com";
+$mail->Port       = 25;
+$mail->Username = 'john.arevalo@2kstudio.com'; 
+$mail->Password = '800209';
+$body             = file_get_contents('mail/finalistas_salud_bienestar.html');
+$body             = eregi_replace("[\]",'',$body);
+$body=preg_replace("/\[# (.*?) #\]/e", "$\\1", $body);
+print $body;
+$mail->AddReplyTo("john.arevalo@2kstudio.com","Contacto interesado");
+$mail->SetFrom('john.arevalo@2kstudio.com', 'Contacto interesado');
+$mail->AddReplyTo("john.arevalo@2kstudio.com","studiojapones.com'");
+$mail->AddAddress($email, "Centro de Ilustracion Japonesa");
+$mail->Subject    = "Contacto interesado";
+$mail->AltBody    = "Para ver el mensaje, por favor, utilice un visor de HTML de correo electrónico compatibles!"; // optional, comment out and test
+$mail->MsgHTML($body);
+if($mail->Send()) {return true;} 
+else {return false;}
+}

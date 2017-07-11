@@ -31,7 +31,7 @@ $('.owl-carousel').owlCarousel({
         manual: true,
         overlays:true,
         hovers:   true,
-        pageNumbers: false,
+        pageNumbers: true,
         closed: true,
         autoCenter: true
     });
@@ -40,18 +40,28 @@ $('.owl-carousel').owlCarousel({
         $("header").css("display","none");
     });
 
-    $('body').click(function(){
-        $("header").css("display","");
+    $("input").click(function(){
+        $("header").css("display","none");
     });
 
     $(".button").click(function(){
         $("header").css("display","");
     });
+    $("#contenedor").click(function(){
+        $("header").css("display","");
+    })
 
     $(".modal-opener").click(function(){
         var idAncore = $(this).attr("id");
-        alert(idAncore);
-        $.post("index.php", {idDes: idAncore});
+        var inputLeo = document.getElementById('idDescarga');
+        inputLeo.value = idAncore;
     });
 
-});
+    function LimpiarForm(){
+    var form = document.getElementById("sky-form").getElementsByTagName("input");
+    for (var i=0; i<form.length; i++) {
+        form[i].value = "";
+        }
+}
+}); 
+

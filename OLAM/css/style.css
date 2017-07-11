@@ -1,0 +1,314 @@
+@font-face {
+	font-family: "Stag-BoldItalic_0.otf";
+	src: url(../fonts/BebasNeue.otf) format('opentype');
+}
+
+
+*{
+	font-family: "Stag-BoldItalic_0.otf";
+	font-size: 20pt;
+}
+
+body{
+	height: auto;
+	background: rgba(15,43,153,1);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background: -moz-linear-gradient(-135deg, rgb(0, 0, 0) 0%, rgb(39, 61, 80)100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgb(0, 0, 0)), color-stop(100%, rgb(39, 61, 80)));
+	background: -webkit-linear-gradient(-45deg, rgb(0, 0, 0)0%, rgb(39, 61, 80) 100%);
+	background: -o-linear-gradient(-45deg, rgb(0, 0, 0) 0%, rgb(39, 61, 80) 100%);
+	background: -ms-linear-gradient(-45deg, rgb(0, 0, 0) 0%, rgb(39, 61, 80) 100%);
+	background: linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(39, 61, 80) 100%);
+	
+/*
+	background: -moz-linear-gradient(-45deg, rgba(15,43,153,1) 0%, rgba(96,39,143,1) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(15,43,153,1)), color-stop(100%, rgba(96,39,143,1)));
+	background: -webkit-linear-gradient(-45deg, rgba(15,43,153,1) 0%, rgba(96,39,143,1) 100%);
+	background: -o-linear-gradient(-45deg, rgba(15,43,153,1) 0%, rgba(96,39,143,1) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(15,43,153,1) 0%, rgba(96,39,143,1) 100%);
+	background: linear-gradient(135deg, rgba(15,43,153,1) 0%, rgba(96,39,143,1) 100%);
+*/
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f2b99', endColorstr='#60278f', GradientType=1 );
+	
+}
+#contenedor{
+		/*background-image: url("../img/Fondo.jpg");*/
+	background-repeat: no-repeat;
+	width: 1200px;
+	margin: 0px auto;
+	height: 100%;
+}
+
+/*------------- CABECERA -----------------*/
+header{
+	width: 100%;
+	height: 150px;
+	overflow:hidden;
+	position: fixed;
+	z-index: 100;
+	margin-top: -150px;	
+
+}
+
+header div {
+	width: 70%;
+    float: left;
+    text-align: center;
+    margin-top: 30px;
+}
+
+header div img{
+	height: 80px;
+}
+
+header #logo{
+    height: 150px;
+    width: 15%;
+    position: relative;
+    float: left;
+    text-align: center;
+	
+}
+header #logo img {
+	height: 150px;
+    margin: 0px auto;
+    margin-top: -29px;		
+}
+header #home{
+    float: right;
+    position: relative;
+    width: 15%;
+    margin: 0px auto;
+	
+}
+header #home:hover{
+	opacity: 0.5;
+}
+
+header #home img {
+    width: 71px;
+    margin-top: 40px;	
+}
+
+
+.tituloCuadro{
+	text-align: center;
+	color: white;
+	height: 75px;
+	margin: 5px 5px
+}
+/*------------- CABECERA UINAMICA-----------------*/
+.cabecera{
+	width: 100%;
+	height: 60px;
+    background-color: #192833;
+}
+
+.cabecera div {
+    margin-top: 11px;
+}
+
+.cabecera div img{
+	height: 37px;
+}
+
+.cabecera #logo{
+	height: 60px;
+	float: left;
+	position: relative;
+	
+}
+.cabecera #logo img {
+    height: 50px;
+    width: 110px;
+    margin-top: -7px;
+}
+
+.cabecera #home{
+	width: 15%;
+	
+}
+.cabecera #home img {
+    height: 47px;
+    width: 54px;
+    margin-top: 9px;		
+}
+
+/*------------- Boton -----------------*/
+#btnManual{	
+	text-align: center;
+	margin: 20px;
+}
+
+#btnManual a{
+	margin: 0px auto;
+}
+
+.btn {
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: transparent;
+  padding: 10px 20px 10px 20px;
+  border: solid #dfeaf0 3px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ffffff;
+/*  background-image: -webkit-linear-gradient(top, #1b425c, #412993);
+  background-image: -moz-linear-gradient(top, #1b425c, #412993);
+  background-image: -ms-linear-gradient(top, #1b425c, #412993);
+  background-image: -o-linear-gradient(top, #1b425c, #412993);
+  background-image: linear-gradient(to bottom, #1b425c, #412993);*/
+  color:#412993;
+  text-decoration: none;
+}
+
+
+/*-------------CUERPO -----------------*/
+#contenedorHome{
+	width: 1200px;
+	margin: 0px auto;
+	margin-top: 150px;
+	height: 750px;
+	text-align: center;
+}
+
+#contenedor{
+	margin-top: 150px;
+}
+
+#Sec01{
+width: 100%;
+height: 600px;
+}
+#menu_opciones{
+	width: 100%;
+    margin: 0px auto;
+}
+
+article[class^='caja']{
+    border: 4px solid white;
+    display: inline-table;
+    width: 22%;
+    margin: 12px;
+    height: 330px;
+}
+
+article[class^='caja'] .parrafo{
+	font-size: 14pt;
+	text-align: center;
+	color:white;
+	margin: 10px;
+}
+article[class^='caja'] .btnArticle{
+	margin: 15px 46px;
+
+}
+
+.contentImg{
+	width: 100%;
+}
+
+#linea1{
+	margin: 0 auto;
+    width: 1200px;
+
+}
+#linea2{
+	margin: 0 auto;
+    width: 1200px;
+
+}
+.imgCaja{
+    width: 50%;
+    position: relative;
+}
+
+.contCajas{
+
+	width: 100px;
+	height: 100px;
+}
+#btnBanner{
+	width: 100%;
+	height: 100%;	
+	position: relative;
+	float: left;
+	color: black;
+
+}
+#btnBanner:hover{
+	opacity:0.5;
+}
+#btnMailing{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+
+}
+#btnMailing:hover{
+	opacity:0.5;
+}
+
+#btnLanding{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+#btnLanding:hover{
+	opacity:0.5;
+}
+
+#btnWebs{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+#btnWebs:hover{
+	opacity:0.5;
+}
+#btnMod{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+#btnMod:hover{
+	opacity:0.5;
+}
+#btnEventos{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+#btnEventos:hover{
+	opacity:0.5;
+}
+#btnVideo{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: left;
+}
+#btnVideo:hover{
+	opacity:0.5;
+}
+#formulario{
+	width: 100%;
+	text-align: center;
+}
+
+iframe{
+	margin: 0px auto;
+}

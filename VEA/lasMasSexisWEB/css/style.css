@@ -1,0 +1,505 @@
+@font-face {
+	font-family: "Stag-BoldItalic_0.otf";
+	src: url(../fonts/Stag-BoldItalic_0.otf) format('opentype');
+}
+@font-face {
+	font-family: "Stag-Light_2.otf";
+	src: url(../fonts/Stag-Light_2.otf) format('opentype');
+}
+@font-face {
+	font-family: "Knockout-HTF68-FullFeatherwt.otf";
+	src: url(../fonts/Knockout-HTF68-FullFeatherwt.otf) format('opentype');
+}
+@font-face {
+	font-family: "Stag-Medium_2.otf";
+	src: url(../fonts/Stag-Medium_2.otf) format('opentype');
+}
+
+/*.fuentes{
+	font-family: "Stag-BoldItalic_0.otf";
+	font-family: "Stag-Light_2.otf";
+	font-family: "Knockout-HTF68-FullFeatherwt.otf";
+	font-family: "Stag-Medium_2.otf";
+}*/
+
+body{
+	text-align: center;
+
+}
+
+
+/***********************************************
+CARGADOR
+***********************************************/
+#preload{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-color: #00969D;
+/*	background-color: #bc86ba;*/
+	margin-top: -20px;
+	margin-left: -10px;
+}
+#porcentajeCarga{
+	position: absolute;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: black;
+	top:35%;
+}
+#fondoCarga{
+	position: absolute;
+	top:50%;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background: black;
+}
+
+
+#rellenoCarga{
+	position: absolute;
+	top:50%;
+	left: 0;
+	height: 2px;
+	width: 0%;
+	background: #fff;
+}
+
+#estado{
+	position: absolute;
+	top:60%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin:-100px 0 0 -100px;
+	background: url(../img/loading.gif) center no-repeat;
+}
+
+/*------------------CONTENEDOR--------------*/
+.contenedor{
+	margin: 20px auto;
+	background-color: #00969D;
+/*	background-color: #bc86ba;*/
+	width: 1200px;
+	height: auto;
+}
+
+/*------------------CABECERA--------------*/
+header{
+	width: 1028px;
+	height: 150px;
+	position: relative;
+	overflow: hidden;
+	margin:0px auto;
+}
+
+header #logo{
+	width: 344px;
+	float: left;
+	margin:15px;
+}
+
+header #portada{
+	background-color: #00969d;
+	width: 120px;
+	height: 121px;
+	margin: 5px;
+	float: right;
+
+}
+
+header #redes{
+	width: 40px;
+	height: 121px;
+	float: right;
+	overflow: hidden;
+	margin: 5px;
+
+}
+
+header #redes .redesBox{
+	width: 38px;
+	height: 38px;
+}
+header #redes .redesBox:hover{
+	opacity: 0.7;
+}
+/*------------------VIDEO PORTADA--------------*/
+#video{
+	margin: 10px auto;
+	width: 1028px;
+	height: 578px;
+	background-color: white;
+}
+
+#videoMovil{
+	display: none;
+}
+/*------------------PUBLICIDAD 1--------------*/
+#public1{
+	margin:20px auto;
+	width: 1020px;
+	height: 75px;
+	background-color: white;
+}
+
+#public1 #banner1{
+
+
+}
+/*------------------PORTADA DISEÑO--------------*/
+#portada{
+	width: 100%;
+	height: 407px;
+	background:#bc86ba;
+}
+
+/*voting style */
+.votos {
+	list-style: none;
+	width: 300px;
+	height: 60px;
+	margin: 15px auto;
+}
+
+.votos .dw_button {
+	background: url(../img/mEncanta.png) no-repeat;
+	float: right;
+	width: 50%;
+	cursor:pointer;
+	height: 40px;
+}
+.votos .dw_button:hover {
+	background: url(../img/mEncanta_a.png) no-repeat ;
+}
+
+.votos .up_button {
+	background: url(../img/mGusta.png) no-repeat;
+	float: left;
+	width: 50%;
+	cursor:pointer;
+	background-position-x: 71px;
+	height: 40px;
+}
+.votos .up_button:hover{
+	background: url(../img/mGusta_a.png) no-repeat ;
+	background-position-x: 71px;
+}
+
+.voting_btn{
+	float:left;
+}
+.voting_btn span{
+	font-size: 11px;
+	font-family:Arial,sans-serif;
+	margin:10px 0 0 37px;
+	display:block;
+	width:27px;
+	height:22px;
+	line-height:22px;
+	text-align:center
+}
+.votado{
+	font-family: "Stag-Light_2.otf";
+	color: white;
+	font-size: 15px;
+	text-align: center
+	width:100%;
+	height: 20px;
+
+}
+
+.love_votado{
+	background: url(../img/mEncanta_a.png) no-repeat !important;
+}
+.likes_votado{
+	background: url(../img/mGusta_a.png) no-repeat  !important;
+	float: left;
+	width: 50%;
+	cursor:pointer;
+	background-position-x: 71px !important;
+	height: 40px;
+}
+
+/*------------------	GRUPO DE VIDEOS--------------*/
+#groupVideo{
+	margin:15px auto;
+	width: 90%;
+	overflow: hidden;
+}
+
+#groupVideo .boxVideo{
+	width: 352px;
+	height: 342px;
+	/*border:2px solid white;*/
+	float: left;
+}
+#groupVideo .boxVideo .imgVideo{
+	width: 300px;
+	height: 250px;
+	background: #8f3a3a;
+	border:1px solid white;
+	margin:0px auto;
+}
+
+#video2{
+	margin: 0px auto;
+    height: 100px;
+    width: 100px;
+    margin-top: 88px;
+    cursor: pointer;
+    margin-left: 65px;
+    list-style: none;
+}
+#video2 li{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+.play{
+	width: 60px;
+    height: 60px;
+    margin-top: 12px;
+}
+.play:hover{
+	width: 70px;
+	height: 70px;
+	margin-top: 10px;
+}
+
+
+#contentVideo2{
+	width: 66%;
+	overflow: hidden;
+	float: left;
+}
+
+#contentBanner{
+	width: 32.7%;
+	height: 690px;
+	float: left;
+/*	border:1px solid white;*/
+}
+
+/*------------------ FOOTER SUSCRIPCIÓN--------------*/
+
+#contentSuscrip{
+	margin:0px auto;
+	width: 90%;
+	height: 506px;
+	overflow: hidden;
+}
+
+#contentSuscrip #Revistas{
+	width: 50%;
+	float: left;
+}
+
+#contentSuscrip #Revistas img{
+	width: 80%;
+}
+
+#contentSuscrip #Suscripcion {
+	width: 49%;
+/*	border:1px solid white;*/
+	float: left;
+}
+#contentSuscrip #Suscripcion #suscUp{
+	width: 100%;
+	height: 160px;
+	margin-top: 150px;
+}
+#contentSuscrip #Suscripcion #suscUp .btn {
+  font-family: "Stag-Medium_2.otf";
+  color: #fff;
+  font-size: 30px;
+  background: transparent;
+  padding: 10px 20px 10px 20px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
+
+#contentSuscrip #Suscripcion #suscUp .btn:hover {
+
+  background: #2bb8c5;
+}
+
+
+/*******************************************************************************************************/
+@media (max-width: 1024px) {
+
+/************CARGADOR*************************/
+#preload{
+
+}
+#porcentajeCarga{
+	position: absolute;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: black;
+	top:35%;
+}
+#fondoCarga{
+	position: absolute;
+	top:50%;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background: black;
+}
+
+
+#rellenoCarga{
+	position: absolute;
+	top:50%;
+	left: 0;
+	height: 2px;
+	width: 0%;
+	background: #fff;
+}
+
+#estado{
+	position: absolute;
+	top:60%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin:-100px 0 0 -100px;
+	background: url(../img/loading.gif) center no-repeat;
+}
+.contenedor{
+	margin: 0px auto;
+	width: 100%;
+	height: auto;
+}
+
+/*------------------CABECERA--------------*/
+header{
+	width: 100%;
+	height: 70px;
+	position: relative;
+	overflow: hidden;
+	margin:0px auto;
+}
+
+header #logo{
+	width: 155px;
+	float: left;
+	margin:5px;
+}
+
+header #portada{
+	display: none;
+
+}
+
+header #redes{
+	width: 130px;
+	height: 40px;
+	float: right;
+	overflow: hidden;
+	margin-top: 5px;
+}
+
+/*------------------PUBLICIDAD 1--------------*/
+#public1{
+	display: none;
+}
+#public1 #banner1{
+
+
+}
+/*------------------VIDEO PORTADA--------------*/
+#video{
+	display: none;
+}
+
+#videoMovil{
+	margin: 10px auto;
+	width: 365px;
+	height: 200px;
+	background-color: white;
+	display:block !important;
+}
+#contentBanner{
+	display:none;
+	width: 0px;
+	height: 0px;
+}
+#contentVideo2{
+	width: 100%;
+	overflow: hidden;
+	float: left;
+}
+#portada{
+	width: 100%;
+	height: 100%;
+	background:#bc86ba;
+}
+
+#portada img{ 
+	width: 100%;
+}
+
+/*------------------	GRUPO DE VIDEOS--------------*/
+#groupVideo{
+    margin: 1px auto;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+#groupVideo .boxVideo{
+	height: 350px;
+
+}
+
+/*------------------ FOOTER SUSCRIPCIÓN--------------*/
+
+#contentSuscrip{
+	margin:0px auto;
+	width: 90%;
+	height: auto;
+	overflow: hidden;
+}
+
+#contentSuscrip #Revistas{
+	width: 100%;
+	float: left;
+}
+
+#contentSuscrip #Revistas img{
+	width: 100%;
+}
+
+#contentSuscrip #Suscripcion {
+	width: 100%;
+/*	border:1px solid white;*/
+	float: left;
+}
+#contentSuscrip #Suscripcion #suscUp{
+	width: 100%;
+	height: 65px;
+	margin-top: 13px;
+}
+#contentSuscrip #Suscripcion #suscUp .btn {
+
+  color: #fff;
+  font-size: 20px;
+  background:  #2bb8c5;
+  padding: 10px 20px 10px 20px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+}
+
+#contentSuscrip #Suscripcion #suscUp .btn:hover {
+ background: #2bb8c5;
+}

@@ -1,0 +1,49 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 11-05-2012 a las 11:54:16
+-- Versión del servidor: 5.5.8
+-- Versión de PHP: 5.3.5
+
+--------------------------------------------------------------
+
+CREATE TABLE `users` (
+ iduser int(30) NOT NULL AUTO_INCREMENT,
+ username varchar(50),
+ picture varchar(50) NOT NULL,
+ PRIMARY KEY (iduser)
+)ENGINE=InnoDB;
+
+INSERT INTO `users` (`iduser`, `username`, `picture`) VALUES
+(1, 'Hugo', 'pic1.jpg'),
+(2, 'Juan', 'pic2.jpg'),
+(3, 'Pedro', 'pic3.jpg'),
+(4, 'Ramiro', 'pic4.jpg'),
+(5, 'Vero', 'pic5.jpg'),
+(6, 'Elias', 'pic6.jpg'),
+(7, 'Beto', 'pic7.jpg'),
+(8, 'Juan', 'pic8.jpg'),
+(9, 'Laura', 'pic9.jpg');
+
+--------------------------------------------------------------
+CREATE TABLE `friend`(
+idlike int(30) NOT NULL  AUTO_INCREMENT,
+iduser int(30) NOT NULL,
+idfriend int(30) NOT NULL,
+PRIMARY KEY (idlike),
+FOREIGN KEY (iduser) REFERENCES users(iduser)) ENGINE=InnoDB;
+
+INSERT INTO `friend` (`idlike`, `iduser`, `idfriend`) VALUES
+(7, 1, 5),
+(8, 1, 9),
+(9, 1, 7),
+(10, 1, 2),
+(11, 2, 3),
+(12, 2, 9),
+(13, 2, 6),
+(14, 2, 1),
+(15, 2, 4);
+
+--------------------------------------------------------------

@@ -6,8 +6,19 @@
 
  class Funciones {
 
+    public function ejecutarJS($nomFunction){
+        echo '<script type="text/javascript">';
+        echo $nomFunction.'();';
+        echo '</script>';
+    }
 
-    public static function encriptar ($clave) {
+    public function descargaPDF($idPdf){
+        header("Content-disposition: attachment; filename=".$idPdf.".pdf");
+        header("Content-type: application/pdf");
+        readfile("descargas/".$idPdf.".pdf");  
+    }
+
+    public static function encriptar($clave) {
     	$key = hash('sha256', SECRET_KEY);
     	$iv=substr(hash('sha256', SECRET_IV), 0, 16);
     	$output = openssl_encrypt($clave, METHOD, $key, 0, $iv);
@@ -16,7 +27,7 @@
     	return $output;
     }
  
-    public static function desencriptar ($clave) {
+    public static function desencriptar($clave) {
        	$key = hash('sha256', SECRET_KEY);
     	$iv=substr(hash('sha256', SECRET_IV), 0, 16);
     	$output = openssl_decrypt(base64_decode($clave), METHOD, $key, 0, $iv);

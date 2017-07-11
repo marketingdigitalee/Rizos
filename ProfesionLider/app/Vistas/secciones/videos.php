@@ -2,10 +2,21 @@
 			<img src="img/banners-01.jpg" alt="">
 		</div>
 		<article class="ppalVideo">
-			<iframe width="1020" height="578" src="https://www.youtube.com/embed/EMSIIjEYOLU?list=PLiupuggSxf-cu5xnB8wQEKXJbA8C_zFQI" frameborder="0" allowfullscreen></iframe>
+			<iframe width="1020" height="578" src="https://www.youtube.com/embed/zlPxhDuGw0M" frameborder="0" allowfullscreen></iframe>
 		</article>
 		<div id="contentMiniVideos">
-				<article class="boxVideo">
+		<article class="boxVideo">
+			<div class="imgVideo" style="background-image: url(img/5.jpg);">
+		      	<ul id="video2">
+					<li>
+						<a data-fancybox data-fancybox="iframe" href="https://youtu.be/EMSIIjEYOLU">
+							<img class="play" src="img/play.png" alt="">
+						</a>
+					</li>
+				</ul>
+	        </div>
+		</article>
+		<article class="boxVideo">
 			<div class="imgVideo" style="background-image: url(img/4.jpg);">
 		      	<ul id="video2">
 					<li>
@@ -27,15 +38,5 @@
 				</ul>
 	        </div>
 		</article>
-		<article class="boxVideo">
-			<div class="imgVideo" style="background-image: url(img/2.jpg);">
-		      	<ul id="video2">
-					<li>
-						<a data-fancybox data-fancybox="iframe" href="https://youtu.be/5lj5jlszSfE">
-							<img class="play" src="img/play.png" alt="">
-						</a>
-					</li>
-				</ul>
-	        </div>
-		</article>
+
 		</div>

@@ -1,0 +1,434 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+
+.contenedor{width: 80%;
+            height: auto;
+	background-color:rgba(178,178,178,0.8);
+            margin: auto;	
+}
+
+
+#piezalogo{
+			text-align: center;
+			margin: auto;	
+}
+
+#piezalogo img{ width: 90%;
+				text-align: center;
+				margin: auto;}
+
+
+#imglogo{width:90%;
+		height: auto;
+		text-align: center;
+		margin: auto;
+}
+#despcipcion_meetup{width:90%;
+					height: auto;
+					margin: auto;
+					}
+
+#despcipcion_meetup p{font-family:Oswald;
+				      font-size:1em;
+					  color:white;
+					  padding: 35px;
+					  text-align: center;
+					   margin: auto;
+}
+
+#ee {color:#36a9e1;
+	font-size: 1.2em;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+#ele {color:#36a9e1;
+	font-size: 1.2em;
+	text-align: center;
+	text-decoration: none;
+}
+
+span{color:#36a9e1;
+	font-family:Oswald;
+	font-size: 1.2em;
+	text-decoration:overline;
+	text-decoration-color: white;
+	}
+
+#pulla{color:white;
+	font-family:Oswald;
+	font-size: 1.2em;
+	text-decoration:overline;
+	text-decoration-color:#b2b2b2;
+	}
+
+#conte-fot {width: 90%;
+	margin: auto;
+	
+	background-color:#36a9e1;
+	display: flex;
+	background-image: url(../img/microfono.png);
+	background-repeat: no-repeat;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	justify-content: space-around;
+}
+
+
+
+
+
+#fotopaulina{width: 50%;
+			height: auto;
+			margin: auto;
+			 padding: 0px;
+			
+			
+}
+
+#fotopaulina img{width: 83%;
+				 display: block;
+				 margin: auto;
+				 text-align: center;}
+
+#fotopaulina #boton{width: 40%;
+			        height: auto;
+					margin: auto;
+					text-align: center;
+
+				}
+
+
+#fotopaulina #boton:hover{
+	-webkit-transform: scale(1.1);
+    transform: scale(1.1)
+ }
+
+#fotopaulina p{font-family:Oswald;
+				      font-size:0.9em;
+					  color:white;
+					  padding:4px;
+					  text-align: center;}
+
+
+
+#experiencias{  width: 50%;
+				height: auto;
+				margin: auto;
+					
+}
+
+#experiencias img{width: 100%;
+				  height: auto;
+				 text-align: center;	
+				 margin-bottom: -4px;
+				}
+
+
+.proximos { width:90%;
+	       height: auto;
+			
+		   text-align: center;
+			margin: auto;
+}
+
+
+.proximos img { width:40%;
+				text-align: center;
+				margin: auto;
+				padding: 20px;
+				display: inline-block;
+				}
+
+.proximos h1{font-family:Oswald;
+			 color:black;
+			  font-size: 3em;
+			
+			 
+}
+
+#descripcion p{font-family:Oswald;
+				      font-size:1.1em;
+					  color:white;
+					  padding:4px;
+					  text-align: center;}
+
+#pro{color:#36a9e1;
+	font-family:Oswald;
+	font-size: 1em;
+	text-decoration:overline;
+	text-decoration-color: white;
+}
+
+
+
+
+
+
+#terminos{width:90%;
+		  height: auto;
+			background-color: black;
+	      margin: auto;
+		  background-size:cover;
+		  position:relative;}
+
+#terminos h1{font-family:Oswald;
+			 font-size:1.3em;
+			color: white;
+			padding: 4px;}
+
+#terminos p{font-family:Oswald;
+			color: white;
+			padding:0px 20px 4px 4px;
+			font-size:0.8em;}
+
+#footer{width: 90%;
+  		position:relative;
+	    margin: auto;
+	    display: block;
+  }
+
+#footer img{width: 100%;
+            height: auto;
+			margin: auto;}
+
+@media only screen and (max-width:1144px){
+	
+	
+	#despcipcion_meetup p{font-family:Oswald;
+				      font-size:1em;
+					  color:white;
+					  padding: 15px;
+					  text-align: center;
+					   margin: auto;
+    }
+	
+	#conte-fot {width: 90%;
+	margin: auto;
+	background-color:#36a9e1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	justify-content: space-around;
+}
+	
+	#fotopaulina{width: 47%;
+			height: auto;
+			margin: auto;
+			 padding:8px;
+			
+}
+
+	#fotopaulina img{width: 75%;
+				 display: block;
+				 margin: auto;
+				 text-align: center;}
+	
+	#fotopaulina p{font-family:Oswald;
+				      font-size:0.9em;
+					  color:white;
+					  padding:11px;
+					  text-align: center;}
+	
+	#fotopaulina #boton{width: 30%;
+			        height: auto;
+					margin: auto;
+					text-align: center;
+
+				}
+	
+	#experiencias{  width: 50%;
+				height: auto;
+				margin: auto;
+					
+}
+	
+	.proximos img { width:40%;
+				text-align: center;
+				margin: auto;
+				padding: 20px;
+				display: inline-block;
+				}
+	
+	#terminos h1{font-family:Oswald;
+			 font-size:1.3em;
+			color: white;
+			padding: 4px;}
+
+#terminos p{font-family:Oswald;
+			color: white;
+			padding:0px 10px 4px 10px;
+			font-size:0.8em;}
+	
+}
+
+
+
+
+@media only screen and (max-width:770px){
+	
+	#despcipcion_meetup p{width:98%;
+					font-family:Oswald;
+				      font-size:0.9em;
+					  color:white;
+					  padding: 3px;
+					  text-align: center;
+					   margin: auto;}
+
+	
+	#conte-fot {width: 90%;
+	margin: auto;
+	background-color:#36a9e1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;}
+
+	
+#fotopaulina{width: 80%;
+			height: auto;
+			margin: auto;
+			 padding: 17px;}
+	
+#fotopaulina img{width: 100%;
+				 display: block;
+				 margin: auto;
+				 text-align: center;}
+	
+
+
+#fotopaulina p{ width:100%; 
+				font-family:Oswald;
+				font-size:0.9em;
+			    color:white;
+				padding: 0px;
+			    text-align: center;}
+
+
+#fotopaulina #boton{width: 50%;
+			        height: auto;
+					margin: auto;
+					text-align: center;}
+
+#experiencias{  width:100%;
+				height: auto;
+				margin: auto;
+				background: #000000;}
+
+.proximos img { width:84%;
+				text-align: center;
+				margin: auto;
+				padding: 10px;
+				display: inline-block;}
+
+#terminos h1{font-family:Oswald;
+			 font-size:0.9em;
+			color: white;
+			padding: 1px;
+			text-align: center;}
+	
+
+#terminos p{font-family:Oswald;
+			color: white;
+			padding:0px 8px 4px 8px;
+			font-size:0.6em;
+			text-align: center;}
+}
+
+
+	
+@media only screen and (max-width:360px){
+	
+	
+#despcipcion_meetup p{width:98%;
+					font-family:Oswald;
+				      font-size:0.9em;
+					  color:white;
+					  padding: 3px;
+					  text-align: center;
+					   margin: auto;}
+
+	
+	#conte-fot {width: 90%;
+	margin: auto;
+	background-color:#36a9e1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;}
+
+	
+#fotopaulina{width: 80%;
+			height: auto;
+			margin: auto;
+			 padding: 17px;}
+	
+#fotopaulina img{width: 100%;
+				 display: block;
+				 margin: auto;
+				 text-align: center;}
+	
+
+
+#fotopaulina p{ width:100%; 
+				font-family:Oswald;
+				font-size:0.9em;
+			    color:white;
+				padding: 0px;
+			    text-align: center;}
+
+
+#fotopaulina #boton{width: 50%;
+			        height: auto;
+					margin: auto;
+					text-align: center;}
+
+#experiencias{  width:100%;
+				height: auto;
+				margin: auto;
+				background: #000000;}
+
+.proximos img { width:84%;
+				text-align: center;
+				margin: auto;
+				padding: 10px;
+				display: inline-block;}
+
+#terminos h1{font-family:Oswald;
+			 font-size:0.9em;
+			color: white;
+			padding: 1px;
+			text-align: center;}
+	
+
+#terminos p{font-family:Oswald;
+			color: white;
+			padding:0px 8px 4px 8px;
+			font-size:0.6em;
+			text-align: center;}
+	
+.proximos h1{font-family:Oswald;
+			 color:black;
+			  font-size: 2em;
+			
+			 
+}
+	
+
+	
+
+}	
+
+
+
+
+
+
+
+
+	

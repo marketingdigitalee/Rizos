@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+#content{
+	background-image:url(../img/Fondo.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center top;
+	height: 600px;
+
+}
+/*------Contenido Index----------*/
+
+#content #der{
+	width: 50%;
+	float: left;
+	height: 600px;
+
+}
+
+#content #der #btn1{
+	height: 180px;
+	margin-top: 186px;
+	margin-left: 210px;
+
+}
+#content #der #btn1 img{
+	width: 70%;
+}
+
+#content #der #btn1 img:hover{
+	width: 80%;
+
+}
+#content #der #medellin{
+	height: 200px;
+	margin-left: 210px;
+	
+}
+#content #der #medellin img{
+	width: 70%;
+}
+/*#content #der #btn2 img:hover{
+	width: 80%;
+}*/
+
+#content #izq{
+	width: 50%;
+	float: left;
+	height: 600px;
+}
+
+#content #izq #womanRun{
+	position: absolute;
+	margin-top: 60px;
+	width: 40%;
+	left:35%;
+}
+.freebirdDisclaimerColor, .freebirdDisclaimerColor a{
+	display: none !important; 
+
+}
+
+.freebirdFormviewerViewFooterPageBreak{
+	display: none;
+}
