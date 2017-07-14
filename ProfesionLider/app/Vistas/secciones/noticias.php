@@ -4,6 +4,17 @@
 </div>
 		<div class="divContenedorNoticias">
 			<article class="Noticia">
+				<img src="img/maria_claudia_paez.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">“Un buen líder sabe que debe asumir riesgos”</h1>
+					<p class="pnoti">María Claudia Páez Mallarino es la presidenta de la Cámara de Comercio de Cartagena y asegura que en los retos constantes está la evolución de un buen capitán de equipo, de un buen líder. Si se falla, hay que contarlo como aprendizaje. Pero hay que intentarlo.</p>
+					
+				</div>
+				<a href="http://www.elespectador.com/economia/un-buen-lider-sabe-que-debe-asumir-riesgos-articulo-702585" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>
+			</article>	
+			<article class="Noticia">
 				<img src="img/MISI.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti">“Hay que pasar de la terquedad a la perseverancia”</h1>
@@ -25,6 +36,9 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>				
+					
+		</div>
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/Patricia_Urrea.jpg" alt="Patricia Urrea" class="imgNoti">
 				<div class="descripNoti">
@@ -34,12 +48,7 @@
 				<a href="http://www.elespectador.com/economia/los-centros-comerciales-son-como-los-clubes-de-barrio-articulo-699239" target="_blank">
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
-			</article>		
-
-
-		
-		</div>
-		<div class="divContenedorNoticias">
+			</article>	
 			<article class="Noticia">
 				<img src="img/Rosita_Manrique.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -61,6 +70,10 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>			
+						
+		</div>
+		
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/Sandra_Forero_Camacol.jpg" alt="Sandra Forero" class="imgNoti">
 				<div class="descripNoti">
@@ -71,13 +84,6 @@
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
 			</article>
-
-
-
-			
-		</div>
-		
-		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/ana_maria_uribe.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -99,6 +105,11 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>				
+			
+
+			
+		</div>
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/astrid_a.jpg" alt="Astrid Àlvarez" class="imgNoti">
 				<div class="descripNoti">
@@ -109,11 +120,6 @@
 					<button type="button"  class="css3button">VER MÁS</button>
 				</a>
 			</article>
-
-			
-		</div>
-		<div class="divContenedorNoticias">
-			<article class="NoticiaVacia"></article>
 			<article class="Noticia">
 				<img src="img/Anato.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
