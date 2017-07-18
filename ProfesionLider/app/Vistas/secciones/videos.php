@@ -2,7 +2,7 @@
 			<img src="img/banners-01.jpg" alt="">
 		</div>
 		<article class="ppalVideo">
-			<iframe width="1020" height="578" src="https://www.youtube.com/embed/vGeLuSFJ7tc" frameborder="0" allowfullscreen></iframe>
+			<iframe width="1020" height="578" src="https://www.youtube.com/embed/VOu8YLKd2-Y" frameborder="0" allowfullscreen></iframe>
 		</article>
 		<div id="contentMiniVideos">
 		<article class="boxVideo">

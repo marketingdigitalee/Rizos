@@ -33,7 +33,10 @@ $('.owl-carousel').owlCarousel({
         hovers:   true,
         pageNumbers: true,
         closed: true,
-        autoCenter: true
+        autoCenter: true,
+        tabs:  true,
+        tabWidth:  60,
+        tabHeight:  20
     });
 
     $('.descargaFasciculo').click(function(){
@@ -57,11 +60,19 @@ $('.owl-carousel').owlCarousel({
         inputLeo.value = idAncore;
     });
 
-    function LimpiarForm(){
+
+}); 
+
+function LimpiarForm(){
     var form = document.getElementById("sky-form").getElementsByTagName("input");
     for (var i=0; i<form.length; i++) {
         form[i].value = "";
         }
 }
-}); 
 
+function Alerta($mensaje){
+    var mensaje = confirm($mensaje);
+    if(mensaje){
+        //TODO activar el modal
+    }
+}

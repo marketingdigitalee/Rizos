@@ -1,6 +1,5 @@
 <?php 
 require 'app/Modelo/PersonasDAO.class.php';
-require 'app/Modelo/AlmacenDAO.class.php';
 require_once 'app/Modelo/funciones.php';
 require_once 'app/Controlador/libreria/recaptcha/recaptchalib.php';
 require_once 'controladorVistas.php';
@@ -18,7 +17,7 @@ function ValidarUsuario($POST){
 		if($modPersonas->existeXCedula($POST['doccedula'])){
 			$respuesta = 'ok';
 		}else{
-			$respuesta = 'error3';
+			$respuesta = 'Usuario ya existe';
 		}
 	}
 
@@ -33,31 +32,41 @@ function AgregarPersona($POST){
 	if($POST['acepto_Persona'] == 'on'){
 
 		$POST['acepto_Persona'] = true;
-				
-		if($modPersonas->existeXCedula($POST['cedula_Persona'])){
-			$respuesta = 'error1';
+
+		if(empty($POST['cedula_Persona'])|| empty($POST['nom_Persona']) || empty($POST['apell_Persona']) || empty($POST['correo_Persona']) || empty($POST['genero_Persona']) || empty($POST['cedula_Persona']) || empty($POST['tel_Persona'])){
+
+				$respuesta = 'Llene todos los campos';
+
 		}else{
 
-			$nuevoArray = $funciones->quitarDatosArreglo($POST,'doccedula');
-			$nuevoArray = $funciones->quitarDatosArreglo($nuevoArray,'numForm');
-			$servidor = $_SERVER;
-			$nuevoArray['ip_Persona'] = $funciones->getRealIP($servidor);
+			if($modPersonas->existeXCedula($POST['cedula_Persona'])){
+				$respuesta = 'Cedula ya existe en el sistema';
+			}else{
+		
+			//Validar campos que no esten vacios 
+
+				$nuevoArray = $funciones->quitarDatosArreglo($POST,'doccedula');
+				$nuevoArray = $funciones->quitarDatosArreglo($nuevoArray,'numForm');
+				$servidor = $_SERVER;
+				$nuevoArray['ip_Persona'] = $funciones->getRealIP($servidor);
 
 
-		//Se envia objeto nuevo creado los datos enviados
+			//Se envia objeto nuevo creado los datos enviados
 
-			$resultado = $modPersonas->AgregarPersona($nuevoArray);
-			var_dump($resultado);
-
+				$resultado = $modPersonas->AgregarPersona($nuevoArray);
 				if ($resultado){
 					$respuesta = 'ok';
 				}else{
-					$respuesta = 'error1';
+					$respuesta = 'Error al guardar el Usuario';
 				}
+		
+			}
 
 		}
+				
+
 	}else{
-		$respuesta = 'error2';
+		$respuesta = 'No ha aceptado los terminos y condiciones';
 	}
 return $respuesta;
 }

@@ -25,8 +25,7 @@ if(!empty($_GET['reg'])){
  	if(isset($_POST['numForm'])){
  		
  		if($_POST['numForm'] == "1"){
- 			var_dump($_POST);
- 			
+ 			 			
 	 		if(isset($_POST['idDescarga']) && isset($_POST['doccedula']) && isset($_POST['nom_Persona']) && isset($_POST['apell_Persona']) && isset($_POST['correo_Persona']) && isset($_POST['genero_Persona']) && isset($_POST['cedula_Persona']) && isset($_POST['tel_Persona']) && isset($_POST['emp_Persona']) && isset($_POST['acepto_Persona']) ){	
 
 					$resultado = null;
@@ -42,25 +41,16 @@ if(!empty($_GET['reg'])){
 					 	case 'ok':
 					 		//Descargar PDF
 					 		$funciones->descargaPDF($_POST['idDescarga']);
-					 		$control->cargarPrincipal('fromInscripcion');
 					 		$funciones->ejecutarJS('LimpiarForm');
-					 		echo '<SCRIPT LANGUAGE="JavaScript">  ';
-							echo 'alert("TU PAGINA");  ';
-							echo '</SCRIPT>';
+					 		$control->cargarPrincipal('fromInscripcion');
 					 		break;
-					 	case 'error1':
-					 		var_dump("ya estabas registrado");
-					 		break;
-					 	case 'error3':
-					 		var_dump("no estabas registrado");
-					 		break;
-
-					 	case 'error2':
-					 		var_dump("Debe aceptar los terminos");
-					 		break;
-
+					 	
 					 	default:
-						 	var_dump("entro al default");
+					 		echo '<SCRIPT LANGUAGE="JavaScript">  ';
+							echo 'alert("'. $resultado.'");  ';
+							echo '</SCRIPT>';
+							$control->cargarPrincipal('fromInscripcion');
+						 	
 					 		break;
 					 	}
 				} 			
