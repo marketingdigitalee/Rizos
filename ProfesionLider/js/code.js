@@ -62,17 +62,3 @@ $('.owl-carousel').owlCarousel({
 
 
 }); 
-
-function LimpiarForm(){
-    var form = document.getElementById("sky-form").getElementsByTagName("input");
-    for (var i=0; i<form.length; i++) {
-        form[i].value = "";
-        }
-}
-
-function Alerta($mensaje){
-    var mensaje = confirm($mensaje);
-    if(mensaje){
-        //TODO activar el modal
-    }
-}

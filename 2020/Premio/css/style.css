@@ -2,17 +2,13 @@
 	font-family: "HelveticaNeueLTStd.otf";
 	src: url(../fonts/HelveticaNeueLTStd.otf) format('opentype');
 }
-@font-face {
-	font-family: "ChampionsRegular.otf";
-	src: url(../fonts/ChampionsRegular.otf) format('opentype');
-}
-
 
 *{
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
+	 font-family: "HelveticaNeueLTStd.otf";
 }
 
 h1{
@@ -33,6 +29,23 @@ h2{
 	font-family: "HelveticaNeueLTStd.otf";
 	color: black;
 }
+
+h3{
+	text-align: center;
+	font-size: 2.5em;
+}
+
+h4{
+	color:black;
+	margin-left: 35px;
+    margin-top: 5px;
+
+}
+
+h5{
+
+}
+
  p{
  	text-align: justify;
  	font-family: "HelveticaNeueLTStd.otf";
@@ -72,47 +85,11 @@ h2{
 	overflow: hidden;
 }
 
-#content #izq #btn1{
-    height: 100px;
-    width: 60%;
-    margin-top: 90px;
-    margin-left: 120px;
-}
-
-#content #izq #btn1 img{
-	width: 100%;
-}
-
-#content #izq #btn1 img:hover{
-	width: 90%;
-    margin-left: 10px;
-    margin-top: 10px;
-
-}
-
-#content #izq #btn2{
-    height: 100px;
-    width: 60%;
-    margin-left: 120px;
-    margin-top: 40px;
-}
-
-#content #izq #btn2 img{
-	width: 100%;
-}
-
-#content #izq #btn2 img:hover{
-	width: 90%;
-    margin-left: 10px;
-    margin-top: 10px;
-
-}
-
 #content #izq #btn3{
     height: 100px;
     width: 60%;
     margin-left: 120px;
-    margin-top: 40px;
+    margin-top: 160px;
 
 }
 
@@ -127,53 +104,53 @@ h2{
 
 }
 
-#content #izq #womanRun{
-	position: absolute;
-	margin-top: 60px;
-	width: 40%;
-	left:35%;
-}
 
-.freebirdDisclaimerColor, .freebirdDisclaimerColor a{
-	display: none !important; 
+/*--------- Acordion --------------*/
 
-}
-
-.freebirdFormviewerViewFooterPageBreak{
-	display: none;
-}
-
-
-
-/*----------------DESCRIPCÌÓN ----------------*/
-
-#descripcion{
-	border: 2px solid rgba(128, 128, 128, 0.53);
-	padding: 10px;
-}
-
-/*--------------------------AGENDA -------------------*/
-#agenda{
-	padding-top: 30px;
-}
-
-#contentAgenda{
+#contentReserva{
 	width: 90%;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
-#contentAgenda img{
-	text-align: center;
-	width: 100%;
+.faq li { 
+list-style: none;
+	padding: 20px; }
+
+.faq li.q {
+  background: #4FC2E;
+  font-weight: bold;
+  font-size: 120%;
+
+	color:#FFFFFF;
+  border-bottom: 1px #ddd solid;
+  cursor: pointer;
 }
 
-/*-------------FORM ---------------*/
+.faq li.q .img{ 
+	width: 30px;
+	height: 30px;
+	background-color: #f0ee00;
+	 -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+	background-image: url("../img/vi_1.png");
+	float: left;
+	background-size: 30px;
 
-#form{
-	padding-top: 30px;
-	width: 90%;
-	margin: 0 auto;
+	}
+
+.faq li.a {
+  background: #ccd4e4;
+  display: none;
+  color:black;
+
 }
+
+.activado {
+	background-color: #e74d4d !important;
+	background-image: url("../img/vi_2.png") !important;
+}
+
 
 /*-------------Scroll up ---------------*/
 #scrollUp {

@@ -47,10 +47,10 @@ if(!empty($_GET['reg'])){
 					 	
 					 	default:
 					 		echo '<SCRIPT LANGUAGE="JavaScript">  ';
-							echo 'alert("'. $resultado.'");  ';
+							echo 'confirm("'. $resultado.'");  ';
 							echo '</SCRIPT>';
 							$control->cargarPrincipal('fromInscripcion');
-						 	
+													 	
 					 		break;
 					 	}
 				} 			

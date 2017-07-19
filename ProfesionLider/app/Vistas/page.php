@@ -75,6 +75,23 @@
   </div>
       
   <script src="js/code.js"></script>
+  <script type="text/javascript">
+    
+function LimpiarForm(){
+    var form = document.getElementById("#sky-form").getElementsByTagName("input");
+    for (var i=0; i<form.length; i++) {
+        form[i].value = "";
+        }
+}
+
+function Alerta($mensaje){
+    var mensaje = confirm($mensaje);
+    if(mensaje){
+        e.preventDefault();
+        $("html, body").animate({scrollTop: $('#sky-form').offset().top }, 1000);
+    }
+}
+  </script>
 </body>
 </html>
 

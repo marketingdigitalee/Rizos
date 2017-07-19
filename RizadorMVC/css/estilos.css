@@ -169,9 +169,6 @@ header{
 	background-repeat: no-repeat;
     margin: 0 auto;
 	
-
-   
-
 }
 
 #homePromo{
@@ -272,8 +269,9 @@ header{
 }
 
 .faq li { 
-list-style: none;
-	padding: 20px; }
+  list-style: none;
+  padding: 20px; 
+}
 
 .faq li.q {
   background: #4FC2E;

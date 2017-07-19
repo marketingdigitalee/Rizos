@@ -8,8 +8,8 @@
 			</div>
 			<section class="col col-9">
 		    	<label class="input">
-					<i class="icon-append fa fa-credit-card"></i>
-					<input type="text" name="doccedula" id="doccedula" placeholder="Cédula">
+					<!-- <i class="icon-append fa fa-credit-card"></i> -->
+					<input type="text" name="doccedula" id="doccedula" placeholder="Cédula" >
 					<b class="tooltip tooltip-bottom-right">Num. documento, Sin comas ni puntos</b>
 				</label>
 			</section>
@@ -27,7 +27,7 @@
 			<div align="center" style="color: #000; width: 100%; margin: auto;font-size: 12px;font-weight: 300;;margin-top:0px; margin-bottom:15px; "> Si ingresas por primera vez, solo debes digitar tus datos personales, e inmediatamente tendrás acceso al contenido gratuito
 			</div>
 			<label class="input">
-				<i class="icon-append fa fa-user"></i>
+				
 				<input type="text" name="nom_Persona" placeholder="Nombres">
 				<b class="tooltip tooltip-bottom-right">Escriba solo sus nombres</b>
 			</label>
@@ -36,7 +36,7 @@
 		<div class="row">
 		<section class="col col-11">
 			<label class="input">
-				<i class="icon-append fa fa-user"></i>
+				
 				<input type="text" name="apell_Persona" placeholder="Apellidos">
 				<b class="tooltip tooltip-bottom-right">Escriba solo sus apellidos</b>
 			</label>
@@ -45,7 +45,7 @@
 	<div class="row">
 		<section class="col col-11">
 			<label class="input">
-				<i class="icon-append fa fa-envelope-o"></i>
+				
 				<input type="email" name="correo_Persona" placeholder="Correo electrónico">
 				<b class="tooltip tooltip-bottom-right">Correo electrónico</b>
 			</label>
@@ -64,7 +64,7 @@
 	<div class="row">
 		<section class="col col-11">
 			<label class="input">
-				<i class="icon-append fa fa-credit-card"></i>
+				
 				<input type="text" name="cedula_Persona" placeholder="Cédula">
 				<b class="tooltip tooltip-bottom-right">Num. documento, Sin comas ni puntos</b>
 			</label>
@@ -73,7 +73,7 @@
 	<div class="row">
 		<section class="col col-11">
 			<label class="input">
-				<i class="icon-append fa fa-mobile-phone"></i>
+				
 				<input type="text" name="tel_Persona" placeholder="Numero Celular">
 				<b class="tooltip tooltip-bottom-right">Numero Celular</b>
 			</label>
@@ -82,7 +82,7 @@
 	<div class="row">
 		<section class="col col-11">
 			<label class="input">
-				<i class="icon-append fa fa-globe"></i>
+				
 				<input type="text" name="emp_Persona" placeholder="Empresa">
 				<b class="tooltip tooltip-bottom-right">Empresa</b>
 			</label>
@@ -97,7 +97,7 @@
 <footer>
 	<input type="hidden" name="numForm" id="numForm" value="1">
 	<a href="#" class="button button-secondary modal-closer" style="margin-top:0px;">Cerrar</a>
-	<button type="submit" class="button" style="float:none;margin:auto;">ENVIAR</button>
+	<button type="submit" id="btnEnviar" class="button" style="float:none;margin:auto;">ENVIAR</button>
 	<div class="progress"></div>
 	<div class="row">
 		<section class="col col-12"><label class="input state-error"></label>
