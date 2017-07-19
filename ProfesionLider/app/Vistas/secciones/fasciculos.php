@@ -3,7 +3,10 @@
 </div>
 <div>
     <h1 class="titleEventos">Instrucciones</h1>
-    <p class="descripEvento">Para descargar los fascículos, abra la revista dando click en el borde derecho para ver todos sus contenidos, busque entre las paginas el contenido a descargar</p>
+    <p class="descripEvento">Para descargar los fascículos, abra la revista dando click en el borde derecho para ver todos sus contenidos. 
+    </br>
+    </br>
+    Busque entre las paginas la información que desee. Complete el formulario para que pueda descargar el material, y si ya está registrado, escriba su número de cédula y descargue los nuevos archivos disponibles. </p>
 </div>
 <div id="contentFaciculo">
 <div id="mybook">
