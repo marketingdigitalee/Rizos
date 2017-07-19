@@ -64,7 +64,7 @@ header{
 
 
 #header {
-	width: 800px;
+	width: 900px;
 	height: 100px;
 	font-family: "ChampionsRegular.otf";
 	margin: auto;
@@ -266,7 +266,7 @@ button.css3button {
 	padding-top: 90px;
 	width: 100%;
 	position: relative;
-	height: 1050px;
+	height: 1250px;
 }
 
 #Videos .ppalVideo{
@@ -470,6 +470,14 @@ button.css3button {
     position: relative;
     background-size: 100%;
     float: left;
+}
+
+/*---------- PREMIOS ---------------*/
+
+#inscripcionPremio{
+	padding-top: 90px;
+    width: 100%;
+    position: relative;
 }
 
 /*----------------FOOTER --------------*/

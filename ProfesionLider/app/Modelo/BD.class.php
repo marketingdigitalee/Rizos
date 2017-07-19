@@ -9,9 +9,14 @@ class BD{
 
     /* METODO PARA CONECTAR CON LA BASE DE DATOS*/
  public function conectar() {
-  $DB_HOST = 'localhost';
-  $DB_USER = 'root';
-  $DB_PASS = 'usuario$1';
+  // $DB_HOST = 'localhost';
+  // $DB_USER = 'root';
+  // $DB_PASS = 'usuario$1';
+  // $DB_NAME = 'profesionlider';
+
+  $DB_HOST = 'mercadeo-1.cluster-cfjqsgr4ok1n.us-west-2.rds.amazonaws.com';
+  $DB_USER = 'usrProLider';
+  $DB_PASS = 'Pr0f3s10n_!2017';
   $DB_NAME = 'profesionlider';
 
   $db = ADONewConnection('mysqli');

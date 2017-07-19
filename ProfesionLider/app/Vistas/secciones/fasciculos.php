@@ -27,9 +27,9 @@
 
             </section>
             <section class="tableFasci_02">
-              <!--   <a href="#sky-form" class="modal-opener" id="1f2"> -->
-                    <div class="proximaDescarga"></div>
-              <!--   </a>  -->
+                <a href="#sky-form" class="modal-opener" id="1f2"> 
+                    <div class="descargaFasciculo"></div>
+                </a>  
                 <div class="contentFasiculo">
                     <p class="nameFasci">¿CÓMO LAS EMOCIONES INFLUYEN AL LIDERAR?</p>
                 </div>

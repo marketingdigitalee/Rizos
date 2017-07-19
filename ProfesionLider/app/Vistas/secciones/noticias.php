@@ -4,6 +4,17 @@
 </div>
 		<div class="divContenedorNoticias">
 			<article class="Noticia">
+				<img src="img/AnaMaría_Uribe.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">“Las mujeres tenemos la gran virtud de ser más tolerantes”</h1>
+					<p class="pnoti"> Lo dice Ana María Uribe, la jefa de Servicio al Consumidor y Apoyo al Empresario de la SIC, quien cuenta cómo se lidera cuando se valora el trabajo de la gente.</p>
+					
+				</div>
+				<a href="http://www.elespectador.com/economia/ella-lidera-la-industria-del-software-en-colombia-articulo-703794" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>
+			</article>
+			<article class="Noticia">
 				<img src="img/maria_claudia_paez.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti">“Un buen líder sabe que debe asumir riesgos”</h1>
@@ -25,6 +36,10 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>	
+							
+					
+		</div>
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/Cecilia_Nunes.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -35,10 +50,7 @@
 				<a href="http://www.elespectador.com/economia/la-mujer-que-lidera-empoderando-otras-mujeres-articulo-700276" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
-			</article>				
-					
-		</div>
-		<div class="divContenedorNoticias">
+			</article>
 			<article class="Noticia">
 				<img src="img/Patricia_Urrea.jpg" alt="Patricia Urrea" class="imgNoti">
 				<div class="descripNoti">
@@ -59,6 +71,11 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>				
 			</article>
+	
+						
+		</div>
+		
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/AdrianaSuarez.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -69,11 +86,7 @@
 				<a href="http://www.elespectador.com/economia/cuando-enfrentarse-los-miedos-se-convierte-en-un-estilo-de-liderar-articulo-697209" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
-			</article>			
-						
-		</div>
-		
-		<div class="divContenedorNoticias">
+			</article>	
 			<article class="Noticia">
 				<img src="img/Sandra_Forero_Camacol.jpg" alt="Sandra Forero" class="imgNoti">
 				<div class="descripNoti">
@@ -94,6 +107,9 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>				
 			</article>
+		
+		</div>
+		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/AnaKarina.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -104,12 +120,7 @@
 				<a href="http://www.elespectador.com/economia/hay-que-tener-una-politica-de-puertas-mente-y-corazon-abiertos-articulo-694096" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
-			</article>				
-			
-
-			
-		</div>
-		<div class="divContenedorNoticias">
+			</article>
 			<article class="Noticia">
 				<img src="img/astrid_a.jpg" alt="Astrid Àlvarez" class="imgNoti">
 				<div class="descripNoti">
@@ -131,15 +142,3 @@
 				</a>				
 			</article>
 		</div>
-<script>
-(function CargarNoticias(){
-    $.ajax({
-		type: "POST",
-    	url: "app/Controlador/traerNoticiasws.php",
-    	success: function(response){
-	            $('#notiContendido').empty();
-	            $('#notiContendido').html(response).fadeIn();
-        	}
-    });
-});
-</script>	
