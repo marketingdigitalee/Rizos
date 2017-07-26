@@ -70,7 +70,7 @@
       #FORMULARIO#
     </section>
     <section id="inscripcionPremio">
-      #INSCRIPREMIO#
+      #INSCRIPCIONPREMIO#
     </section>
     <section id="Footer">
       #FOOTER#

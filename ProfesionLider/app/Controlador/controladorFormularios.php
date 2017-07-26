@@ -17,7 +17,7 @@ function ValidarUsuario($POST){
 		if($modPersonas->existeXCedula($POST['doccedula'])){
 			$respuesta = 'ok';
 		}else{
-			$respuesta = 'Usuario ya existe';
+			$respuesta = 'Usuario no existe, diligencie el formulario completo';
 		}
 	}
 

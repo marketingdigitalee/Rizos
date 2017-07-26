@@ -6,7 +6,25 @@
     <p class="descripEvento">Para descargar los fascículos, abra la revista dando click en el borde derecho para ver todos sus contenidos. 
     </br>
     </br>
-    Busque entre las paginas la información que desee. Complete el formulario para que pueda descargar el material, y si ya está registrado, escriba su número de cédula y descargue los nuevos archivos disponibles. </p>
+    Busque entre las paginas la información que desee.</p>
+
+    <p>
+        Si es la primera vez que va a realizar esta acción debe hacer lo siguiente:
+    </br>
+    </br>
+    1. Seleccionar el fascículo que quiere obtener.</br>
+    2. Llenar todos los campos que aparecen en el formulario.</br>
+    3. Aceptar los términos y condiciones.</br>
+    4. Esperar que descargue el archivo de pdf.</br>
+
+ 
+Si ya está registrado y quiere bajar de la página web otro fascículo debe hacer lo siguiente:
+    </br>
+    </br>
+    1. Seleccionar el fascículo que quiere obtener.</br>
+    2. Ingresar su número de cédula en el primer campo que aparece en el formulario.</br>
+    3. Esperar que descarga el archivo en pdf.</br>
+    </p>
 </div>
 <div id="contentFaciculo">
 <div id="mybook">
@@ -40,9 +58,9 @@
 
             </section>
             <section class="tableFasci_03">
-                <!--  <a href="#sky-form" class="modal-opener" id="1f3"> -->
-                    <div class="proximaDescarga"></div>
-                <!-- </a>  -->
+                  <a href="#sky-form" class="modal-opener" id="1f3"> -->
+                    <div class="descargaFasciculo"></div>
+                 </a>  
                 <div class="contentFasiculo">
                     <p class="nameFasci">LIDERAZGO HUMANO: LA CLAVE PARA TENER EMPRESAS RENTABLES </p>
                 </div>
@@ -59,9 +77,9 @@
         <h3>
             <img alt="" src="img/pages/2b.jpg" />
             <section class="tableFasci_01">
-                <!-- <a href="#sky-form" class="modal-opener" id="2f1"> -->
-                    <div class="proximaDescarga"></div>
-                <!--</a> -->
+                <a href="#sky-form" class="modal-opener" id="2f1"> -->
+                    <div class="descargaFasciculo"></div>
+                </a> 
                 <div class="contentFasiculo">
                     <p class="nameFasci">CARÁCTER, CONVICCIÓN Y DISCIPLINA: PILARES PARA LIDERAR </p>
                 </div>

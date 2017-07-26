@@ -37,7 +37,7 @@ class controladorVistas{
 		
 		$sostenibilidad = $this->load_page('app/Vistas/secciones/sostenibilidad.php');
 		$fasciculos = $this->load_page('app/Vistas/secciones/fasciculos.php');
-		$inscripremio = $this->load_page('app/Vistas/secciones/inscripcionPremio.php');
+		$inscripcionPremio = $this->load_page('app/Vistas/secciones/inscripcionPremio.php');
 		$footer = $this->load_page('app/Vistas/secciones/footer.php');
 
 		$pagina = $this->replace_content('/\#HEADER\#/ms' ,$header , $pagina);
@@ -47,7 +47,7 @@ class controladorVistas{
 		$pagina = $this->replace_content('/\#EVENTOS\#/ms' ,$eventos , $pagina);
 		$pagina = $this->replace_content('/\#SOSTENIBILIDAD\#/ms' ,$sostenibilidad , $pagina);
 		$pagina = $this->replace_content('/\#FASCICULOS\#/ms', $fasciculos , $pagina);
-		$pagina = $this->replace_content('/\#INSCRIPREMIO\#/ms' , '' , $pagina);
+		$pagina = $this->replace_content('/\#INSCRIPCIONPREMIO\#/ms' , $inscripcionPremio , $pagina);
 		$pagina = $this->replace_content('/\#FOOTER\#/ms' ,$footer , $pagina);
 
 

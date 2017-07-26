@@ -2,19 +2,48 @@
 <div class="Titulo">
 	<img src="img/banners-03.jpg" alt="">
 </div>
-		<div class="divContenedorNoticias">
+
+	<div class="divContenedorNoticias">
+          <article class="Noticia">
+				<img src="img/Carlos_Augusto_Villa.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">“Conscientes de servirle a la sociedad”</h1>
+					<p class="pnoti">El presidente de La Equidad Seguros, Carlos Augusto Villa, habla de los proyectos que ejecutan para formar nuevos líderes a través del deporte, la importancia de cuidar el medio ambiente y su aporte social en una Colombia en paz. </p>
+			   </div>
+				<a href="http://www.elespectador.com/economia/conscientes-de-servirle-la-sociedad-articulo-704245" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>
+			</article>
+
+			<article class="Noticia">
+				<img src="img/Angela_Montoya.jpg" alt="" class="imgNoti">
+				<div class="descripNoti">
+					<h1 class="h1noti">“Todo el mundo puede ser exitoso si se propone metas”</h1>
+					<p class="pnoti">Ángela Montoya, presidenta de la Asociación Colombiana de Generadores de Energía Eléctrica, dice que el sector ahora es reconocido y con prestigio mundial.</p>
+			   </div>
+				<a href="http://www.elespectador.com/economia/todo-el-mundo-puede-ser-exitoso-si-se-propone-metas-articulo-704813" target="_blank">
+					<button type="button" class="css3button">VER MÁS</button>
+				</a>
+			</article>
+
+		
 			<article class="Noticia">
 				<img src="img/AnaMaría_Uribe.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
-					<h1 class="h1noti">“Las mujeres tenemos la gran virtud de ser más tolerantes”</h1>
-					<p class="pnoti"> Lo dice Ana María Uribe, la jefa de Servicio al Consumidor y Apoyo al Empresario de la SIC, quien cuenta cómo se lidera cuando se valora el trabajo de la gente.</p>
-					
-				</div>
+					<h1 class="h1noti">“Ella lidera la industria del “software” en Colombia”</h1>
+					<p class="pnoti"> Paola Restrepo le cambió la cara al gremio que trabaja por el desarrollo del sector. Creó cuatro unidades de negocio y logró pasar de 25 afiliados a 450 en un mercado que viene creciendo en la economía nacional. </p>
+			   </div>
 				<a href="http://www.elespectador.com/economia/ella-lidera-la-industria-del-software-en-colombia-articulo-703794" target="_blank">
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>
-			<article class="Noticia">
+						
+					
+   </div>
+
+		<div class="divContenedorNoticias">
+		
+		<article class="Noticia">
 				<img src="img/maria_claudia_paez.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti">“Un buen líder sabe que debe asumir riesgos”</h1>
@@ -36,11 +65,7 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>	
-							
-					
-		</div>
-		<div class="divContenedorNoticias">
-			<article class="Noticia">
+				<article class="Noticia">
 				<img src="img/Cecilia_Nunes.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti">La mujer que lidera empoderando a otras mujeres.</h1>
@@ -51,6 +76,11 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>
+							
+					
+		</div>
+		<div class="divContenedorNoticias">
+		
 			<article class="Noticia">
 				<img src="img/Patricia_Urrea.jpg" alt="Patricia Urrea" class="imgNoti">
 				<div class="descripNoti">
@@ -71,11 +101,6 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>				
 			</article>
-	
-						
-		</div>
-		
-		<div class="divContenedorNoticias">
 			<article class="Noticia">
 				<img src="img/AdrianaSuarez.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
@@ -87,6 +112,12 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>	
+	
+						
+		</div>
+		
+		<div class="divContenedorNoticias">
+			
 			<article class="Noticia">
 				<img src="img/Sandra_Forero_Camacol.jpg" alt="Sandra Forero" class="imgNoti">
 				<div class="descripNoti">
@@ -107,10 +138,7 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>				
 			</article>
-		
-		</div>
-		<div class="divContenedorNoticias">
-			<article class="Noticia">
+				<article class="Noticia">
 				<img src="img/AnaKarina.jpg" alt="" class="imgNoti">
 				<div class="descripNoti">
 					<h1 class="h1noti">“Hay que tener una política de puertas, mente y corazón abiertos”.</h1>
@@ -121,6 +149,10 @@
 					<button type="button" class="css3button">VER MÁS</button>
 				</a>
 			</article>
+		
+		</div>
+		<div class="divContenedorNoticias">
+		
 			<article class="Noticia">
 				<img src="img/astrid_a.jpg" alt="Astrid Àlvarez" class="imgNoti">
 				<div class="descripNoti">
